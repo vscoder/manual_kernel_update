@@ -16,6 +16,11 @@
     - [Install vagrant vbguest plugin](#install-vagrant-vbguest-plugin)
     - [Install VirtualBox Guest Additions](#install-virtualbox-guest-additions)
       - [Fix package name in vbguest gem sources](#fix-package-name-in-vbguest-gem-sources)
+- [Packer](#packer)
+  - [packer provisioning config](#packer-provisioning-config)
+  - [packer build image](#packer-build-image)
+  - [vagrant init (testing)](#vagrant-init-testing)
+- [Custom kernel](#custom-kernel)
 
 ## Preparation
 
@@ -786,3 +791,98 @@ drwxrwxr-x.  1 vagrant vagrant  4096 апр 29 19:39 packer
 drwxrwxr-x.  1 vagrant vagrant  4096 апр 29 19:51 .vagrant
 -rw-rw-r--.  1 vagrant vagrant  1356 апр 29 22:46 Vagrantfile
 ```
+
+# Packer
+
+https://www.packer.io/docs/index.html
+
+All necessary configuration is in directory `./packer`
+
+Overall proccess of creating and publishing the image is described in chapter [Packer](manual/manual.md#packer-1)
+
+## packer provisioning config
+
+Config is described [here](manual/manual.md#packer-provision-config)
+
+## packer build image
+
+Build instructions is described [here](manual/manual.md#packer-build)
+
+Let's build our image:
+
+```shell
+cd ./packer
+packer build centos.json -color=false | tee ../assets/packer-build-1.log
+```
+The output is available in log file [assets/packer-build-1.log](assets/packer-build-1.log)
+
+## vagrant init (testing)
+
+Box testing pricess is described [here](manual/manual.md#vagrant-init-тестирование)
+
+
+Import image to vagrant
+```shell
+vagrant box add --name centos-7-5 centos-7.7.1908-kernel-5-x86_64-Minimal.box
+```
+```log
+==> box: Box file was not detected as metadata. Adding it directly...
+==> box: Adding box 'centos-7-5' (v0) for provider: 
+    box: Unpacking necessary files from: file:///home/vscoder/projects/otus/linux-2020-04/manual_kernel_update/packer/centos-7.7.1908-kernel-5-x86_64-Minimal.box
+==> box: Successfully added box 'centos-7-5' (v0) for 'virtualbox'!
+```
+
+Check vagrant images list
+```shell
+vagrant box list
+```
+```log
+centos-7-5         (virtualbox, 0)
+centos/7           (virtualbox, 1905.1)
+```
+
+It's name is `centos-7-5`. There was set at image importing with `--name` argument.
+
+Then create `Vagrantfile` for testing the new image.
+```shell
+mkdir ./test
+cp Vagrantfile ./test/
+cd ./test
+```
+And change the box name, set `:box_name => "centos-7-5"`
+
+Let's check it:
+```shell
+vagrant up | tee ../assets/test-image-1.log
+```
+Output is at [assets/test-image-1.log](assets/test-image-1.log)
+
+Check kernel version
+```shell
+vagrant ssh
+```
+```log
+Last login: Thu Apr 30 22:49:10 2020 from 10.0.2.2
+[vagrant@kernel-update ~]$ uname -r
+5.6.8-1.el7.elrepo.x86_64
+```
+
+All is okay. So, we can remove test image from the storage.
+```shell
+vagrant box remove centos-7-5
+```
+```log
+Box 'centos-7-5' (v0) with provider 'virtualbox' appears
+to still be in use by at least one Vagrant environment. Removing
+the box could corrupt the environment. We recommend destroying
+these environments first:
+
+kernel-update (ID: e006e3134fdf4c1e972b0bed5da57648)
+
+Are you sure you want to remove this box? [y/N] y
+Removing box 'centos-7-5' (v0) with provider 'virtualbox'...
+```
+
+# Custom kernel
+
+Tomorrow
