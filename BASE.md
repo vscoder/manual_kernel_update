@@ -25,8 +25,12 @@
     - [On host](#on-host)
     - [Install tools](#install-tools)
     - [Get kernel sources](#get-kernel-sources)
+  - [Installation](#installation)
     - [Configure](#configure)
     - [Build](#build)
+    - [Install](#install)
+    - [Grub](#grub)
+  - [Virtualbox Guest Additions](#virtualbox-guest-additions)
 
 ## Preparation
 
@@ -768,7 +772,7 @@ vagrant reload
     kernel-update: /vagrant => /home/vscoder/projects/otus/linux-2020-04/manual_kernel_update
 ==> kernel-update: Machine already provisioned. Run `vagrant provision` or use the `--provision`
 ==> kernel-update: flag to force provisioning. Provisioners marked to run always will still run.
-```log
+```
 </p>
 </details>
 
@@ -1067,6 +1071,8 @@ du -sm ~/rpmbuild/BUILD/kernel-ml-5.6.11/linux-5.6.11-1.el7.x86_64/
 1020    /home/vagrant/rpmbuild/BUILD/kernel-ml-5.6.11/linux-5.6.11-1.el7.x86_64/
 ```
 
+## Installation
+
 ### Configure
 
 NOTE: Only for custom kernel configuration
@@ -1119,3 +1125,284 @@ Finished
 Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64.rpm
 Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64.rpm
 ```
+
+### Install
+
+```shell
+cd ~/rpmbuild/RPMS/x86_64/
+sudo yum localinstall --skip-broken -y *.rpm
+```
+There are some conflicts, but kernel is installed.
+<details><summary>output</summary>
+<p>
+
+```log
+Loaded plugins: fastestmirror
+Examining kernel-ml-5.6.11-1.vsc.el7.x86_64.rpm: kernel-ml-5.6.11-1.vsc.el7.x86_64
+Marking kernel-ml-5.6.11-1.vsc.el7.x86_64.rpm to be installed
+Examining kernel-ml-devel-5.6.11-1.vsc.el7.x86_64.rpm: kernel-ml-devel-5.6.11-1.vsc.el7.x86_64
+Marking kernel-ml-devel-5.6.11-1.vsc.el7.x86_64.rpm as an update to kernel-ml-devel-5.6.11-1.el7.elrepo.x86_64
+Examining kernel-ml-headers-5.6.11-1.vsc.el7.x86_64.rpm: kernel-ml-headers-5.6.11-1.vsc.el7.x86_64
+Marking kernel-ml-headers-5.6.11-1.vsc.el7.x86_64.rpm to be installed
+Examining kernel-ml-tools-5.6.11-1.vsc.el7.x86_64.rpm: kernel-ml-tools-5.6.11-1.vsc.el7.x86_64
+Marking kernel-ml-tools-5.6.11-1.vsc.el7.x86_64.rpm to be installed
+Examining kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64.rpm: kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64
+Marking kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64.rpm to be installed
+Examining kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64.rpm: kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64
+Marking kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64.rpm to be installed
+Examining perf-5.6.11-1.vsc.el7.x86_64.rpm: perf-5.6.11-1.vsc.el7.x86_64
+Marking perf-5.6.11-1.vsc.el7.x86_64.rpm to be installed
+Examining python-perf-5.6.11-1.vsc.el7.x86_64.rpm: python-perf-5.6.11-1.vsc.el7.x86_64
+Marking python-perf-5.6.11-1.vsc.el7.x86_64.rpm as an update to python-perf-3.10.0-957.12.2.el7.x86_64
+Resolving Dependencies
+--> Running transaction check
+---> Package kernel-ml.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-devel.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-headers.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-tools.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-tools-libs.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-tools-libs-devel.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package perf.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package python-perf.x86_64 0:3.10.0-957.12.2.el7 will be updated
+---> Package python-perf.x86_64 0:5.6.11-1.vsc.el7 will be an update
+--> Processing Conflict: kernel-ml-headers-5.6.11-1.vsc.el7.x86_64 conflicts kernel-headers < 5.6.11-1.vsc.el7
+Loading mirror speeds from cached hostfile
+ * base: mirror.sale-dedic.com
+ * elrepo: mirrors.colocall.net
+ * extras: mirror.sale-dedic.com
+ * updates: mirror.sale-dedic.com
+No package matched to upgrade: kernel-ml-headers
+--> Processing Conflict: kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64 conflicts kernel-tools-libs < 5.6.11-1.vsc.el7
+--> Restarting Dependency Resolution with new changes.
+--> Running transaction check
+---> Package kernel-tools-libs.x86_64 0:3.10.0-957.12.2.el7 will be updated
+--> Processing Dependency: kernel-tools-libs = 3.10.0-957.12.2.el7 for package: kernel-tools-3.10.0-957.12.2.el7.x86_64
+---> Package kernel-tools-libs.x86_64 0:3.10.0-1127.el7 will be an update
+--> Running transaction check
+---> Package kernel-tools.x86_64 0:3.10.0-957.12.2.el7 will be updated
+---> Package kernel-tools.x86_64 0:3.10.0-1127.el7 will be an update
+--> Processing Conflict: kernel-ml-headers-5.6.11-1.vsc.el7.x86_64 conflicts kernel-headers < 5.6.11-1.vsc.el7
+No package matched to upgrade: kernel-ml-headers
+--> Processing Conflict: kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64 conflicts kernel-tools-libs < 5.6.11-1.vsc.el7
+No package matched to upgrade: kernel-ml-tools-libs
+--> Processing Conflict: kernel-ml-tools-5.6.11-1.vsc.el7.x86_64 conflicts kernel-tools < 5.6.11-1.vsc.el7
+No package matched to upgrade: kernel-ml-tools
+--> Running transaction check
+---> Package kernel-ml.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-devel.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-tools.x86_64 0:3.10.0-957.12.2.el7 will be updated
+---> Package perf.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package python-perf.x86_64 0:3.10.0-957.12.2.el7 will be updated
+---> Package python-perf.x86_64 0:5.6.11-1.vsc.el7 will be an update
+--> Running transaction check
+---> Package kernel-ml.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package kernel-ml-devel.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package perf.x86_64 0:5.6.11-1.vsc.el7 will be installed
+---> Package python-perf.x86_64 0:3.10.0-957.12.2.el7 will be updated
+---> Package python-perf.x86_64 0:5.6.11-1.vsc.el7 will be an update
+--> Finished Dependency Resolution
+
+Packages skipped because of dependency problems:
+    kernel-ml-headers-5.6.11-1.vsc.el7.x86_64 from /kernel-ml-headers-5.6.11-1.vsc.el7.x86_64
+    kernel-ml-tools-5.6.11-1.vsc.el7.x86_64 from /kernel-ml-tools-5.6.11-1.vsc.el7.x86_64
+    kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64 from /kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64
+    kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64 from /kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64
+    kernel-tools-3.10.0-1127.el7.x86_64 from base
+    kernel-tools-libs-3.10.0-1127.el7.x86_64 from base
+
+Dependencies Resolved
+
+============================================================================================================================================================
+ Package                               Arch              Version                       Repository                                                      Size
+============================================================================================================================================================
+Installing:
+ kernel-ml                             x86_64            5.6.11-1.vsc.el7              /kernel-ml-5.6.11-1.vsc.el7.x86_64                             222 M
+ kernel-ml-devel                       x86_64            5.6.11-1.vsc.el7              /kernel-ml-devel-5.6.11-1.vsc.el7.x86_64                        50 M
+ perf                                  x86_64            5.6.11-1.vsc.el7              /perf-5.6.11-1.vsc.el7.x86_64                                  8.9 M
+Updating:
+ python-perf                           x86_64            5.6.11-1.vsc.el7              /python-perf-5.6.11-1.vsc.el7.x86_64                           1.6 M
+Skipped (dependency problems):
+ kernel-ml-headers                     x86_64            5.6.11-1.vsc.el7              /kernel-ml-headers-5.6.11-1.vsc.el7.x86_64                     4.9 M
+ kernel-ml-tools                       x86_64            5.6.11-1.vsc.el7              /kernel-ml-tools-5.6.11-1.vsc.el7.x86_64                       365 k
+ kernel-ml-tools-libs                  x86_64            5.6.11-1.vsc.el7              /kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64                   71 k
+ kernel-ml-tools-libs-devel            x86_64            5.6.11-1.vsc.el7              /kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64            5.9 k
+ kernel-tools                          x86_64            3.10.0-1127.el7               base                                                           8.0 M
+ kernel-tools-libs                     x86_64            3.10.0-1127.el7               base                                                           7.9 M
+
+Transaction Summary
+============================================================================================================================================================
+Install                        3 Packages
+Upgrade                        1 Package
+Skipped (dependency problems)  6 Packages
+
+Total size: 283 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : kernel-ml-devel-5.6.11-1.vsc.el7.x86_64                                                                                                  1/5 
+  Installing : perf-5.6.11-1.vsc.el7.x86_64                                                                                                             2/5 
+  Installing : kernel-ml-5.6.11-1.vsc.el7.x86_64                                                                                                        3/5 
+  Updating   : python-perf-5.6.11-1.vsc.el7.x86_64                                                                                                      4/5 
+  Cleanup    : python-perf-3.10.0-957.12.2.el7.x86_64                                                                                                   5/5 
+  Verifying  : python-perf-5.6.11-1.vsc.el7.x86_64                                                                                                      1/5 
+  Verifying  : kernel-ml-5.6.11-1.vsc.el7.x86_64                                                                                                        2/5 
+  Verifying  : perf-5.6.11-1.vsc.el7.x86_64                                                                                                             3/5 
+  Verifying  : kernel-ml-devel-5.6.11-1.vsc.el7.x86_64                                                                                                  4/5 
+  Verifying  : python-perf-3.10.0-957.12.2.el7.x86_64                                                                                                   5/5 
+
+Installed:
+  kernel-ml.x86_64 0:5.6.11-1.vsc.el7                kernel-ml-devel.x86_64 0:5.6.11-1.vsc.el7                perf.x86_64 0:5.6.11-1.vsc.el7               
+
+Updated:
+  python-perf.x86_64 0:5.6.11-1.vsc.el7                                                                                                                     
+
+Skipped (dependency problems):
+  kernel-ml-headers.x86_64 0:5.6.11-1.vsc.el7              kernel-ml-tools.x86_64 0:5.6.11-1.vsc.el7     kernel-ml-tools-libs.x86_64 0:5.6.11-1.vsc.el7    
+  kernel-ml-tools-libs-devel.x86_64 0:5.6.11-1.vsc.el7     kernel-tools.x86_64 0:3.10.0-1127.el7         kernel-tools-libs.x86_64 0:3.10.0-1127.el7        
+
+Complete!
+```
+</p>
+</details>
+
+### Grub
+
+Update grub config
+```shell
+sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+```
+<details><summary>output</summary>
+<p>
+
+```log
+Generating grub configuration file ...
+Found linux image: /boot/vmlinuz-5.6.11-1.vsc.el7.x86_64
+Found initrd image: /boot/initramfs-5.6.11-1.vsc.el7.x86_64.img
+Found linux image: /boot/vmlinuz-3.10.0-957.12.2.el7.x86_64
+Found initrd image: /boot/initramfs-3.10.0-957.12.2.el7.x86_64.img
+done
+```
+</p>
+</details>
+
+Get grub menuentries
+```shell
+sudo awk -F\' '/menuentry / {print $2}' /boot/grub2/grub.cfg
+```
+<details><summary>output</summary>
+<p>
+
+```log
+CentOS Linux (5.6.11-1.vsc.el7.x86_64) 7 (Core)
+CentOS Linux (3.10.0-957.12.2.el7.x86_64) 7 (Core)
+```
+</p>
+</details>
+
+Set default
+```shell
+sudo grub2-set-default 0
+```
+
+Reboot
+```shell
+sudo reboot
+```
+
+Check
+```shell
+uname -r
+```
+```log
+5.6.11-1.vsc.el7.x86_64
+```
+
+## Virtualbox Guest Additions
+
+By default correct version of VBoxGuestAdditions.iso is distributed with VirtualBox and located at `/usr/share/virtualbox/VBoxGuestAdditions.iso`. So one of the ways is to mount this image in `Vagrantfile` and install Virtualbox Guest Additions.
+
+But I'd like other way.
+
+First, install necessary packages to build a VBoxGuestAdditions and `dmidecode` to determine VirtualBox version
+
+```shell
+# Install dmidecode
+sudo yum install -y dmidecode
+# Ensure necessary packages are installed
+sudo yum install -y gcc binutils make perl bzip2 elfutils-libelf-devel
+```
+
+Then get corect VBoxGuestAdditions iso
+```shell
+cd ~
+# Get VBox version (ex: 6.0.20)
+VBOX_VERSION=$(dmidecode --oem-string 1 | cut -d_ -f2)
+# Download iso
+wget https://download.virtualbox.org/virtualbox/${VBOX_VERSION}/VBoxGuestAdditions_${VBOX_VERSION}.iso
+# Mount iso
+sudo mount -o loop ./VBoxGuestAdditions_${VBOX_VERSION}.iso /mnt
+# Ensure necessary packages are installed
+sudo yum install -y gcc binutils make perl bzip2 elfutils-libelf-devel
+# Install VBoxGuestAdditions
+sudo /mnt/VBoxLinuxAdditions.run --nox11
+```
+<details><summary>output</summary>
+<p>
+
+```log
+Verifying archive integrity... All good.
+Uncompressing VirtualBox 6.0.20 Guest Additions for Linux........
+VirtualBox Guest Additions installer
+Copying additional installer modules ...
+Installing additional modules ...
+VirtualBox Guest Additions: Starting.
+VirtualBox Guest Additions: Building the VirtualBox Guest Additions kernel 
+modules.  This may take a while.
+VirtualBox Guest Additions: To build modules for other installed kernels, run
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup <version>
+VirtualBox Guest Additions: or
+VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup all
+VirtualBox Guest Additions: Building the modules for kernel 
+5.6.11-1.vsc.el7.x86_64.
+```
+</p>
+</details>
+
+Cleanup
+```shell
+sudo umount /mnt
+rm ~/VBoxGuestAdditions*.iso
+```
+
+And finally, enable shared folder in vagrant file
+
+`Vagrantfile` line 21, set `disabled` to `false`
+```ruby
+    config.vm.synced_folder ".", "/vagrant", type: "virtualbox", disabled: false
+```
+and check it's mounted
+```shell
+# on host: reload vagrant instance
+vagrant reload
+vagrant ssh
+# on instance: and check content of /vagrant
+ll /vagrant
+```
+<details><summary>output</summary>
+<p>
+
+```log
+итого 88
+drwxrwxr-x. 1 vagrant vagrant  4096 май  7 10:29 assets
+-rw-rw-r--. 1 vagrant vagrant 60237 май  7 23:42 BASE.md
+-rw-rw-r--. 1 vagrant vagrant  2672 май  7 00:45 DEPRECATED.md
+drwxrwxr-x. 1 vagrant vagrant  4096 апр 29 19:39 manual
+drwxrwxr-x. 1 vagrant vagrant  4096 апр 30 23:13 packer
+-rw-rw-r--. 1 vagrant vagrant    64 апр 29 21:24 README.md
+drwxrwxr-x. 1 vagrant vagrant  4096 апр 30 23:15 test
+-rw-rw-r--. 1 vagrant vagrant  1356 май  7 23:31 Vagrantfile
+```
+</p>
+</details>
