@@ -1105,6 +1105,17 @@ cd
 rpmbuild -bb --target=`uname -m` kernel-ml-5.6.spec
 ```
 [output](assets/kernel-build-out.log)
-[errors](assets/kernel-build-err.log)
 
 A sleeping must be awesome...
+
+Finished
+```log
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-devel-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-headers-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/perf-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/python-perf-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-tools-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-tools-libs-5.6.11-1.vsc.el7.x86_64.rpm
+Записан: /home/vagrant/rpmbuild/RPMS/x86_64/kernel-ml-tools-libs-devel-5.6.11-1.vsc.el7.x86_64.rpm
+```
