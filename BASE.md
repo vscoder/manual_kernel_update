@@ -21,6 +21,12 @@
   - [packer build image](#packer-build-image)
   - [vagrant init (testing)](#vagrant-init-testing)
 - [Custom kernel](#custom-kernel)
+  - [Preparation](#preparation-1)
+    - [On host](#on-host)
+    - [Install tools](#install-tools)
+    - [Get kernel sources](#get-kernel-sources)
+    - [Configure](#configure)
+    - [Build](#build)
 
 ## Preparation
 
@@ -104,7 +110,7 @@ uname -r
 ### Add elrepo-kernel repository
 
 ```shell
-rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+sudo rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
 sudo yum install -y https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
 ```
 
@@ -885,4 +891,220 @@ Removing box 'centos-7-5' (v0) with provider 'virtualbox'...
 
 # Custom kernel
 
-Tomorrow
+Documentation: https://wiki.centos.org/HowTos/Custom_Kernel (But I don't want old kernel, give me new!)
+
+## Preparation
+
+### On host
+
+```shell
+# On host OS, uninstall vagrant-vbguest plugin (it needs only if that plugin is installed present)
+vagrant plugin uninstall vagrant-vbguest
+# destroy current vagrant instances
+vagrant destroy
+```
+
+Update vagrant instance resources in [Vagrantfile](Vagrantfile), set `:cpus => 8` and `:memory => 8196`Mb
+
+Up and connect to vagrant instance
+```shell
+vagrant up
+vagrant ssh
+```
+
+### Install tools
+```shell
+# Install common tools
+sudo yum install wget
+# Install development tools
+sudo yum groupinstall "Development Tools"
+```
+[output](assets/groupinstall-dev-tools.log)
+
+### Get kernel sources
+
+This link helps: https://elrepo.org/bugs/view.php?id=870&nbn=1
+
+Let's explore elrepo mirror https://elrepo.org/linux/ and try to find src package...
+Got it! Download kernel-ml src (nosrc ^_^) rpm from https://elrepo.org/linux/kernel/el7/SRPMS/kernel-ml-5.6.11-1.el7.elrepo.nosrc.rpm
+
+```shell
+# Go to home directory
+cd
+# Create a rpmbuild directory structure
+mkdir -p ~/rpmbuild/{BUILD,BUILDROOT,RPMS,SOURCES,SPECS,SRPMS}
+# and configure rpmbuild to use it
+echo '%_topdir %(echo $HOME)/rpmbuild' > ~/.rpmmacros
+# Install kernel-ml src (nonsrc ^_^) package
+rpm -i https://elrepo.org/linux/kernel/el7/SRPMS/kernel-ml-5.6.11-1.el7.elrepo.nosrc.rpm
+```
+<details><summary>output</summary>
+<p>
+
+```log
+rpm -i https://elrepo.org/linux/kernel/el7/SRPMS/kernel-ml-5.6.11-1.el7.elrepo.nosrc.rpm
+warning: user ajb does not exist - using root
+warning: group ajb does not exist - using root
+warning: user ajb does not exist - using root
+warning: group ajb does not exist - using root
+warning: user ajb does not exist - using root
+warning: group ajb does not exist - using root
+warning: user ajb does not exist - using root
+warning: group ajb does not exist - using root
+```
+</p>
+</details>
+
+Check result
+```shell
+cd ~/rpmbuild
+tree .
+```
+```log
+tree
+.
+|-- BUILD
+|-- BUILDROOT
+|-- RPMS
+|-- SOURCES
+|   |-- config-5.6.11-x86_64
+|   |-- cpupower.config
+|   `-- cpupower.service
+|-- SPECS
+|   `-- kernel-ml-5.6.spec
+`-- SRPMS
+
+6 directories, 4 files
+```
+
+Get kernel tarball from kernel.org
+```shell
+cd ~/rpmbuild/SOURCES/
+wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.6.11.tar.xz
+```
+
+Extract sources (and apply patches if present)
+```shell
+rpmbuild -bp ~/rpmbuild/SPECS/kernel-ml-5.6.spec
+```
+<details><summary>OOPS...</summary>
+<p>
+
+```log
+error: Failed build dependencies:
+        asciidoc is needed by kernel-ml-5.6.11-1.el7.x86_64
+        bc is needed by kernel-ml-5.6.11-1.el7.x86_64
+        elfutils-libelf-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        net-tools is needed by kernel-ml-5.6.11-1.el7.x86_64
+        newt-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        openssl-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        audit-libs-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        binutils-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        elfutils-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        java-1.8.0-openjdk-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        libcap-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        numactl-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        perl(ExtUtils::Embed) is needed by kernel-ml-5.6.11-1.el7.x86_64
+        python-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        python3 is needed by kernel-ml-5.6.11-1.el7.x86_64
+        slang-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        xz-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        ncurses-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+        pciutils-devel is needed by kernel-ml-5.6.11-1.el7.x86_64
+```
+</p>
+</details>
+
+Let's install missing packages
+```shell
+sudo yum install -y asciidoc bc elfutils-libelf-devel net-tools newt-devel openssl-devel audit-libs-devel binutils-devel elfutils-devel java-1.8.0-openjdk-devel libcap-devel numactl-devel "perl(ExtUtils::Embed)" python-devel python3 slang-devel xz-devel ncurses-devel pciutils-devel
+```
+[output](assets/install-missing.log)
+
+Extract sources, second attempt
+```shell
+rpmbuild -bp ~/rpmbuild/SPECS/kernel-ml-5.6.spec
+```
+Success!
+<details><summary>output</summary>
+<p>
+
+```log
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.parNha+ umask 022
++ cd /home/vagrant/rpmbuild/BUILD
++ cd /home/vagrant/rpmbuild/BUILD
++ rm -rf kernel-ml-5.6.11
++ /usr/bin/mkdir -p kernel-ml-5.6.11
++ cd kernel-ml-5.6.11
++ /usr/bin/xz -dc /home/vagrant/rpmbuild/SOURCES/linux-5.6.11.tar.xz
++ /usr/bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/mv linux-5.6.11 linux-5.6.11-1.el7.x86_64
++ pushd linux-5.6.11-1.el7.x86_64
++ /usr/bin/find -name '.[a-z]*'
++ xargs --no-run-if-empty /usr/bin/rm -rf
++ /usr/bin/cp /home/vagrant/rpmbuild/SOURCES/config-5.6.11-x86_64 .
++ for C in 'config-*-x86_64*'
++ /usr/bin/cp config-5.6.11-x86_64 .config
++ /usr/bin/make -s ARCH=x86_64 listnewconfig
++ grep -E '^CONFIG_'
++ true
++ '[' -s .newoptions ']'
++ /usr/bin/rm -f .newoptions
++ popd
++ exit 0
+```
+</p>
+</details>
+
+Check sources size (Just for fun:)
+```shell
+du -sm ~/rpmbuild/BUILD/kernel-ml-5.6.11/linux-5.6.11-1.el7.x86_64/
+```
+```log
+1020    /home/vagrant/rpmbuild/BUILD/kernel-ml-5.6.11/linux-5.6.11-1.el7.x86_64/
+```
+
+### Configure
+
+NOTE: Only for custom kernel configuration
+Copy old config
+```shell
+# backup distribution config
+cd ~/rpmbuild/SOURCES/
+mv config-5.6.11-x86_64 config-5.6.11-x86_64.distrib
+cd ~/rpmbuild/BUILD/kernel-ml-5.6.11/linux-5.6.11-1.el7.x86_64/
+# backup original .config
+mv .config .config.dist
+# copy old config to .config
+cp /boot/config-`uname -r` .config
+# Adopt old configuration
+yes "" | make oldconfig
+cp ./config ~/rpmbuild/SOURCES/config-5.6.11-x86_64
+```
+`make oldconfig` command [output](assets/make-oldconfig.log)
+
+But we didn't do that step ^_^
+
+And we didn't do `make menuconfig`. Not in this time. A sleeping is though important...
+
+Change buildid in spec
+```shell
+cd ~/rpmbuild/SPECS/
+cp kernel-ml-5.6.spec kernel-ml-5.6.spec.distrib
+# set custom buildid
+sed -i.bak 's/#define buildid ./%define buildid .vsc/g' kernel-ml-5.6.spec
+```
+
+### Build
+
+```shell
+cd 
+rpmbuild -bb --target=`uname -m` kernel-ml-5.6.spec
+```
+[output](assets/kernel-build-out.log)
+[errors](assets/kernel-build-err.log)
+
+A sleeping must be awesome...

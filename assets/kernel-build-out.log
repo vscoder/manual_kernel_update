@@ -1,0 +1,44 @@
+Платформы для сборки: x86_64
+Сборка для платформы x86_64
+Выполняется(%prep): /bin/sh -e /var/tmp/rpm-tmp.mMlAFg
++ umask 022
++ cd /home/vagrant/rpmbuild/BUILD
++ cd /home/vagrant/rpmbuild/BUILD
++ rm -rf kernel-ml-5.6.11
++ /usr/bin/mkdir -p kernel-ml-5.6.11
++ cd kernel-ml-5.6.11
++ /usr/bin/xz -dc /home/vagrant/rpmbuild/SOURCES/linux-5.6.11.tar.xz
++ /usr/bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ /usr/bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ /usr/bin/mv linux-5.6.11 linux-5.6.11-1.vsc.el7.x86_64
++ pushd linux-5.6.11-1.vsc.el7.x86_64
++ /usr/bin/find -name '.[a-z]*'
++ xargs --no-run-if-empty /usr/bin/rm -rf
++ /usr/bin/cp /home/vagrant/rpmbuild/SOURCES/config-5.6.11-x86_64 .
++ for C in 'config-*-x86_64*'
++ /usr/bin/cp config-5.6.11-x86_64 .config
++ /usr/bin/make -s ARCH=x86_64 listnewconfig
++ grep -E '^CONFIG_'
++ true
++ '[' -s .newoptions ']'
++ /usr/bin/rm -f .newoptions
++ popd
++ exit 0
+Выполняется(%build): /bin/sh -e /var/tmp/rpm-tmp.mHfIvq
++ umask 022
++ cd /home/vagrant/rpmbuild/BUILD
++ cd kernel-ml-5.6.11
++ /usr/bin/rm -rf /home/vagrant/rpmbuild/BUILDROOT/kernel-ml-5.6.11-1.vsc.el7.x86_64
++ /usr/bin/mkdir -p /home/vagrant/rpmbuild/BUILDROOT/kernel-ml-5.6.11-1.vsc.el7.x86_64/boot
++ /usr/bin/mkdir -p /home/vagrant/rpmbuild/BUILDROOT/kernel-ml-5.6.11-1.vsc.el7.x86_64/usr/libexec
++ pushd linux-5.6.11-1.vsc.el7.x86_64
++ BuildKernel
++ Flavour=
++ /usr/bin/make -s distclean
++ '[' -z '' ']'
++ /usr/bin/cp config-5.6.11-x86_64 .config
++ /usr/bin/sed -i 's/^EXTRAVERSION.*/EXTRAVERSION = -1.vsc.el7.x86_64/' Makefile
++ /usr/bin/make -s ARCH=x86_64 oldconfig
++ /usr/bin/make -s ARCH=x86_64 -j8 bzImage
