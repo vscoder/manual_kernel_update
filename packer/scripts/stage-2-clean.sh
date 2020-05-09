@@ -28,4 +28,4 @@ dd if=/dev/zero of=/EMPTY bs=1M
 rm -f /EMPTY
 sync
 grub2-set-default 1
-echo "###   Hi from secone stage" >> /boot/grub2/grub.cfg
+echo "###   Hi from second stage" >> /boot/grub2/grub.cfg

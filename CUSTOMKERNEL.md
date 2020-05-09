@@ -6,7 +6,7 @@
     - [Install tools](#install-tools)
     - [Get kernel sources](#get-kernel-sources)
   - [Installation](#installation)
-    - [Configure](#configure)
+    - [Configure (skipped)](#configure-skipped)
     - [Build](#build)
     - [Install](#install)
     - [Grub](#grub)
@@ -189,7 +189,7 @@ du -sm ~/rpmbuild/BUILD/kernel-ml-5.6.11/linux-5.6.11-1.el7.x86_64/
 
 ## Installation
 
-### Configure
+### Configure (skipped)
 
 NOTE: Only for custom kernel configuration
 Copy old config
@@ -212,6 +212,9 @@ But we didn't do that step ^_^
 
 And we didn't do `make menuconfig`. Not in this time. A sleeping is though important...
 
+
+### Build
+
 Change buildid in spec
 ```shell
 cd ~/rpmbuild/SPECS/
@@ -220,10 +223,8 @@ cp kernel-ml-5.6.spec kernel-ml-5.6.spec.distrib
 sed -i.bak 's/#define buildid ./%define buildid .vsc/g' kernel-ml-5.6.spec
 ```
 
-### Build
-
 ```shell
-cd 
+cd ~/rpmbuild/SPECS/
 rpmbuild -bb --target=`uname -m` kernel-ml-5.6.spec
 ```
 [output](assets/kernel-build-out.log)
