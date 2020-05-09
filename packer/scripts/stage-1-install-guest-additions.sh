@@ -2,8 +2,8 @@
 
 set -eux
 
-echo "Install dmidecode"
-sudo yum install -y dmidecode
+echo "Install dmidecode and other necessary tools"
+sudo yum install -y dmidecode wget
 
 echo "Ensure other necessary packages are installed"
 sudo yum install -y gcc binutils make perl bzip2 elfutils-libelf-devel
@@ -18,9 +18,6 @@ wget https://download.virtualbox.org/virtualbox/${VBOX_VERSION}/VBoxGuestAdditio
 echo "Mount iso"
 sudo mount -o loop ./VBoxGuestAdditions_${VBOX_VERSION}.iso /mnt
 
-echo "Ensure necessary packages are installed"
-sudo yum install -y gcc binutils make perl bzip2 elfutils-libelf-devel
-
 echo "Install VBoxGuestAdditions"
 sudo /mnt/VBoxLinuxAdditions.run --nox11
 
@@ -29,3 +26,6 @@ sudo umount /mnt
 
 echo "Remove iso"
 rm ~/VBoxGuestAdditions*.iso
+
+echo "Reboot"
+sudo shutdown -r now

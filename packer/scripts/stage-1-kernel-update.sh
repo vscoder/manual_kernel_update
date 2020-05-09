@@ -3,7 +3,7 @@
 # Install elrepo
 yum install -y http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm
 # Install new kernel
-yum --enablerepo elrepo-kernel install kernel-ml -y
+yum --enablerepo elrepo-kernel install kernel-ml kernel-ml-headers kernel-ml-devel -y
 # Remove older kernels (Only for demo! Not Production!)
 rm -f /boot/*3.10*
 # Update GRUB

@@ -1,3 +1,9 @@
+- [Packer](#packer)
+  - [Cinfiguration](#cinfiguration)
+  - [Build](#build)
+  - [Test](#test)
+  - [Upload box to vagrant cloud](#upload-box-to-vagrant-cloud)
+
 # Packer
 
 Now we build vagrant box with custom kernel using packer.

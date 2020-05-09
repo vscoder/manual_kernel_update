@@ -1,0 +1,1904 @@
+==> centos-7.7: Retrieving Guest additions
+==> centos-7.7: Trying /usr/share/virtualbox/VBoxGuestAdditions.iso
+==> centos-7.7: Trying /usr/share/virtualbox/VBoxGuestAdditions.iso
+==> centos-7.7: /usr/share/virtualbox/VBoxGuestAdditions.iso => /home/vscoder/projects/otus/linux-2020-04/manual_kernel_update/packer/packer_cache/26fb5ce50fc4b178e2f2ab9965e7b69240ae8239.iso
+==> centos-7.7: Retrieving ISO
+==> centos-7.7: Trying http://mirror.yandex.ru/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso
+==> centos-7.7: Trying http://mirror.yandex.ru/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso?checksum=sha256%3A9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d
+==> centos-7.7: http://mirror.yandex.ru/centos/7.7.1908/isos/x86_64/CentOS-7-x86_64-Minimal-1908.iso?checksum=sha256%3A9a2c47d97b9975452f7d582264e9fc16d108ed8252ac6816239a3b58cef5c53d => /home/vscoder/projects/otus/linux-2020-04/manual_kernel_update/packer/packer_cache/4643e65b1345d2b22536e5d371596b98120f4251.iso
+==> centos-7.7: Starting HTTP server on port 8699
+==> centos-7.7: Creating virtual machine...
+==> centos-7.7: Creating hard drive...
+==> centos-7.7: Creating forwarded port mapping for communicator (SSH, WinRM, etc) (host port 4071)
+==> centos-7.7: Executing custom VBoxManage commands...
+    centos-7.7: Executing: modifyvm packer-centos-vm --memory 2048
+    centos-7.7: Executing: modifyvm packer-centos-vm --cpus 8
+==> centos-7.7: Starting the virtual machine...
+==> centos-7.7: Waiting 10s for boot...
+==> centos-7.7: Typing the boot command...
+==> centos-7.7: Using ssh communicator to connect: 127.0.0.1
+==> centos-7.7: Waiting for SSH to become available...
+==> centos-7.7: Connected to SSH!
+==> centos-7.7: Uploading VirtualBox version info (6.0.20)
+==> centos-7.7: Uploading VirtualBox guest additions ISO...
+==> centos-7.7: Pausing 20s before the next provisioner...
+==> centos-7.7: Provisioning with shell script: scripts/stage-1-kernel-update.sh
+    centos-7.7: Loaded plugins: fastestmirror
+    centos-7.7: elrepo-release-7.0-3.el7.elrepo.noarch.rpm               | 8.5 kB     00:00
+    centos-7.7: Examining /var/tmp/yum-root-2ZwDF1/elrepo-release-7.0-3.el7.elrepo.noarch.rpm: elrepo-release-7.0-3.el7.elrepo.noarch
+    centos-7.7: Marking /var/tmp/yum-root-2ZwDF1/elrepo-release-7.0-3.el7.elrepo.noarch.rpm to be installed
+    centos-7.7: Resolving Dependencies
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package elrepo-release.noarch 0:7.0-3.el7.elrepo will be installed
+    centos-7.7: --> Finished Dependency Resolution
+    centos-7.7:
+    centos-7.7: Dependencies Resolved
+    centos-7.7:
+    centos-7.7: ================================================================================
+    centos-7.7:  Package  Arch   Version          Repository                               Size
+    centos-7.7: ================================================================================
+    centos-7.7: Installing:
+    centos-7.7:  [1melrepo-release(B[m
+    centos-7.7:           noarch 7.0-3.el7.elrepo /elrepo-release-7.0-3.el7.elrepo.noarch 5.2 k
+    centos-7.7:
+    centos-7.7: Transaction Summary
+    centos-7.7: ================================================================================
+    centos-7.7: Install  1 Package
+    centos-7.7:
+    centos-7.7: Total size: 5.2 k
+    centos-7.7: Installed size: 5.2 k
+    centos-7.7: Downloading packages:
+    centos-7.7: Running transaction check
+    centos-7.7: Running transaction test
+    centos-7.7: Transaction test succeeded
+    centos-7.7: Running transaction
+    centos-7.7:   Installing : elrepo-release-7.0-3.el7.elrepo.noarch                       1/1
+    centos-7.7:   Verifying  : elrepo-release-7.0-3.el7.elrepo.noarch                       1/1
+    centos-7.7:
+    centos-7.7: Installed:
+    centos-7.7:   elrepo-release.noarch 0:7.0-3.el7.elrepo
+    centos-7.7:
+    centos-7.7: Complete!
+    centos-7.7: Loaded plugins: fastestmirror
+    centos-7.7: Determining fastest mirrors
+    centos-7.7:  * base: mirror.corbina.net
+    centos-7.7:  * elrepo: mirrors.colocall.net
+    centos-7.7:  * elrepo-kernel: mirrors.colocall.net
+    centos-7.7:  * extras: mirror.corbina.net
+    centos-7.7:  * updates: mirror.corbina.net
+    centos-7.7: base                                                     | 3.6 kB     00:00
+    centos-7.7: elrepo                                                   | 2.9 kB     00:00
+    centos-7.7: elrepo-kernel                                            | 2.9 kB     00:00
+    centos-7.7: extras                                                   | 2.9 kB     00:00
+    centos-7.7: updates                                                  | 2.9 kB     00:00
+    centos-7.7: (1/6): base/7/x86_64/group_gz                              | 153 kB   00:00
+    centos-7.7: (2/6): updates/7/x86_64/primary_db                         | 176 kB   00:00
+    centos-7.7: (3/6): extras/7/x86_64/primary_db                          | 190 kB   00:00
+    centos-7.7: (4/6): elrepo/primary_db                                   | 472 kB   00:00
+    centos-7.7: (5/6): base/7/x86_64/primary_db                            | 6.1 MB   00:00
+    centos-7.7: (6/6): elrepo-kernel/primary_db                            | 1.9 MB   00:01
+    centos-7.7: Resolving Dependencies
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package kernel-ml.x86_64 0:5.6.11-1.el7.elrepo will be installed
+    centos-7.7: ---> Package kernel-ml-devel.x86_64 0:5.6.11-1.el7.elrepo will be installed
+    centos-7.7: --> Processing Dependency: perl for package: kernel-ml-devel-5.6.11-1.el7.elrepo.x86_64
+    centos-7.7: ---> Package kernel-ml-headers.x86_64 0:5.6.11-1.el7.elrepo will be installed
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package perl.x86_64 4:5.16.3-295.el7 will be installed
+    centos-7.7: --> Processing Dependency: perl-libs = 4:5.16.3-295.el7 for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Socket) >= 1.3 for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Scalar::Util) >= 1.10 for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl-macros for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl-libs for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(threads::shared) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(threads) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(constant) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Time::Local) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Time::HiRes) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Storable) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Socket) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Scalar::Util) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Pod::Simple::XHTML) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Pod::Simple::Search) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Getopt::Long) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Filter::Util::Call) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(File::Temp) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(File::Spec::Unix) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(File::Spec::Functions) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(File::Spec) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(File::Path) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Exporter) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Cwd) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: perl(Carp) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Processing Dependency: libperl.so()(64bit) for package: 4:perl-5.16.3-295.el7.x86_64
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package perl-Carp.noarch 0:1.26-244.el7 will be installed
+    centos-7.7: ---> Package perl-Exporter.noarch 0:5.68-3.el7 will be installed
+    centos-7.7: ---> Package perl-File-Path.noarch 0:2.09-2.el7 will be installed
+    centos-7.7: ---> Package perl-File-Temp.noarch 0:0.23.01-3.el7 will be installed
+    centos-7.7: ---> Package perl-Filter.x86_64 0:1.49-3.el7 will be installed
+    centos-7.7: ---> Package perl-Getopt-Long.noarch 0:2.40-3.el7 will be installed
+    centos-7.7: --> Processing Dependency: perl(Pod::Usage) >= 1.14 for package: perl-Getopt-Long-2.40-3.el7.noarch
+    centos-7.7: --> Processing Dependency: perl(Text::ParseWords) for package: perl-Getopt-Long-2.40-3.el7.noarch
+    centos-7.7: ---> Package perl-PathTools.x86_64 0:3.40-5.el7 will be installed
+    centos-7.7: ---> Package perl-Pod-Simple.noarch 1:3.28-4.el7 will be installed
+    centos-7.7: --> Processing Dependency: perl(Pod::Escapes) >= 1.04 for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    centos-7.7: --> Processing Dependency: perl(Encode) for package: 1:perl-Pod-Simple-3.28-4.el7.noarch
+    centos-7.7: ---> Package perl-Scalar-List-Utils.x86_64 0:1.27-248.el7 will be installed
+    centos-7.7: ---> Package perl-Socket.x86_64 0:2.010-5.el7 will be installed
+    centos-7.7: ---> Package perl-Storable.x86_64 0:2.45-3.el7 will be installed
+    centos-7.7: ---> Package perl-Time-HiRes.x86_64 4:1.9725-3.el7 will be installed
+    centos-7.7: ---> Package perl-Time-Local.noarch 0:1.2300-2.el7 will be installed
+    centos-7.7: ---> Package perl-constant.noarch 0:1.27-2.el7 will be installed
+    centos-7.7: ---> Package perl-libs.x86_64 4:5.16.3-295.el7 will be installed
+    centos-7.7: ---> Package perl-macros.x86_64 4:5.16.3-295.el7 will be installed
+    centos-7.7: ---> Package perl-threads.x86_64 0:1.87-4.el7 will be installed
+    centos-7.7: ---> Package perl-threads-shared.x86_64 0:1.43-6.el7 will be installed
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package perl-Encode.x86_64 0:2.51-7.el7 will be installed
+    centos-7.7: ---> Package perl-Pod-Escapes.noarch 1:1.04-295.el7 will be installed
+    centos-7.7: ---> Package perl-Pod-Usage.noarch 0:1.63-3.el7 will be installed
+    centos-7.7: --> Processing Dependency: perl(Pod::Text) >= 3.15 for package: perl-Pod-Usage-1.63-3.el7.noarch
+    centos-7.7: --> Processing Dependency: perl-Pod-Perldoc for package: perl-Pod-Usage-1.63-3.el7.noarch
+    centos-7.7: ---> Package perl-Text-ParseWords.noarch 0:3.29-4.el7 will be installed
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package perl-Pod-Perldoc.noarch 0:3.20-4.el7 will be installed
+    centos-7.7: --> Processing Dependency: perl(parent) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    centos-7.7: --> Processing Dependency: perl(HTTP::Tiny) for package: perl-Pod-Perldoc-3.20-4.el7.noarch
+    centos-7.7: ---> Package perl-podlators.noarch 0:2.5.1-3.el7 will be installed
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package perl-HTTP-Tiny.noarch 0:0.033-3.el7 will be installed
+    centos-7.7: ---> Package perl-parent.noarch 1:0.225-244.el7 will be installed
+    centos-7.7: --> Finished Dependency Resolution
+    centos-7.7:
+    centos-7.7: Dependencies Resolved
+    centos-7.7:
+    centos-7.7: ================================================================================
+    centos-7.7:  Package                  Arch     Version                Repository       Size
+    centos-7.7: ================================================================================
+    centos-7.7: Installing:
+    centos-7.7:  kernel-ml                x86_64   5.6.11-1.el7.elrepo    elrepo-kernel    49 M
+    centos-7.7:  kernel-ml-devel          x86_64   5.6.11-1.el7.elrepo    elrepo-kernel    13 M
+    centos-7.7:  kernel-ml-headers        x86_64   5.6.11-1.el7.elrepo    elrepo-kernel   1.3 M
+    centos-7.7: Installing for dependencies:
+    centos-7.7:  perl                     x86_64   4:5.16.3-295.el7       base            8.0 M
+    centos-7.7:  perl-Carp                noarch   1.26-244.el7           base             19 k
+    centos-7.7:  perl-Encode              x86_64   2.51-7.el7             base            1.5 M
+    centos-7.7:  perl-Exporter            noarch   5.68-3.el7             base             28 k
+    centos-7.7:  perl-File-Path           noarch   2.09-2.el7             base             26 k
+    centos-7.7:  perl-File-Temp           noarch   0.23.01-3.el7          base             56 k
+    centos-7.7:  perl-Filter              x86_64   1.49-3.el7             base             76 k
+    centos-7.7:  perl-Getopt-Long         noarch   2.40-3.el7             base             56 k
+    centos-7.7:  perl-HTTP-Tiny           noarch   0.033-3.el7            base             38 k
+    centos-7.7:  perl-PathTools           x86_64   3.40-5.el7             base             82 k
+    centos-7.7:  perl-Pod-Escapes         noarch   1:1.04-295.el7         base             51 k
+    centos-7.7:  perl-Pod-Perldoc         noarch   3.20-4.el7             base             87 k
+    centos-7.7:  perl-Pod-Simple          noarch   1:3.28-4.el7           base            216 k
+    centos-7.7:  perl-Pod-Usage           noarch   1.63-3.el7             base             27 k
+    centos-7.7:  perl-Scalar-List-Utils   x86_64   1.27-248.el7           base             36 k
+    centos-7.7:  perl-Socket              x86_64   2.010-5.el7            base             49 k
+    centos-7.7:  perl-Storable            x86_64   2.45-3.el7             base             77 k
+    centos-7.7:  perl-Text-ParseWords     noarch   3.29-4.el7             base             14 k
+    centos-7.7:  perl-Time-HiRes          x86_64   4:1.9725-3.el7         base             45 k
+    centos-7.7:  perl-Time-Local          noarch   1.2300-2.el7           base             24 k
+    centos-7.7:  perl-constant            noarch   1.27-2.el7             base             19 k
+    centos-7.7:  perl-libs                x86_64   4:5.16.3-295.el7       base            689 k
+    centos-7.7:  perl-macros              x86_64   4:5.16.3-295.el7       base             44 k
+    centos-7.7:  perl-parent              noarch   1:0.225-244.el7        base             12 k
+    centos-7.7:  perl-podlators           noarch   2.5.1-3.el7            base            112 k
+    centos-7.7:  perl-threads             x86_64   1.87-4.el7             base             49 k
+    centos-7.7:  perl-threads-shared      x86_64   1.43-6.el7             base             39 k
+    centos-7.7:
+    centos-7.7: Transaction Summary
+    centos-7.7: ================================================================================
+    centos-7.7: Install  3 Packages (+27 Dependent packages)
+    centos-7.7:
+    centos-7.7: Total download size: 75 M
+    centos-7.7: Installed size: 313 M
+    centos-7.7: Downloading packages:
+    centos-7.7: warning: /var/cache/yum/x86_64/7/base/packages/perl-Carp-1.26-244.el7.noarch.rpm: Header V3 RSA/SHA256 Signature, key ID f4a80eb5: NOKEY
+    centos-7.7: Public key for perl-Carp-1.26-244.el7.noarch.rpm is not installed
+    centos-7.7: (1/30): perl-Carp-1.26-244.el7.noarch.rpm                  |  19 kB   00:00
+    centos-7.7: (2/30): perl-Encode-2.51-7.el7.x86_64.rpm                  | 1.5 MB   00:00
+    centos-7.7: (3/30): perl-Exporter-5.68-3.el7.noarch.rpm                |  28 kB   00:00
+    centos-7.7: (4/30): perl-File-Path-2.09-2.el7.noarch.rpm               |  26 kB   00:00
+    centos-7.7: (5/30): perl-File-Temp-0.23.01-3.el7.noarch.rpm            |  56 kB   00:00
+    centos-7.7: (6/30): perl-Filter-1.49-3.el7.x86_64.rpm                  |  76 kB   00:00
+    centos-7.7: (7/30): perl-Getopt-Long-2.40-3.el7.noarch.rpm             |  56 kB   00:00
+    centos-7.7: (8/30): perl-HTTP-Tiny-0.033-3.el7.noarch.rpm              |  38 kB   00:00
+    centos-7.7: (9/30): perl-PathTools-3.40-5.el7.x86_64.rpm               |  82 kB   00:00
+    centos-7.7: (10/30): perl-Pod-Escapes-1.04-295.el7.noarch.rpm          |  51 kB   00:00
+    centos-7.7: (11/30): perl-Pod-Perldoc-3.20-4.el7.noarch.rpm            |  87 kB   00:00
+    centos-7.7: (12/30): perl-Pod-Simple-3.28-4.el7.noarch.rpm             | 216 kB   00:00
+    centos-7.7: (13/30): perl-Pod-Usage-1.63-3.el7.noarch.rpm              |  27 kB   00:00
+    centos-7.7: (14/30): perl-Scalar-List-Utils-1.27-248.el7.x86_64.rpm    |  36 kB   00:00
+    centos-7.7: (15/30): perl-Socket-2.010-5.el7.x86_64.rpm                |  49 kB   00:00
+    centos-7.7: (16/30): perl-Storable-2.45-3.el7.x86_64.rpm               |  77 kB   00:00
+    centos-7.7: (17/30): perl-Text-ParseWords-3.29-4.el7.noarch.rpm        |  14 kB   00:00
+    centos-7.7: (18/30): perl-Time-HiRes-1.9725-3.el7.x86_64.rpm           |  45 kB   00:00
+    centos-7.7: (19/30): perl-Time-Local-1.2300-2.el7.noarch.rpm           |  24 kB   00:00
+    centos-7.7: warning: /var/cache/yum/x86_64/7/elrepo-kernel/packages/kernel-ml-headers-5.6.11-1.el7.elrepo.x86_64.rpm: Header V4 DSA/SHA1 Signature, key ID baadae52: NOKEY
+    centos-7.7: Public key for kernel-ml-headers-5.6.11-1.el7.elrepo.x86_64.rpm is not installed
+    centos-7.7: (20/30): kernel-ml-headers-5.6.11-1.el7.elrepo.x86_64.rpm  | 1.3 MB   00:01
+    centos-7.7: (21/30): perl-constant-1.27-2.el7.noarch.rpm               |  19 kB   00:00
+    centos-7.7: (22/30): perl-libs-5.16.3-295.el7.x86_64.rpm               | 689 kB   00:00
+    centos-7.7: (23/30): perl-macros-5.16.3-295.el7.x86_64.rpm             |  44 kB   00:00
+    centos-7.7: (24/30): perl-5.16.3-295.el7.x86_64.rpm                    | 8.0 MB   00:01
+    centos-7.7: (25/30): perl-parent-0.225-244.el7.noarch.rpm              |  12 kB   00:00
+    centos-7.7: (26/30): perl-podlators-2.5.1-3.el7.noarch.rpm             | 112 kB   00:00
+    centos-7.7: (27/30): perl-threads-1.87-4.el7.x86_64.rpm                |  49 kB   00:00
+    centos-7.7: (28/30): perl-threads-shared-1.43-6.el7.x86_64.rpm         |  39 kB   00:00
+    centos-7.7: (29/30): kernel-ml-5.6.11-1.el7.elrepo.x86_64.rpm          |  49 MB   00:13
+    centos-7.7: (30/30): kernel-ml-devel-5.6.11-1.el7.elrepo.x86_64.rpm    |  13 MB   00:26
+    centos-7.7: --------------------------------------------------------------------------------
+    centos-7.7: Total                                              2.8 MB/s |  75 MB  00:26
+    centos-7.7: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    centos-7.7: Importing GPG key 0xF4A80EB5:
+    centos-7.7:  Userid     : "CentOS-7 Key (CentOS 7 Official Signing Key) <security@centos.org>"
+    centos-7.7:  Fingerprint: 6341 ab27 53d7 8a78 a7c2 7bb1 24c6 a8a7 f4a8 0eb5
+    centos-7.7:  Package    : centos-release-7-7.1908.0.el7.centos.x86_64 (@anaconda)
+    centos-7.7:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
+    centos-7.7: Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-elrepo.org
+    centos-7.7: Importing GPG key 0xBAADAE52:
+    centos-7.7:  Userid     : "elrepo.org (RPM Signing Key for elrepo.org) <secure@elrepo.org>"
+    centos-7.7:  Fingerprint: 96c0 104f 6315 4731 1e0b b1ae 309b c305 baad ae52
+    centos-7.7:  Package    : elrepo-release-7.0-3.el7.elrepo.noarch (@/elrepo-release-7.0-3.el7.elrepo.noarch)
+    centos-7.7:  From       : /etc/pki/rpm-gpg/RPM-GPG-KEY-elrepo.org
+    centos-7.7: Running transaction check
+    centos-7.7: Running transaction test
+    centos-7.7: Transaction test succeeded
+    centos-7.7: Running transaction
+    centos-7.7:   Installing : 1:perl-parent-0.225-244.el7.noarch                          1/30
+    centos-7.7:   Installing : perl-HTTP-Tiny-0.033-3.el7.noarch                           2/30
+    centos-7.7:   Installing : perl-podlators-2.5.1-3.el7.noarch                           3/30
+    centos-7.7:   Installing : perl-Pod-Perldoc-3.20-4.el7.noarch                          4/30
+    centos-7.7:   Installing : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      5/30
+    centos-7.7:   Installing : perl-Text-ParseWords-3.29-4.el7.noarch                      6/30
+    centos-7.7:   Installing : perl-Encode-2.51-7.el7.x86_64                               7/30
+    centos-7.7:   Installing : perl-Pod-Usage-1.63-3.el7.noarch                            8/30
+    centos-7.7:   Installing : 4:perl-libs-5.16.3-295.el7.x86_64                           9/30
+    centos-7.7:   Installing : 4:perl-macros-5.16.3-295.el7.x86_64                        10/30
+    centos-7.7:   Installing : perl-Storable-2.45-3.el7.x86_64                            11/30
+    centos-7.7:   Installing : perl-Exporter-5.68-3.el7.noarch                            12/30
+    centos-7.7:   Installing : perl-constant-1.27-2.el7.noarch                            13/30
+    centos-7.7:   Installing : perl-Socket-2.010-5.el7.x86_64                             14/30
+    centos-7.7:   Installing : perl-Time-Local-1.2300-2.el7.noarch                        15/30
+    centos-7.7:   Installing : perl-Carp-1.26-244.el7.noarch                              16/30
+    centos-7.7:   Installing : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      17/30
+    centos-7.7:   Installing : perl-PathTools-3.40-5.el7.x86_64                           18/30
+    centos-7.7:   Installing : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/30
+    centos-7.7:   Installing : perl-File-Temp-0.23.01-3.el7.noarch                        20/30
+    centos-7.7:   Installing : perl-File-Path-2.09-2.el7.noarch                           21/30
+    centos-7.7:   Installing : perl-threads-shared-1.43-6.el7.x86_64                      22/30
+    centos-7.7:   Installing : perl-threads-1.87-4.el7.x86_64                             23/30
+    centos-7.7:   Installing : perl-Filter-1.49-3.el7.x86_64                              24/30
+    centos-7.7:   Installing : 1:perl-Pod-Simple-3.28-4.el7.noarch                        25/30
+    centos-7.7:   Installing : perl-Getopt-Long-2.40-3.el7.noarch                         26/30
+    centos-7.7:   Installing : 4:perl-5.16.3-295.el7.x86_64                               27/30
+    centos-7.7:   Installing : kernel-ml-devel-5.6.11-1.el7.elrepo.x86_64                 28/30
+    centos-7.7:   Installing : kernel-ml-headers-5.6.11-1.el7.elrepo.x86_64               29/30
+    centos-7.7:   Installing : kernel-ml-5.6.11-1.el7.elrepo.x86_64                       30/30
+    centos-7.7:   Verifying  : perl-HTTP-Tiny-0.033-3.el7.noarch                           1/30
+    centos-7.7:   Verifying  : perl-threads-shared-1.43-6.el7.x86_64                       2/30
+    centos-7.7:   Verifying  : perl-Storable-2.45-3.el7.x86_64                             3/30
+    centos-7.7:   Verifying  : 1:perl-Pod-Escapes-1.04-295.el7.noarch                      4/30
+    centos-7.7:   Verifying  : perl-Exporter-5.68-3.el7.noarch                             5/30
+    centos-7.7:   Verifying  : perl-constant-1.27-2.el7.noarch                             6/30
+    centos-7.7:   Verifying  : perl-PathTools-3.40-5.el7.x86_64                            7/30
+    centos-7.7:   Verifying  : perl-Socket-2.010-5.el7.x86_64                              8/30
+    centos-7.7:   Verifying  : 1:perl-parent-0.225-244.el7.noarch                          9/30
+    centos-7.7:   Verifying  : 4:perl-libs-5.16.3-295.el7.x86_64                          10/30
+    centos-7.7:   Verifying  : perl-File-Temp-0.23.01-3.el7.noarch                        11/30
+    centos-7.7:   Verifying  : 1:perl-Pod-Simple-3.28-4.el7.noarch                        12/30
+    centos-7.7:   Verifying  : perl-Time-Local-1.2300-2.el7.noarch                        13/30
+    centos-7.7:   Verifying  : 4:perl-macros-5.16.3-295.el7.x86_64                        14/30
+    centos-7.7:   Verifying  : 4:perl-5.16.3-295.el7.x86_64                               15/30
+    centos-7.7:   Verifying  : kernel-ml-5.6.11-1.el7.elrepo.x86_64                       16/30
+    centos-7.7:   Verifying  : perl-Carp-1.26-244.el7.noarch                              17/30
+    centos-7.7:   Verifying  : 4:perl-Time-HiRes-1.9725-3.el7.x86_64                      18/30
+    centos-7.7:   Verifying  : perl-Scalar-List-Utils-1.27-248.el7.x86_64                 19/30
+    centos-7.7:   Verifying  : perl-Pod-Usage-1.63-3.el7.noarch                           20/30
+    centos-7.7:   Verifying  : perl-Encode-2.51-7.el7.x86_64                              21/30
+    centos-7.7:   Verifying  : perl-Pod-Perldoc-3.20-4.el7.noarch                         22/30
+    centos-7.7:   Verifying  : perl-podlators-2.5.1-3.el7.noarch                          23/30
+    centos-7.7:   Verifying  : kernel-ml-headers-5.6.11-1.el7.elrepo.x86_64               24/30
+    centos-7.7:   Verifying  : perl-File-Path-2.09-2.el7.noarch                           25/30
+    centos-7.7:   Verifying  : perl-threads-1.87-4.el7.x86_64                             26/30
+    centos-7.7:   Verifying  : perl-Filter-1.49-3.el7.x86_64                              27/30
+    centos-7.7:   Verifying  : perl-Getopt-Long-2.40-3.el7.noarch                         28/30
+    centos-7.7:   Verifying  : perl-Text-ParseWords-3.29-4.el7.noarch                     29/30
+    centos-7.7:   Verifying  : kernel-ml-devel-5.6.11-1.el7.elrepo.x86_64                 30/30
+    centos-7.7:
+    centos-7.7: Installed:
+    centos-7.7:   kernel-ml.x86_64 0:5.6.11-1.el7.elrepo
+    centos-7.7:   kernel-ml-devel.x86_64 0:5.6.11-1.el7.elrepo
+    centos-7.7:   kernel-ml-headers.x86_64 0:5.6.11-1.el7.elrepo
+    centos-7.7:
+    centos-7.7: Dependency Installed:
+    centos-7.7:   perl.x86_64 4:5.16.3-295.el7
+    centos-7.7:   perl-Carp.noarch 0:1.26-244.el7
+    centos-7.7:   perl-Encode.x86_64 0:2.51-7.el7
+    centos-7.7:   perl-Exporter.noarch 0:5.68-3.el7
+    centos-7.7:   perl-File-Path.noarch 0:2.09-2.el7
+    centos-7.7:   perl-File-Temp.noarch 0:0.23.01-3.el7
+    centos-7.7:   perl-Filter.x86_64 0:1.49-3.el7
+    centos-7.7:   perl-Getopt-Long.noarch 0:2.40-3.el7
+    centos-7.7:   perl-HTTP-Tiny.noarch 0:0.033-3.el7
+    centos-7.7:   perl-PathTools.x86_64 0:3.40-5.el7
+    centos-7.7:   perl-Pod-Escapes.noarch 1:1.04-295.el7
+    centos-7.7:   perl-Pod-Perldoc.noarch 0:3.20-4.el7
+    centos-7.7:   perl-Pod-Simple.noarch 1:3.28-4.el7
+    centos-7.7:   perl-Pod-Usage.noarch 0:1.63-3.el7
+    centos-7.7:   perl-Scalar-List-Utils.x86_64 0:1.27-248.el7
+    centos-7.7:   perl-Socket.x86_64 0:2.010-5.el7
+    centos-7.7:   perl-Storable.x86_64 0:2.45-3.el7
+    centos-7.7:   perl-Text-ParseWords.noarch 0:3.29-4.el7
+    centos-7.7:   perl-Time-HiRes.x86_64 4:1.9725-3.el7
+    centos-7.7:   perl-Time-Local.noarch 0:1.2300-2.el7
+    centos-7.7:   perl-constant.noarch 0:1.27-2.el7
+    centos-7.7:   perl-libs.x86_64 4:5.16.3-295.el7
+    centos-7.7:   perl-macros.x86_64 4:5.16.3-295.el7
+    centos-7.7:   perl-parent.noarch 1:0.225-244.el7
+    centos-7.7:   perl-podlators.noarch 0:2.5.1-3.el7
+    centos-7.7:   perl-threads.x86_64 0:1.87-4.el7
+    centos-7.7:   perl-threads-shared.x86_64 0:1.43-6.el7
+    centos-7.7:
+    centos-7.7: Complete!
+    centos-7.7: Generating grub configuration file ...
+    centos-7.7: Found linux image: /boot/vmlinuz-5.6.11-1.el7.elrepo.x86_64
+    centos-7.7: Found initrd image: /boot/initramfs-5.6.11-1.el7.elrepo.x86_64.img
+    centos-7.7: Found linux image: /boot/vmlinuz-0-rescue-243a4a2cdac347ebaeb458e4c41fb6a7
+    centos-7.7: Found initrd image: /boot/initramfs-0-rescue-243a4a2cdac347ebaeb458e4c41fb6a7.img
+    centos-7.7: done
+    centos-7.7: Grub update done.
+==> centos-7.7: Provisioning with shell script: scripts/stage-1-install-guest-additions.sh
+    centos-7.7: + echo 'Install dmidecode and other necessary tools'
+    centos-7.7: Install dmidecode and other necessary tools
+    centos-7.7: + sudo yum install -y dmidecode wget
+    centos-7.7: Loaded plugins: fastestmirror
+    centos-7.7: Loading mirror speeds from cached hostfile
+    centos-7.7:  * base: mirror.corbina.net
+    centos-7.7:  * elrepo: mirrors.colocall.net
+    centos-7.7:  * extras: mirror.corbina.net
+    centos-7.7:  * updates: mirror.corbina.net
+    centos-7.7: Package 1:dmidecode-3.2-3.el7.x86_64 already installed and latest version
+    centos-7.7: Resolving Dependencies
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package wget.x86_64 0:1.14-18.el7_6.1 will be installed
+    centos-7.7: --> Finished Dependency Resolution
+    centos-7.7:
+    centos-7.7: Dependencies Resolved
+    centos-7.7:
+    centos-7.7: ================================================================================
+    centos-7.7:  Package        Arch             Version                   Repository      Size
+    centos-7.7: ================================================================================
+    centos-7.7: Installing:
+    centos-7.7:  wget           x86_64           1.14-18.el7_6.1           base           547 k
+    centos-7.7:
+    centos-7.7: Transaction Summary
+    centos-7.7: ================================================================================
+    centos-7.7: Install  1 Package
+    centos-7.7:
+    centos-7.7: Total download size: 547 k
+    centos-7.7: Installed size: 2.0 M
+    centos-7.7: Downloading packages:
+    centos-7.7: wget-1.14-18.el7_6.1.x86_64.rpm                            | 547 kB   00:00
+    centos-7.7: Running transaction check
+    centos-7.7: Running transaction test
+    centos-7.7: Transaction test succeeded
+    centos-7.7: Running transaction
+    centos-7.7:   Installing : wget-1.14-18.el7_6.1.x86_64                                  1/1
+    centos-7.7:   Verifying  : wget-1.14-18.el7_6.1.x86_64                                  1/1
+    centos-7.7:
+    centos-7.7: Installed:
+    centos-7.7:   wget.x86_64 0:1.14-18.el7_6.1
+    centos-7.7:
+    centos-7.7: Complete!
+    centos-7.7: + echo 'Ensure other necessary packages are installed'
+    centos-7.7: Ensure other necessary packages are installed
+    centos-7.7: + sudo yum install -y gcc binutils make perl bzip2 elfutils-libelf-devel
+    centos-7.7: Loaded plugins: fastestmirror
+    centos-7.7: Loading mirror speeds from cached hostfile
+    centos-7.7:  * base: mirror.corbina.net
+    centos-7.7:  * elrepo: mirrors.colocall.net
+    centos-7.7:  * extras: mirror.corbina.net
+    centos-7.7:  * updates: mirror.corbina.net
+    centos-7.7: Package 1:make-3.82-24.el7.x86_64 already installed and latest version
+    centos-7.7: Package 4:perl-5.16.3-295.el7.x86_64 already installed and latest version
+    centos-7.7: Resolving Dependencies
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package binutils.x86_64 0:2.27-41.base.el7 will be updated
+    centos-7.7: ---> Package binutils.x86_64 0:2.27-43.base.el7 will be an update
+    centos-7.7: ---> Package bzip2.x86_64 0:1.0.6-13.el7 will be installed
+    centos-7.7: ---> Package elfutils-libelf-devel.x86_64 0:0.176-4.el7 will be installed
+    centos-7.7: --> Processing Dependency: elfutils-libelf(x86-64) = 0.176-4.el7 for package: elfutils-libelf-devel-0.176-4.el7.x86_64
+    centos-7.7: --> Processing Dependency: pkgconfig(zlib) for package: elfutils-libelf-devel-0.176-4.el7.x86_64
+    centos-7.7: ---> Package gcc.x86_64 0:4.8.5-39.el7 will be installed
+    centos-7.7: --> Processing Dependency: cpp = 4.8.5-39.el7 for package: gcc-4.8.5-39.el7.x86_64
+    centos-7.7: --> Processing Dependency: glibc-devel >= 2.2.90-12 for package: gcc-4.8.5-39.el7.x86_64
+    centos-7.7: --> Processing Dependency: libmpfr.so.4()(64bit) for package: gcc-4.8.5-39.el7.x86_64
+    centos-7.7: --> Processing Dependency: libmpc.so.3()(64bit) for package: gcc-4.8.5-39.el7.x86_64
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package cpp.x86_64 0:4.8.5-39.el7 will be installed
+    centos-7.7: ---> Package elfutils-libelf.x86_64 0:0.176-2.el7 will be updated
+    centos-7.7: --> Processing Dependency: elfutils-libelf(x86-64) = 0.176-2.el7 for package: elfutils-libs-0.176-2.el7.x86_64
+    centos-7.7: ---> Package elfutils-libelf.x86_64 0:0.176-4.el7 will be an update
+    centos-7.7: ---> Package glibc-devel.x86_64 0:2.17-307.el7.1 will be installed
+    centos-7.7: --> Processing Dependency: glibc-headers = 2.17-307.el7.1 for package: glibc-devel-2.17-307.el7.1.x86_64
+    centos-7.7: --> Processing Dependency: glibc = 2.17-307.el7.1 for package: glibc-devel-2.17-307.el7.1.x86_64
+    centos-7.7: --> Processing Dependency: glibc-headers for package: glibc-devel-2.17-307.el7.1.x86_64
+    centos-7.7: ---> Package libmpc.x86_64 0:1.0.1-3.el7 will be installed
+    centos-7.7: ---> Package mpfr.x86_64 0:3.1.1-4.el7 will be installed
+    centos-7.7: ---> Package zlib-devel.x86_64 0:1.2.7-18.el7 will be installed
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package elfutils-libs.x86_64 0:0.176-2.el7 will be updated
+    centos-7.7: ---> Package elfutils-libs.x86_64 0:0.176-4.el7 will be an update
+    centos-7.7: ---> Package glibc.x86_64 0:2.17-292.el7 will be updated
+    centos-7.7: --> Processing Dependency: glibc = 2.17-292.el7 for package: glibc-common-2.17-292.el7.x86_64
+    centos-7.7: ---> Package glibc.x86_64 0:2.17-307.el7.1 will be an update
+    centos-7.7: ---> Package glibc-headers.x86_64 0:2.17-307.el7.1 will be installed
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package glibc-common.x86_64 0:2.17-292.el7 will be updated
+    centos-7.7: ---> Package glibc-common.x86_64 0:2.17-307.el7.1 will be an update
+    centos-7.7: --> Finished Dependency Resolution
+    centos-7.7:
+    centos-7.7: Dependencies Resolved
+    centos-7.7:
+    centos-7.7: ================================================================================
+    centos-7.7:  Package                    Arch        Version                 Repository
+    centos-7.7:                                                                            Size
+    centos-7.7: ================================================================================
+    centos-7.7: Installing:
+    centos-7.7:  bzip2                      x86_64      1.0.6-13.el7            base       52 k
+    centos-7.7:  elfutils-libelf-devel      x86_64      0.176-4.el7             base       40 k
+    centos-7.7:  gcc                        x86_64      4.8.5-39.el7            base       16 M
+    centos-7.7: Updating:
+    centos-7.7:  binutils                   x86_64      2.27-43.base.el7        base      5.9 M
+    centos-7.7: Installing for dependencies:
+    centos-7.7:  cpp                        x86_64      4.8.5-39.el7            base      5.9 M
+    centos-7.7:  glibc-devel                x86_64      2.17-307.el7.1          base      1.1 M
+    centos-7.7:  glibc-headers              x86_64      2.17-307.el7.1          base      689 k
+    centos-7.7:  libmpc                     x86_64      1.0.1-3.el7             base       51 k
+    centos-7.7:  mpfr                       x86_64      3.1.1-4.el7             base      203 k
+    centos-7.7:  zlib-devel                 x86_64      1.2.7-18.el7            base       50 k
+    centos-7.7: Updating for dependencies:
+    centos-7.7:  elfutils-libelf            x86_64      0.176-4.el7             base      195 k
+    centos-7.7:  elfutils-libs              x86_64      0.176-4.el7             base      291 k
+    centos-7.7:  glibc                      x86_64      2.17-307.el7.1          base      3.6 M
+    centos-7.7:  glibc-common               x86_64      2.17-307.el7.1          base       11 M
+    centos-7.7:
+    centos-7.7: Transaction Summary
+    centos-7.7: ================================================================================
+    centos-7.7: Install  3 Packages (+6 Dependent packages)
+    centos-7.7: Upgrade  1 Package  (+4 Dependent packages)
+    centos-7.7:
+    centos-7.7: Total download size: 46 M
+    centos-7.7: Downloading packages:
+    centos-7.7: Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+    centos-7.7: (1/14): bzip2-1.0.6-13.el7.x86_64.rpm                      |  52 kB   00:00
+    centos-7.7: (2/14): binutils-2.27-43.base.el7.x86_64.rpm               | 5.9 MB   00:01
+    centos-7.7: (3/14): elfutils-libelf-0.176-4.el7.x86_64.rpm             | 195 kB   00:00
+    centos-7.7: (4/14): elfutils-libelf-devel-0.176-4.el7.x86_64.rpm       |  40 kB   00:00
+    centos-7.7: (5/14): cpp-4.8.5-39.el7.x86_64.rpm                        | 5.9 MB   00:01
+    centos-7.7: (6/14): elfutils-libs-0.176-4.el7.x86_64.rpm               | 291 kB   00:00
+    centos-7.7: (7/14): glibc-2.17-307.el7.1.x86_64.rpm                    | 3.6 MB   00:00
+    centos-7.7: (8/14): gcc-4.8.5-39.el7.x86_64.rpm                        |  16 MB   00:02
+    centos-7.7: (9/14): glibc-devel-2.17-307.el7.1.x86_64.rpm              | 1.1 MB   00:00
+    centos-7.7: (10/14): glibc-common-2.17-307.el7.1.x86_64.rpm            |  11 MB   00:02
+    centos-7.7: (11/14): glibc-headers-2.17-307.el7.1.x86_64.rpm           | 689 kB   00:00
+    centos-7.7: (12/14): libmpc-1.0.1-3.el7.x86_64.rpm                     |  51 kB   00:00
+    centos-7.7: (13/14): zlib-devel-1.2.7-18.el7.x86_64.rpm                |  50 kB   00:00
+    centos-7.7: (14/14): mpfr-3.1.1-4.el7.x86_64.rpm                       | 203 kB   00:00
+    centos-7.7: --------------------------------------------------------------------------------
+    centos-7.7: Total                                              9.5 MB/s |  46 MB  00:04
+    centos-7.7: Running transaction check
+    centos-7.7: Running transaction test
+    centos-7.7: Transaction test succeeded
+    centos-7.7: Running transaction
+    centos-7.7:   Updating   : glibc-2.17-307.el7.1.x86_64                                 1/19
+    centos-7.7:   Updating   : glibc-common-2.17-307.el7.1.x86_64                          2/19
+    centos-7.7:   Installing : mpfr-3.1.1-4.el7.x86_64                                     3/19
+    centos-7.7:   Installing : libmpc-1.0.1-3.el7.x86_64                                   4/19
+    centos-7.7:   Updating   : elfutils-libelf-0.176-4.el7.x86_64                          5/19
+    centos-7.7:   Installing : cpp-4.8.5-39.el7.x86_64                                     6/19
+    centos-7.7:   Installing : glibc-headers-2.17-307.el7.1.x86_64                         7/19
+    centos-7.7:   Installing : glibc-devel-2.17-307.el7.1.x86_64                           8/19
+    centos-7.7:   Updating   : binutils-2.27-43.base.el7.x86_64                            9/19
+    centos-7.7:   Installing : zlib-devel-1.2.7-18.el7.x86_64                             10/19
+    centos-7.7:   Installing : elfutils-libelf-devel-0.176-4.el7.x86_64                   11/19
+    centos-7.7:   Installing : gcc-4.8.5-39.el7.x86_64                                    12/19
+    centos-7.7:   Updating   : elfutils-libs-0.176-4.el7.x86_64                           13/19
+    centos-7.7:   Installing : bzip2-1.0.6-13.el7.x86_64                                  14/19
+    centos-7.7:   Cleanup    : elfutils-libs-0.176-2.el7.x86_64                           15/19
+    centos-7.7:   Cleanup    : elfutils-libelf-0.176-2.el7.x86_64                         16/19
+    centos-7.7:   Cleanup    : binutils-2.27-41.base.el7.x86_64                           17/19
+    centos-7.7:   Cleanup    : glibc-2.17-292.el7.x86_64                                  18/19
+    centos-7.7:   Cleanup    : glibc-common-2.17-292.el7.x86_64                           19/19
+    centos-7.7:   Verifying  : glibc-common-2.17-307.el7.1.x86_64                          1/19
+    centos-7.7:   Verifying  : glibc-headers-2.17-307.el7.1.x86_64                         2/19
+    centos-7.7:   Verifying  : bzip2-1.0.6-13.el7.x86_64                                   3/19
+    centos-7.7:   Verifying  : zlib-devel-1.2.7-18.el7.x86_64                              4/19
+    centos-7.7:   Verifying  : elfutils-libelf-devel-0.176-4.el7.x86_64                    5/19
+    centos-7.7:   Verifying  : cpp-4.8.5-39.el7.x86_64                                     6/19
+    centos-7.7:   Verifying  : mpfr-3.1.1-4.el7.x86_64                                     7/19
+    centos-7.7:   Verifying  : glibc-2.17-307.el7.1.x86_64                                 8/19
+    centos-7.7:   Verifying  : binutils-2.27-43.base.el7.x86_64                            9/19
+    centos-7.7:   Verifying  : libmpc-1.0.1-3.el7.x86_64                                  10/19
+    centos-7.7:   Verifying  : gcc-4.8.5-39.el7.x86_64                                    11/19
+    centos-7.7:   Verifying  : elfutils-libelf-0.176-4.el7.x86_64                         12/19
+    centos-7.7:   Verifying  : elfutils-libs-0.176-4.el7.x86_64                           13/19
+    centos-7.7:   Verifying  : glibc-devel-2.17-307.el7.1.x86_64                          14/19
+    centos-7.7:   Verifying  : glibc-common-2.17-292.el7.x86_64                           15/19
+    centos-7.7:   Verifying  : glibc-2.17-292.el7.x86_64                                  16/19
+    centos-7.7:   Verifying  : binutils-2.27-41.base.el7.x86_64                           17/19
+    centos-7.7:   Verifying  : elfutils-libs-0.176-2.el7.x86_64                           18/19
+    centos-7.7:   Verifying  : elfutils-libelf-0.176-2.el7.x86_64                         19/19
+    centos-7.7:
+    centos-7.7: Installed:
+    centos-7.7:   bzip2.x86_64 0:1.0.6-13.el7     elfutils-libelf-devel.x86_64 0:0.176-4.el7
+    centos-7.7:   gcc.x86_64 0:4.8.5-39.el7
+    centos-7.7:
+    centos-7.7: Dependency Installed:
+    centos-7.7:   cpp.x86_64 0:4.8.5-39.el7               glibc-devel.x86_64 0:2.17-307.el7.1
+    centos-7.7:   glibc-headers.x86_64 0:2.17-307.el7.1   libmpc.x86_64 0:1.0.1-3.el7
+    centos-7.7:   mpfr.x86_64 0:3.1.1-4.el7               zlib-devel.x86_64 0:1.2.7-18.el7
+    centos-7.7:
+    centos-7.7: Updated:
+    centos-7.7:   binutils.x86_64 0:2.27-43.base.el7
+    centos-7.7:
+    centos-7.7: Dependency Updated:
+    centos-7.7:   elfutils-libelf.x86_64 0:0.176-4.el7   elfutils-libs.x86_64 0:0.176-4.el7
+    centos-7.7:   glibc.x86_64 0:2.17-307.el7.1          glibc-common.x86_64 0:2.17-307.el7.1
+    centos-7.7:
+    centos-7.7: Complete!
+    centos-7.7: + echo 'Get VBox version (ex: 6.0.20)'
+    centos-7.7: Get VBox version (ex: 6.0.20)
+    centos-7.7: ++ dmidecode --oem-string 1
+    centos-7.7: ++ cut -d_ -f2
+    centos-7.7: + VBOX_VERSION=6.0.20
+    centos-7.7: + echo 'Download iso'
+    centos-7.7: Download iso
+    centos-7.7: + cd /root
+    centos-7.7: + wget https://download.virtualbox.org/virtualbox/6.0.20/VBoxGuestAdditions_6.0.20.iso
+    centos-7.7: --2020-05-09 20:43:16--  https://download.virtualbox.org/virtualbox/6.0.20/VBoxGuestAdditions_6.0.20.iso
+    centos-7.7: Resolving download.virtualbox.org (download.virtualbox.org)... 95.100.176.39
+    centos-7.7: Connecting to download.virtualbox.org (download.virtualbox.org)|95.100.176.39|:443... connected.
+    centos-7.7: HTTP request sent, awaiting response... 200 OK
+    centos-7.7: Length: 77297664 (74M) [application/octet-stream]
+    centos-7.7: Saving to: ‘VBoxGuestAdditions_6.0.20.iso’
+    centos-7.7:
+    centos-7.7: 100%[======================================>] 77,297,664   890KB/s   in 85s
+    centos-7.7:
+    centos-7.7: 2020-05-09 20:44:43 (888 KB/s) - ‘VBoxGuestAdditions_6.0.20.iso’ saved [77297664/77297664]
+    centos-7.7:
+    centos-7.7: + echo 'Mount iso'
+    centos-7.7: Mount iso
+    centos-7.7: + sudo mount -o loop ./VBoxGuestAdditions_6.0.20.iso /mnt
+    centos-7.7: mount: /dev/loop0 is write-protected, mounting read-only
+    centos-7.7: + echo 'Install VBoxGuestAdditions'
+    centos-7.7: Install VBoxGuestAdditions
+    centos-7.7: + sudo /mnt/VBoxLinuxAdditions.run --nox11
+    centos-7.7: Verifying archive integrity... All good.
+    centos-7.7: Uncompressing VirtualBox 6.0.20 Guest Additions for Linux........
+    centos-7.7: VirtualBox Guest Additions installer
+    centos-7.7: Copying additional installer modules ...
+    centos-7.7: Installing additional modules ...
+    centos-7.7: VirtualBox Guest Additions: Starting.
+    centos-7.7: VirtualBox Guest Additions: Building the VirtualBox Guest Additions kernel
+    centos-7.7: modules.  This may take a while.
+    centos-7.7: VirtualBox Guest Additions: To build modules for other installed kernels, run
+    centos-7.7: VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup <version>
+    centos-7.7: VirtualBox Guest Additions: or
+    centos-7.7: VirtualBox Guest Additions:   /sbin/rcvboxadd quicksetup all
+    centos-7.7: VirtualBox Guest Additions: Building the modules for kernel
+    centos-7.7: 5.6.11-1.el7.elrepo.x86_64.
+    centos-7.7: + echo 'Unmount iso'
+    centos-7.7: Unmount iso
+    centos-7.7: + sudo umount /mnt
+    centos-7.7: + echo 'Remove iso'
+    centos-7.7: Remove iso
+    centos-7.7: + rm /root/VBoxGuestAdditions_6.0.20.iso
+    centos-7.7: + echo Reboot
+    centos-7.7: Reboot
+    centos-7.7: + sudo shutdown -r now
+==> centos-7.7: Provisioning with shell script: scripts/stage-2-clean.sh
+    centos-7.7: Loaded plugins: fastestmirror
+    centos-7.7: Loading mirror speeds from cached hostfile
+    centos-7.7:  * base: mirror.corbina.net
+    centos-7.7:  * elrepo: mirrors.colocall.net
+    centos-7.7:  * extras: mirror.corbina.net
+    centos-7.7:  * updates: mirror.corbina.net
+    centos-7.7: Resolving Dependencies
+    centos-7.7: --> Running transaction check
+    centos-7.7: ---> Package NetworkManager.x86_64 1:1.18.0-5.el7 will be updated
+    centos-7.7: ---> Package NetworkManager.x86_64 1:1.18.4-3.el7 will be an update
+    centos-7.7: ---> Package NetworkManager-libnm.x86_64 1:1.18.0-5.el7 will be updated
+    centos-7.7: ---> Package NetworkManager-libnm.x86_64 1:1.18.4-3.el7 will be an update
+    centos-7.7: ---> Package NetworkManager-team.x86_64 1:1.18.0-5.el7 will be updated
+    centos-7.7: ---> Package NetworkManager-team.x86_64 1:1.18.4-3.el7 will be an update
+    centos-7.7: ---> Package NetworkManager-tui.x86_64 1:1.18.0-5.el7 will be updated
+    centos-7.7: ---> Package NetworkManager-tui.x86_64 1:1.18.4-3.el7 will be an update
+    centos-7.7: ---> Package NetworkManager-wifi.x86_64 1:1.18.0-5.el7 will be updated
+    centos-7.7: ---> Package NetworkManager-wifi.x86_64 1:1.18.4-3.el7 will be an update
+    centos-7.7: ---> Package acl.x86_64 0:2.2.51-14.el7 will be updated
+    centos-7.7: ---> Package acl.x86_64 0:2.2.51-15.el7 will be an update
+    centos-7.7: ---> Package bash.x86_64 0:4.2.46-33.el7 will be updated
+    centos-7.7: ---> Package bash.x86_64 0:4.2.46-34.el7 will be an update
+    centos-7.7: ---> Package bind-export-libs.x86_64 32:9.11.4-9.P2.el7 will be updated
+    centos-7.7: ---> Package bind-export-libs.x86_64 32:9.11.4-16.P2.el7_8.2 will be an update
+    centos-7.7: ---> Package ca-certificates.noarch 0:2018.2.22-70.0.el7_5 will be updated
+    centos-7.7: ---> Package ca-certificates.noarch 0:2019.2.32-76.el7_7 will be an update
+    centos-7.7: ---> Package centos-release.x86_64 0:7-7.1908.0.el7.centos will be updated
+    centos-7.7: ---> Package centos-release.x86_64 0:7-8.2003.0.el7.centos will be an update
+    centos-7.7: ---> Package cryptsetup-libs.x86_64 0:2.0.3-5.el7 will be updated
+    centos-7.7: ---> Package cryptsetup-libs.x86_64 0:2.0.3-6.el7 will be an update
+    centos-7.7: ---> Package curl.x86_64 0:7.29.0-54.el7 will be updated
+    centos-7.7: ---> Package curl.x86_64 0:7.29.0-57.el7 will be an update
+    centos-7.7: ---> Package device-mapper.x86_64 7:1.02.158-2.el7 will be updated
+    centos-7.7: ---> Package device-mapper.x86_64 7:1.02.164-7.el7_8.1 will be an update
+    centos-7.7: ---> Package device-mapper-event.x86_64 7:1.02.158-2.el7 will be updated
+    centos-7.7: ---> Package device-mapper-event.x86_64 7:1.02.164-7.el7_8.1 will be an update
+    centos-7.7: ---> Package device-mapper-event-libs.x86_64 7:1.02.158-2.el7 will be updated
+    centos-7.7: ---> Package device-mapper-event-libs.x86_64 7:1.02.164-7.el7_8.1 will be an update
+    centos-7.7: ---> Package device-mapper-libs.x86_64 7:1.02.158-2.el7 will be updated
+    centos-7.7: ---> Package device-mapper-libs.x86_64 7:1.02.164-7.el7_8.1 will be an update
+    centos-7.7: ---> Package device-mapper-persistent-data.x86_64 0:0.8.5-1.el7 will be updated
+    centos-7.7: ---> Package device-mapper-persistent-data.x86_64 0:0.8.5-2.el7 will be an update
+    centos-7.7: ---> Package dhclient.x86_64 12:4.2.5-77.el7.centos will be updated
+    centos-7.7: ---> Package dhclient.x86_64 12:4.2.5-79.el7.centos will be an update
+    centos-7.7: ---> Package dhcp-common.x86_64 12:4.2.5-77.el7.centos will be updated
+    centos-7.7: ---> Package dhcp-common.x86_64 12:4.2.5-79.el7.centos will be an update
+    centos-7.7: ---> Package dhcp-libs.x86_64 12:4.2.5-77.el7.centos will be updated
+    centos-7.7: ---> Package dhcp-libs.x86_64 12:4.2.5-79.el7.centos will be an update
+    centos-7.7: ---> Package dracut.x86_64 0:033-564.el7 will be updated
+    centos-7.7: ---> Package dracut.x86_64 0:033-568.el7 will be an update
+    centos-7.7: ---> Package dracut-config-rescue.x86_64 0:033-564.el7 will be updated
+    centos-7.7: ---> Package dracut-config-rescue.x86_64 0:033-568.el7 will be an update
+    centos-7.7: ---> Package dracut-network.x86_64 0:033-564.el7 will be updated
+    centos-7.7: ---> Package dracut-network.x86_64 0:033-568.el7 will be an update
+    centos-7.7: ---> Package e2fsprogs.x86_64 0:1.42.9-16.el7 will be updated
+    centos-7.7: ---> Package e2fsprogs.x86_64 0:1.42.9-17.el7 will be an update
+    centos-7.7: ---> Package e2fsprogs-libs.x86_64 0:1.42.9-16.el7 will be updated
+    centos-7.7: ---> Package e2fsprogs-libs.x86_64 0:1.42.9-17.el7 will be an update
+    centos-7.7: ---> Package elfutils-default-yama-scope.noarch 0:0.176-2.el7 will be updated
+    centos-7.7: ---> Package elfutils-default-yama-scope.noarch 0:0.176-4.el7 will be an update
+    centos-7.7: ---> Package elrepo-release.noarch 0:7.0-3.el7.elrepo will be updated
+    centos-7.7: ---> Package elrepo-release.noarch 0:7.0-4.el7.elrepo will be an update
+    centos-7.7: ---> Package expat.x86_64 0:2.1.0-10.el7_3 will be updated
+    centos-7.7: ---> Package expat.x86_64 0:2.1.0-11.el7 will be an update
+    centos-7.7: ---> Package file.x86_64 0:5.11-35.el7 will be updated
+    centos-7.7: ---> Package file.x86_64 0:5.11-36.el7 will be an update
+    centos-7.7: ---> Package file-libs.x86_64 0:5.11-35.el7 will be updated
+    centos-7.7: ---> Package file-libs.x86_64 0:5.11-36.el7 will be an update
+    centos-7.7: ---> Package firewalld.noarch 0:0.6.3-2.el7 will be updated
+    centos-7.7: ---> Package firewalld.noarch 0:0.6.3-8.el7_8.1 will be an update
+    centos-7.7: ---> Package firewalld-filesystem.noarch 0:0.6.3-2.el7 will be updated
+    centos-7.7: ---> Package firewalld-filesystem.noarch 0:0.6.3-8.el7_8.1 will be an update
+    centos-7.7: ---> Package gettext.x86_64 0:0.19.8.1-2.el7 will be updated
+    centos-7.7: ---> Package gettext.x86_64 0:0.19.8.1-3.el7 will be an update
+    centos-7.7: ---> Package gettext-libs.x86_64 0:0.19.8.1-2.el7 will be updated
+    centos-7.7: ---> Package gettext-libs.x86_64 0:0.19.8.1-3.el7 will be an update
+    centos-7.7: ---> Package grub2.x86_64 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2.x86_64 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package grub2-common.noarch 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2-common.noarch 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package grub2-pc.x86_64 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2-pc.x86_64 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package grub2-pc-modules.noarch 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2-pc-modules.noarch 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package grub2-tools.x86_64 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2-tools.x86_64 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package grub2-tools-extra.x86_64 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2-tools-extra.x86_64 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package grub2-tools-minimal.x86_64 1:2.02-0.80.el7.centos will be updated
+    centos-7.7: ---> Package grub2-tools-minimal.x86_64 1:2.02-0.81.el7.centos will be an update
+    centos-7.7: ---> Package hostname.x86_64 0:3.13-3.el7 will be updated
+    centos-7.7: ---> Package hostname.x86_64 0:3.13-3.el7_7.1 will be an update
+    centos-7.7: ---> Package hwdata.x86_64 0:0.252-9.3.el7 will be updated
+    centos-7.7: ---> Package hwdata.x86_64 0:0.252-9.5.el7 will be an update
+    centos-7.7: ---> Package initscripts.x86_64 0:9.49.47-1.el7 will be updated
+    centos-7.7: ---> Package initscripts.x86_64 0:9.49.49-1.el7 will be an update
+    centos-7.7: ---> Package iproute.x86_64 0:4.11.0-25.el7 will be updated
+    centos-7.7: ---> Package iproute.x86_64 0:4.11.0-25.el7_7.2 will be an update
+    centos-7.7: ---> Package iprutils.x86_64 0:2.4.17.1-2.el7 will be updated
+    centos-7.7: ---> Package iprutils.x86_64 0:2.4.17.1-3.el7_7 will be an update
+    centos-7.7: ---> Package iptables.x86_64 0:1.4.21-33.el7 will be updated
+    centos-7.7: ---> Package iptables.x86_64 0:1.4.21-34.el7 will be an update
+    centos-7.7: ---> Package iwl100-firmware.noarch 0:39.31.5.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl100-firmware.noarch 0:39.31.5.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl1000-firmware.noarch 1:39.31.5.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl1000-firmware.noarch 1:39.31.5.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl105-firmware.noarch 0:18.168.6.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl105-firmware.noarch 0:18.168.6.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl135-firmware.noarch 0:18.168.6.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl135-firmware.noarch 0:18.168.6.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl2000-firmware.noarch 0:18.168.6.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl2000-firmware.noarch 0:18.168.6.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl2030-firmware.noarch 0:18.168.6.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl2030-firmware.noarch 0:18.168.6.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl3160-firmware.noarch 0:22.0.7.0-72.el7 will be updated
+    centos-7.7: ---> Package iwl3160-firmware.noarch 0:25.30.13.0-76.el7 will be an update
+    centos-7.7: ---> Package iwl3945-firmware.noarch 0:15.32.2.9-72.el7 will be updated
+    centos-7.7: ---> Package iwl3945-firmware.noarch 0:15.32.2.9-76.el7 will be an update
+    centos-7.7: ---> Package iwl4965-firmware.noarch 0:228.61.2.24-72.el7 will be updated
+    centos-7.7: ---> Package iwl4965-firmware.noarch 0:228.61.2.24-76.el7 will be an update
+    centos-7.7: ---> Package iwl5000-firmware.noarch 0:8.83.5.1_1-72.el7 will be updated
+    centos-7.7: ---> Package iwl5000-firmware.noarch 0:8.83.5.1_1-76.el7 will be an update
+    centos-7.7: ---> Package iwl5150-firmware.noarch 0:8.24.2.2-72.el7 will be updated
+    centos-7.7: ---> Package iwl5150-firmware.noarch 0:8.24.2.2-76.el7 will be an update
+    centos-7.7: ---> Package iwl6000-firmware.noarch 0:9.221.4.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl6000-firmware.noarch 0:9.221.4.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl6000g2a-firmware.noarch 0:17.168.5.3-72.el7 will be updated
+    centos-7.7: ---> Package iwl6000g2a-firmware.noarch 0:18.168.6.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl6000g2b-firmware.noarch 0:17.168.5.2-72.el7 will be updated
+    centos-7.7: ---> Package iwl6000g2b-firmware.noarch 0:18.168.6.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl6050-firmware.noarch 0:41.28.5.1-72.el7 will be updated
+    centos-7.7: ---> Package iwl6050-firmware.noarch 0:41.28.5.1-76.el7 will be an update
+    centos-7.7: ---> Package iwl7260-firmware.noarch 0:22.0.7.0-72.el7 will be updated
+    centos-7.7: ---> Package iwl7260-firmware.noarch 0:25.30.13.0-76.el7 will be obsoleting
+    centos-7.7: ---> Package iwl7265-firmware.noarch 0:22.0.7.0-72.el7 will be obsoleted
+    centos-7.7: ---> Package kernel.x86_64 0:3.10.0-1127.el7 will be installed
+    centos-7.7: ---> Package kernel-tools.x86_64 0:3.10.0-1062.el7 will be updated
+    centos-7.7: ---> Package kernel-tools.x86_64 0:3.10.0-1127.el7 will be an update
+    centos-7.7: ---> Package kernel-tools-libs.x86_64 0:3.10.0-1062.el7 will be updated
+    centos-7.7: ---> Package kernel-tools-libs.x86_64 0:3.10.0-1127.el7 will be an update
+    centos-7.7: ---> Package kexec-tools.x86_64 0:2.0.15-33.el7 will be updated
+    centos-7.7: ---> Package kexec-tools.x86_64 0:2.0.15-43.el7 will be an update
+    centos-7.7: ---> Package kmod.x86_64 0:20-25.el7 will be updated
+    centos-7.7: ---> Package kmod.x86_64 0:20-28.el7 will be an update
+    centos-7.7: ---> Package kmod-libs.x86_64 0:20-25.el7 will be updated
+    centos-7.7: ---> Package kmod-libs.x86_64 0:20-28.el7 will be an update
+    centos-7.7: ---> Package kpartx.x86_64 0:0.4.9-127.el7 will be updated
+    centos-7.7: ---> Package kpartx.x86_64 0:0.4.9-131.el7 will be an update
+    centos-7.7: ---> Package krb5-libs.x86_64 0:1.15.1-37.el7_6 will be updated
+    centos-7.7: ---> Package krb5-libs.x86_64 0:1.15.1-46.el7 will be an update
+    centos-7.7: ---> Package libacl.x86_64 0:2.2.51-14.el7 will be updated
+    centos-7.7: ---> Package libacl.x86_64 0:2.2.51-15.el7 will be an update
+    centos-7.7: ---> Package libblkid.x86_64 0:2.23.2-61.el7 will be updated
+    centos-7.7: ---> Package libblkid.x86_64 0:2.23.2-63.el7 will be an update
+    centos-7.7: ---> Package libcap.x86_64 0:2.22-10.el7 will be updated
+    centos-7.7: ---> Package libcap.x86_64 0:2.22-11.el7 will be an update
+    centos-7.7: ---> Package libcom_err.x86_64 0:1.42.9-16.el7 will be updated
+    centos-7.7: ---> Package libcom_err.x86_64 0:1.42.9-17.el7 will be an update
+    centos-7.7: ---> Package libcurl.x86_64 0:7.29.0-54.el7 will be updated
+    centos-7.7: ---> Package libcurl.x86_64 0:7.29.0-57.el7 will be an update
+    centos-7.7: ---> Package libffi.x86_64 0:3.0.13-18.el7 will be updated
+    centos-7.7: ---> Package libffi.x86_64 0:3.0.13-19.el7 will be an update
+    centos-7.7: ---> Package libmount.x86_64 0:2.23.2-61.el7 will be updated
+    centos-7.7: ---> Package libmount.x86_64 0:2.23.2-63.el7 will be an update
+    centos-7.7: ---> Package libseccomp.x86_64 0:2.3.1-3.el7 will be updated
+    centos-7.7: ---> Package libseccomp.x86_64 0:2.3.1-4.el7 will be an update
+    centos-7.7: ---> Package libselinux.x86_64 0:2.5-14.1.el7 will be updated
+    centos-7.7: ---> Package libselinux.x86_64 0:2.5-15.el7 will be an update
+    centos-7.7: ---> Package libselinux-python.x86_64 0:2.5-14.1.el7 will be updated
+    centos-7.7: ---> Package libselinux-python.x86_64 0:2.5-15.el7 will be an update
+    centos-7.7: ---> Package libselinux-utils.x86_64 0:2.5-14.1.el7 will be updated
+    centos-7.7: ---> Package libselinux-utils.x86_64 0:2.5-15.el7 will be an update
+    centos-7.7: ---> Package libsmartcols.x86_64 0:2.23.2-61.el7 will be updated
+    centos-7.7: ---> Package libsmartcols.x86_64 0:2.23.2-63.el7 will be an update
+    centos-7.7: ---> Package libss.x86_64 0:1.42.9-16.el7 will be updated
+    centos-7.7: ---> Package libss.x86_64 0:1.42.9-17.el7 will be an update
+    centos-7.7: ---> Package libteam.x86_64 0:1.27-9.el7 will be updated
+    centos-7.7: ---> Package libteam.x86_64 0:1.29-1.el7 will be an update
+    centos-7.7: ---> Package libuuid.x86_64 0:2.23.2-61.el7 will be updated
+    centos-7.7: ---> Package libuuid.x86_64 0:2.23.2-63.el7 will be an update
+    centos-7.7: ---> Package libxml2.x86_64 0:2.9.1-6.el7_2.3 will be updated
+    centos-7.7: ---> Package libxml2.x86_64 0:2.9.1-6.el7.4 will be an update
+    centos-7.7: ---> Package linux-firmware.noarch 0:20190429-72.gitddde598.el7 will be updated
+    centos-7.7: ---> Package linux-firmware.noarch 0:20191203-76.gite8a0f4c.el7 will be an update
+    centos-7.7: ---> Package logrotate.x86_64 0:3.8.6-17.el7 will be updated
+    centos-7.7: ---> Package logrotate.x86_64 0:3.8.6-19.el7 will be an update
+    centos-7.7: ---> Package lvm2.x86_64 7:2.02.185-2.el7 will be updated
+    centos-7.7: ---> Package lvm2.x86_64 7:2.02.186-7.el7_8.1 will be an update
+    centos-7.7: ---> Package lvm2-libs.x86_64 7:2.02.185-2.el7 will be updated
+    centos-7.7: ---> Package lvm2-libs.x86_64 7:2.02.186-7.el7_8.1 will be an update
+    centos-7.7: ---> Package mariadb-libs.x86_64 1:5.5.64-1.el7 will be updated
+    centos-7.7: ---> Package mariadb-libs.x86_64 1:5.5.65-1.el7 will be an update
+    centos-7.7: ---> Package microcode_ctl.x86_64 2:2.1-53.el7 will be updated
+    centos-7.7: ---> Package microcode_ctl.x86_64 2:2.1-61.el7 will be an update
+    centos-7.7: ---> Package nss.x86_64 0:3.44.0-4.el7 will be updated
+    centos-7.7: ---> Package nss.x86_64 0:3.44.0-7.el7_7 will be an update
+    centos-7.7: ---> Package nss-softokn.x86_64 0:3.44.0-5.el7 will be updated
+    centos-7.7: ---> Package nss-softokn.x86_64 0:3.44.0-8.el7_7 will be an update
+    centos-7.7: ---> Package nss-softokn-freebl.x86_64 0:3.44.0-5.el7 will be updated
+    centos-7.7: ---> Package nss-softokn-freebl.x86_64 0:3.44.0-8.el7_7 will be an update
+    centos-7.7: ---> Package nss-sysinit.x86_64 0:3.44.0-4.el7 will be updated
+    centos-7.7: ---> Package nss-sysinit.x86_64 0:3.44.0-7.el7_7 will be an update
+    centos-7.7: ---> Package nss-tools.x86_64 0:3.44.0-4.el7 will be updated
+    centos-7.7: ---> Package nss-tools.x86_64 0:3.44.0-7.el7_7 will be an update
+    centos-7.7: ---> Package nss-util.x86_64 0:3.44.0-3.el7 will be updated
+    centos-7.7: ---> Package nss-util.x86_64 0:3.44.0-4.el7_7 will be an update
+    centos-7.7: ---> Package numactl-libs.x86_64 0:2.0.12-3.el7 will be updated
+    centos-7.7: ---> Package numactl-libs.x86_64 0:2.0.12-5.el7 will be an update
+    centos-7.7: ---> Package pam.x86_64 0:1.1.8-22.el7 will be updated
+    centos-7.7: ---> Package pam.x86_64 0:1.1.8-23.el7 will be an update
+    centos-7.7: ---> Package parted.x86_64 0:3.1-31.el7 will be updated
+    centos-7.7: ---> Package parted.x86_64 0:3.1-32.el7 will be an update
+    centos-7.7: ---> Package passwd.x86_64 0:0.79-5.el7 will be updated
+    centos-7.7: ---> Package passwd.x86_64 0:0.79-6.el7 will be an update
+    centos-7.7: ---> Package plymouth.x86_64 0:0.8.9-0.32.20140113.el7.centos will be updated
+    centos-7.7: ---> Package plymouth.x86_64 0:0.8.9-0.33.20140113.el7.centos will be an update
+    centos-7.7: ---> Package plymouth-core-libs.x86_64 0:0.8.9-0.32.20140113.el7.centos will be updated
+    centos-7.7: ---> Package plymouth-core-libs.x86_64 0:0.8.9-0.33.20140113.el7.centos will be an update
+    centos-7.7: ---> Package plymouth-scripts.x86_64 0:0.8.9-0.32.20140113.el7.centos will be updated
+    centos-7.7: ---> Package plymouth-scripts.x86_64 0:0.8.9-0.33.20140113.el7.centos will be an update
+    centos-7.7: ---> Package policycoreutils.x86_64 0:2.5-33.el7 will be updated
+    centos-7.7: ---> Package policycoreutils.x86_64 0:2.5-34.el7 will be an update
+    centos-7.7: ---> Package polkit.x86_64 0:0.112-22.el7 will be updated
+    centos-7.7: ---> Package polkit.x86_64 0:0.112-26.el7 will be an update
+    centos-7.7: ---> Package postfix.x86_64 2:2.10.1-7.el7 will be updated
+    centos-7.7: ---> Package postfix.x86_64 2:2.10.1-9.el7 will be an update
+    centos-7.7: ---> Package procps-ng.x86_64 0:3.3.10-26.el7 will be updated
+    centos-7.7: ---> Package procps-ng.x86_64 0:3.3.10-27.el7 will be an update
+    centos-7.7: ---> Package python.x86_64 0:2.7.5-86.el7 will be updated
+    centos-7.7: ---> Package python.x86_64 0:2.7.5-88.el7 will be an update
+    centos-7.7: ---> Package python-firewall.noarch 0:0.6.3-2.el7 will be updated
+    centos-7.7: ---> Package python-firewall.noarch 0:0.6.3-8.el7_8.1 will be an update
+    centos-7.7: ---> Package python-libs.x86_64 0:2.7.5-86.el7 will be updated
+    centos-7.7: ---> Package python-libs.x86_64 0:2.7.5-88.el7 will be an update
+    centos-7.7: ---> Package python-perf.x86_64 0:3.10.0-1062.el7 will be updated
+    centos-7.7: ---> Package python-perf.x86_64 0:3.10.0-1127.el7 will be an update
+    centos-7.7: ---> Package python-urlgrabber.noarch 0:3.10-9.el7 will be updated
+    centos-7.7: ---> Package python-urlgrabber.noarch 0:3.10-10.el7 will be an update
+    centos-7.7: ---> Package rpm.x86_64 0:4.11.3-40.el7 will be updated
+    centos-7.7: ---> Package rpm.x86_64 0:4.11.3-43.el7 will be an update
+    centos-7.7: ---> Package rpm-build-libs.x86_64 0:4.11.3-40.el7 will be updated
+    centos-7.7: ---> Package rpm-build-libs.x86_64 0:4.11.3-43.el7 will be an update
+    centos-7.7: ---> Package rpm-libs.x86_64 0:4.11.3-40.el7 will be updated
+    centos-7.7: ---> Package rpm-libs.x86_64 0:4.11.3-43.el7 will be an update
+    centos-7.7: ---> Package rpm-python.x86_64 0:4.11.3-40.el7 will be updated
+    centos-7.7: ---> Package rpm-python.x86_64 0:4.11.3-43.el7 will be an update
+    centos-7.7: ---> Package rsyslog.x86_64 0:8.24.0-38.el7 will be updated
+    centos-7.7: ---> Package rsyslog.x86_64 0:8.24.0-52.el7 will be an update
+    centos-7.7: ---> Package sed.x86_64 0:4.2.2-5.el7 will be updated
+    centos-7.7: ---> Package sed.x86_64 0:4.2.2-6.el7 will be an update
+    centos-7.7: ---> Package selinux-policy.noarch 0:3.13.1-252.el7 will be updated
+    centos-7.7: ---> Package selinux-policy.noarch 0:3.13.1-266.el7 will be an update
+    centos-7.7: ---> Package selinux-policy-targeted.noarch 0:3.13.1-252.el7 will be updated
+    centos-7.7: ---> Package selinux-policy-targeted.noarch 0:3.13.1-266.el7 will be an update
+    centos-7.7: ---> Package setup.noarch 0:2.8.71-10.el7 will be updated
+    centos-7.7: ---> Package setup.noarch 0:2.8.71-11.el7 will be an update
+    centos-7.7: ---> Package shared-mime-info.x86_64 0:1.8-4.el7 will be updated
+    centos-7.7: ---> Package shared-mime-info.x86_64 0:1.8-5.el7 will be an update
+    centos-7.7: ---> Package sqlite.x86_64 0:3.7.17-8.el7 will be updated
+    centos-7.7: ---> Package sqlite.x86_64 0:3.7.17-8.el7_7.1 will be an update
+    centos-7.7: ---> Package sudo.x86_64 0:1.8.23-4.el7 will be updated
+    centos-7.7: ---> Package sudo.x86_64 0:1.8.23-9.el7 will be an update
+    centos-7.7: ---> Package systemd.x86_64 0:219-67.el7 will be updated
+    centos-7.7: ---> Package systemd.x86_64 0:219-73.el7_8.5 will be an update
+    centos-7.7: ---> Package systemd-libs.x86_64 0:219-67.el7 will be updated
+    centos-7.7: ---> Package systemd-libs.x86_64 0:219-73.el7_8.5 will be an update
+    centos-7.7: ---> Package systemd-sysv.x86_64 0:219-67.el7 will be updated
+    centos-7.7: ---> Package systemd-sysv.x86_64 0:219-73.el7_8.5 will be an update
+    centos-7.7: ---> Package teamd.x86_64 0:1.27-9.el7 will be updated
+    centos-7.7: ---> Package teamd.x86_64 0:1.29-1.el7 will be an update
+    centos-7.7: ---> Package tuned.noarch 0:2.11.0-5.el7 will be updated
+    centos-7.7: ---> Package tuned.noarch 0:2.11.0-8.el7 will be an update
+    centos-7.7: ---> Package tzdata.noarch 0:2019b-1.el7 will be updated
+    centos-7.7: ---> Package tzdata.noarch 0:2020a-1.el7 will be an update
+    centos-7.7: ---> Package util-linux.x86_64 0:2.23.2-61.el7 will be updated
+    centos-7.7: ---> Package util-linux.x86_64 0:2.23.2-63.el7 will be an update
+    centos-7.7: ---> Package yum.noarch 0:3.4.3-163.el7.centos will be updated
+    centos-7.7: ---> Package yum.noarch 0:3.4.3-167.el7.centos will be an update
+    centos-7.7: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.31-52.el7 will be updated
+    centos-7.7: ---> Package yum-plugin-fastestmirror.noarch 0:1.1.31-53.el7 will be an update
+    centos-7.7: --> Finished Dependency Resolution
+    centos-7.7:
+    centos-7.7: Dependencies Resolved
+    centos-7.7:
+    centos-7.7: ================================================================================
+    centos-7.7:  Package                    Arch   Version                        Repository
+    centos-7.7:                                                                            Size
+    centos-7.7: ================================================================================
+    centos-7.7: Installing:
+    centos-7.7:  iwl7260-firmware           noarch 25.30.13.0-76.el7              base     10 M
+    centos-7.7:      replacing  iwl7265-firmware.noarch 22.0.7.0-72.el7
+    centos-7.7:  kernel                     x86_64 3.10.0-1127.el7                base     50 M
+    centos-7.7: Updating:
+    centos-7.7:  NetworkManager             x86_64 1:1.18.4-3.el7                 base    1.9 M
+    centos-7.7:  NetworkManager-libnm       x86_64 1:1.18.4-3.el7                 base    1.7 M
+    centos-7.7:  NetworkManager-team        x86_64 1:1.18.4-3.el7                 base    164 k
+    centos-7.7:  NetworkManager-tui         x86_64 1:1.18.4-3.el7                 base    327 k
+    centos-7.7:  NetworkManager-wifi        x86_64 1:1.18.4-3.el7                 base    201 k
+    centos-7.7:  acl                        x86_64 2.2.51-15.el7                  base     81 k
+    centos-7.7:  bash                       x86_64 4.2.46-34.el7                  base    1.0 M
+    centos-7.7:  bind-export-libs           x86_64 32:9.11.4-16.P2.el7_8.2        updates 1.1 M
+    centos-7.7:  ca-certificates            noarch 2019.2.32-76.el7_7             base    399 k
+    centos-7.7:  centos-release             x86_64 7-8.2003.0.el7.centos          base     26 k
+    centos-7.7:  cryptsetup-libs            x86_64 2.0.3-6.el7                    base    339 k
+    centos-7.7:  curl                       x86_64 7.29.0-57.el7                  base    270 k
+    centos-7.7:  device-mapper              x86_64 7:1.02.164-7.el7_8.1           updates 295 k
+    centos-7.7:  device-mapper-event        x86_64 7:1.02.164-7.el7_8.1           updates 191 k
+    centos-7.7:  device-mapper-event-libs   x86_64 7:1.02.164-7.el7_8.1           updates 190 k
+    centos-7.7:  device-mapper-libs         x86_64 7:1.02.164-7.el7_8.1           updates 324 k
+    centos-7.7:  device-mapper-persistent-data
+    centos-7.7:                             x86_64 0.8.5-2.el7                    base    422 k
+    centos-7.7:  dhclient                   x86_64 12:4.2.5-79.el7.centos         base    286 k
+    centos-7.7:  dhcp-common                x86_64 12:4.2.5-79.el7.centos         base    176 k
+    centos-7.7:  dhcp-libs                  x86_64 12:4.2.5-79.el7.centos         base    133 k
+    centos-7.7:  dracut                     x86_64 033-568.el7                    base    329 k
+    centos-7.7:  dracut-config-rescue       x86_64 033-568.el7                    base     60 k
+    centos-7.7:  dracut-network             x86_64 033-568.el7                    base    103 k
+    centos-7.7:  e2fsprogs                  x86_64 1.42.9-17.el7                  base    699 k
+    centos-7.7:  e2fsprogs-libs             x86_64 1.42.9-17.el7                  base    168 k
+    centos-7.7:  elfutils-default-yama-scope
+    centos-7.7:                             noarch 0.176-4.el7                    base     33 k
+    centos-7.7:  elrepo-release             noarch 7.0-4.el7.elrepo               elrepo  8.5 k
+    centos-7.7:  expat                      x86_64 2.1.0-11.el7                   base     81 k
+    centos-7.7:  file                       x86_64 5.11-36.el7                    base     57 k
+    centos-7.7:  file-libs                  x86_64 5.11-36.el7                    base    340 k
+    centos-7.7:  firewalld                  noarch 0.6.3-8.el7_8.1                updates 443 k
+    centos-7.7:  firewalld-filesystem       noarch 0.6.3-8.el7_8.1                updates  51 k
+    centos-7.7:  gettext                    x86_64 0.19.8.1-3.el7                 base    1.0 M
+    centos-7.7:  gettext-libs               x86_64 0.19.8.1-3.el7                 base    502 k
+    centos-7.7:  grub2                      x86_64 1:2.02-0.81.el7.centos         base     31 k
+    centos-7.7:  grub2-common               noarch 1:2.02-0.81.el7.centos         base    729 k
+    centos-7.7:  grub2-pc                   x86_64 1:2.02-0.81.el7.centos         base     31 k
+    centos-7.7:  grub2-pc-modules           noarch 1:2.02-0.81.el7.centos         base    847 k
+    centos-7.7:  grub2-tools                x86_64 1:2.02-0.81.el7.centos         base    1.8 M
+    centos-7.7:  grub2-tools-extra          x86_64 1:2.02-0.81.el7.centos         base    996 k
+    centos-7.7:  grub2-tools-minimal        x86_64 1:2.02-0.81.el7.centos         base    173 k
+    centos-7.7:  hostname                   x86_64 3.13-3.el7_7.1                 base     17 k
+    centos-7.7:  hwdata                     x86_64 0.252-9.5.el7                  base    2.4 M
+    centos-7.7:  initscripts                x86_64 9.49.49-1.el7                  base    440 k
+    centos-7.7:  iproute                    x86_64 4.11.0-25.el7_7.2              base    803 k
+    centos-7.7:  iprutils                   x86_64 2.4.17.1-3.el7_7               updates 243 k
+    centos-7.7:  iptables                   x86_64 1.4.21-34.el7                  base    432 k
+    centos-7.7:  iwl100-firmware            noarch 39.31.5.1-76.el7               base    160 k
+    centos-7.7:  iwl1000-firmware           noarch 1:39.31.5.1-76.el7             base    224 k
+    centos-7.7:  iwl105-firmware            noarch 18.168.6.1-76.el7              base    245 k
+    centos-7.7:  iwl135-firmware            noarch 18.168.6.1-76.el7              base    254 k
+    centos-7.7:  iwl2000-firmware           noarch 18.168.6.1-76.el7              base    247 k
+    centos-7.7:  iwl2030-firmware           noarch 18.168.6.1-76.el7              base    256 k
+    centos-7.7:  iwl3160-firmware           noarch 25.30.13.0-76.el7              base    1.7 M
+    centos-7.7:  iwl3945-firmware           noarch 15.32.2.9-76.el7               base     98 k
+    centos-7.7:  iwl4965-firmware           noarch 228.61.2.24-76.el7             base    112 k
+    centos-7.7:  iwl5000-firmware           noarch 8.83.5.1_1-76.el7              base    304 k
+    centos-7.7:  iwl5150-firmware           noarch 8.24.2.2-76.el7                base    157 k
+    centos-7.7:  iwl6000-firmware           noarch 9.221.4.1-76.el7               base    177 k
+    centos-7.7:  iwl6000g2a-firmware        noarch 18.168.6.1-76.el7              base    320 k
+    centos-7.7:  iwl6000g2b-firmware        noarch 18.168.6.1-76.el7              base    321 k
+    centos-7.7:  iwl6050-firmware           noarch 41.28.5.1-76.el7               base    253 k
+    centos-7.7:  kernel-tools               x86_64 3.10.0-1127.el7                base    8.0 M
+    centos-7.7:  kernel-tools-libs          x86_64 3.10.0-1127.el7                base    7.9 M
+    centos-7.7:  kexec-tools                x86_64 2.0.15-43.el7                  base    349 k
+    centos-7.7:  kmod                       x86_64 20-28.el7                      base    123 k
+    centos-7.7:  kmod-libs                  x86_64 20-28.el7                      base     51 k
+    centos-7.7:  kpartx                     x86_64 0.4.9-131.el7                  base     80 k
+    centos-7.7:  krb5-libs                  x86_64 1.15.1-46.el7                  base    809 k
+    centos-7.7:  libacl                     x86_64 2.2.51-15.el7                  base     27 k
+    centos-7.7:  libblkid                   x86_64 2.23.2-63.el7                  base    182 k
+    centos-7.7:  libcap                     x86_64 2.22-11.el7                    base     47 k
+    centos-7.7:  libcom_err                 x86_64 1.42.9-17.el7                  base     42 k
+    centos-7.7:  libcurl                    x86_64 7.29.0-57.el7                  base    223 k
+    centos-7.7:  libffi                     x86_64 3.0.13-19.el7                  base     30 k
+    centos-7.7:  libmount                   x86_64 2.23.2-63.el7                  base    184 k
+    centos-7.7:  libseccomp                 x86_64 2.3.1-4.el7                    base     56 k
+    centos-7.7:  libselinux                 x86_64 2.5-15.el7                     base    162 k
+    centos-7.7:  libselinux-python          x86_64 2.5-15.el7                     base    236 k
+    centos-7.7:  libselinux-utils           x86_64 2.5-15.el7                     base    151 k
+    centos-7.7:  libsmartcols               x86_64 2.23.2-63.el7                  base    142 k
+    centos-7.7:  libss                      x86_64 1.42.9-17.el7                  base     46 k
+    centos-7.7:  libteam                    x86_64 1.29-1.el7                     base     50 k
+    centos-7.7:  libuuid                    x86_64 2.23.2-63.el7                  base     83 k
+    centos-7.7:  libxml2                    x86_64 2.9.1-6.el7.4                  base    668 k
+    centos-7.7:  linux-firmware             noarch 20191203-76.gite8a0f4c.el7     base     81 M
+    centos-7.7:  logrotate                  x86_64 3.8.6-19.el7                   base     70 k
+    centos-7.7:  lvm2                       x86_64 7:2.02.186-7.el7_8.1           updates 1.3 M
+    centos-7.7:  lvm2-libs                  x86_64 7:2.02.186-7.el7_8.1           updates 1.1 M
+    centos-7.7:  mariadb-libs               x86_64 1:5.5.65-1.el7                 base    759 k
+    centos-7.7:  microcode_ctl              x86_64 2:2.1-61.el7                   base    2.5 M
+    centos-7.7:  nss                        x86_64 3.44.0-7.el7_7                 base    854 k
+    centos-7.7:  nss-softokn                x86_64 3.44.0-8.el7_7                 base    330 k
+    centos-7.7:  nss-softokn-freebl         x86_64 3.44.0-8.el7_7                 base    224 k
+    centos-7.7:  nss-sysinit                x86_64 3.44.0-7.el7_7                 base     65 k
+    centos-7.7:  nss-tools                  x86_64 3.44.0-7.el7_7                 base    528 k
+    centos-7.7:  nss-util                   x86_64 3.44.0-4.el7_7                 base     79 k
+    centos-7.7:  numactl-libs               x86_64 2.0.12-5.el7                   base     30 k
+    centos-7.7:  pam                        x86_64 1.1.8-23.el7                   base    721 k
+    centos-7.7:  parted                     x86_64 3.1-32.el7                     base    609 k
+    centos-7.7:  passwd                     x86_64 0.79-6.el7                     base    106 k
+    centos-7.7:  plymouth                   x86_64 0.8.9-0.33.20140113.el7.centos base    116 k
+    centos-7.7:  plymouth-core-libs         x86_64 0.8.9-0.33.20140113.el7.centos base    108 k
+    centos-7.7:  plymouth-scripts           x86_64 0.8.9-0.33.20140113.el7.centos base     39 k
+    centos-7.7:  policycoreutils            x86_64 2.5-34.el7                     base    917 k
+    centos-7.7:  polkit                     x86_64 0.112-26.el7                   base    170 k
+    centos-7.7:  postfix                    x86_64 2:2.10.1-9.el7                 base    2.4 M
+    centos-7.7:  procps-ng                  x86_64 3.3.10-27.el7                  base    291 k
+    centos-7.7:  python                     x86_64 2.7.5-88.el7                   base     96 k
+    centos-7.7:  python-firewall            noarch 0.6.3-8.el7_8.1                updates 354 k
+    centos-7.7:  python-libs                x86_64 2.7.5-88.el7                   base    5.6 M
+    centos-7.7:  python-perf                x86_64 3.10.0-1127.el7                base    8.0 M
+    centos-7.7:  python-urlgrabber          noarch 3.10-10.el7                    base    108 k
+    centos-7.7:  rpm                        x86_64 4.11.3-43.el7                  base    1.2 M
+    centos-7.7:  rpm-build-libs             x86_64 4.11.3-43.el7                  base    107 k
+    centos-7.7:  rpm-libs                   x86_64 4.11.3-43.el7                  base    278 k
+    centos-7.7:  rpm-python                 x86_64 4.11.3-43.el7                  base     84 k
+    centos-7.7:  rsyslog                    x86_64 8.24.0-52.el7                  base    620 k
+    centos-7.7:  sed                        x86_64 4.2.2-6.el7                    base    231 k
+    centos-7.7:  selinux-policy             noarch 3.13.1-266.el7                 base    497 k
+    centos-7.7:  selinux-policy-targeted    noarch 3.13.1-266.el7                 base    7.0 M
+    centos-7.7:  setup                      noarch 2.8.71-11.el7                  base    166 k
+    centos-7.7:  shared-mime-info           x86_64 1.8-5.el7                      base    312 k
+    centos-7.7:  sqlite                     x86_64 3.7.17-8.el7_7.1               base    394 k
+    centos-7.7:  sudo                       x86_64 1.8.23-9.el7                   base    842 k
+    centos-7.7:  systemd                    x86_64 219-73.el7_8.5                 updates 5.1 M
+    centos-7.7:  systemd-libs               x86_64 219-73.el7_8.5                 updates 416 k
+    centos-7.7:  systemd-sysv               x86_64 219-73.el7_8.5                 updates  93 k
+    centos-7.7:  teamd                      x86_64 1.29-1.el7                     base    115 k
+    centos-7.7:  tuned                      noarch 2.11.0-8.el7                   base    268 k
+    centos-7.7:  tzdata                     noarch 2020a-1.el7                    updates 495 k
+    centos-7.7:  util-linux                 x86_64 2.23.2-63.el7                  base    2.0 M
+    centos-7.7:  yum                        noarch 3.4.3-167.el7.centos           base    1.2 M
+    centos-7.7:  yum-plugin-fastestmirror   noarch 1.1.31-53.el7                  base     34 k
+    centos-7.7:
+    centos-7.7: Transaction Summary
+    centos-7.7: ================================================================================
+    centos-7.7: Install    2 Packages
+    centos-7.7: Upgrade  134 Packages
+    centos-7.7:
+    centos-7.7: Total download size: 236 M
+    centos-7.7: Downloading packages:
+    centos-7.7: Delta RPMs disabled because /usr/bin/applydeltarpm not installed.
+    centos-7.7: (1/136): NetworkManager-1.18.4-3.el7.x86_64.rpm            | 1.9 MB   00:00
+    centos-7.7: (2/136): NetworkManager-libnm-1.18.4-3.el7.x86_64.rpm      | 1.7 MB   00:00
+    centos-7.7: (3/136): NetworkManager-team-1.18.4-3.el7.x86_64.rpm       | 164 kB   00:00
+    centos-7.7: (4/136): NetworkManager-tui-1.18.4-3.el7.x86_64.rpm        | 327 kB   00:00
+    centos-7.7: (5/136): NetworkManager-wifi-1.18.4-3.el7.x86_64.rpm       | 201 kB   00:00
+    centos-7.7: (6/136): acl-2.2.51-15.el7.x86_64.rpm                      |  81 kB   00:00
+    centos-7.7: (7/136): ca-certificates-2019.2.32-76.el7_7.noarch.rpm     | 399 kB   00:00
+    centos-7.7: (8/136): bash-4.2.46-34.el7.x86_64.rpm                     | 1.0 MB   00:00
+    centos-7.7: (9/136): centos-release-7-8.2003.0.el7.centos.x86_64.rpm   |  26 kB   00:00
+    centos-7.7: (10/136): cryptsetup-libs-2.0.3-6.el7.x86_64.rpm           | 339 kB   00:00
+    centos-7.7: (11/136): curl-7.29.0-57.el7.x86_64.rpm                    | 270 kB   00:00
+    centos-7.7: (12/136): device-mapper-event-1.02.164-7.el7_8.1.x86_64.rp | 191 kB   00:00
+    centos-7.7: (13/136): device-mapper-1.02.164-7.el7_8.1.x86_64.rpm      | 295 kB   00:00
+    centos-7.7: (14/136): device-mapper-persistent-data-0.8.5-2.el7.x86_64 | 422 kB   00:00
+    centos-7.7: (15/136): device-mapper-event-libs-1.02.164-7.el7_8.1.x86_ | 190 kB   00:00
+    centos-7.7: (16/136): bind-export-libs-9.11.4-16.P2.el7_8.2.x86_64.rpm | 1.1 MB   00:00
+    centos-7.7: (17/136): dhcp-common-4.2.5-79.el7.centos.x86_64.rpm       | 176 kB   00:00
+    centos-7.7: (18/136): dhcp-libs-4.2.5-79.el7.centos.x86_64.rpm         | 133 kB   00:00
+    centos-7.7: (19/136): device-mapper-libs-1.02.164-7.el7_8.1.x86_64.rpm | 324 kB   00:00
+    centos-7.7: (20/136): dracut-config-rescue-033-568.el7.x86_64.rpm      |  60 kB   00:00
+    centos-7.7: (21/136): dracut-033-568.el7.x86_64.rpm                    | 329 kB   00:00
+    centos-7.7: (22/136): dracut-network-033-568.el7.x86_64.rpm            | 103 kB   00:00
+    centos-7.7: (23/136): e2fsprogs-libs-1.42.9-17.el7.x86_64.rpm          | 168 kB   00:00
+    centos-7.7: (24/136): e2fsprogs-1.42.9-17.el7.x86_64.rpm               | 699 kB   00:00
+    centos-7.7: (25/136): dhclient-4.2.5-79.el7.centos.x86_64.rpm          | 286 kB   00:00
+    centos-7.7: (26/136): elfutils-default-yama-scope-0.176-4.el7.noarch.r |  33 kB   00:00
+    centos-7.7: (27/136): expat-2.1.0-11.el7.x86_64.rpm                    |  81 kB   00:00
+    centos-7.7: (28/136): firewalld-filesystem-0.6.3-8.el7_8.1.noarch.rpm  |  51 kB   00:00
+    centos-7.7: (29/136): file-5.11-36.el7.x86_64.rpm                      |  57 kB   00:00
+    centos-7.7: (30/136): file-libs-5.11-36.el7.x86_64.rpm                 | 340 kB   00:00
+    centos-7.7: (31/136): grub2-2.02-0.81.el7.centos.x86_64.rpm            |  31 kB   00:00
+    centos-7.7: (32/136): elrepo-release-7.0-4.el7.elrepo.noarch.rpm       | 8.5 kB   00:00
+    centos-7.7: (33/136): gettext-0.19.8.1-3.el7.x86_64.rpm                | 1.0 MB   00:00
+    centos-7.7: (34/136): firewalld-0.6.3-8.el7_8.1.noarch.rpm             | 443 kB   00:00
+    centos-7.7: (35/136): grub2-common-2.02-0.81.el7.centos.noarch.rpm     | 729 kB   00:00
+    centos-7.7: (36/136): grub2-pc-2.02-0.81.el7.centos.x86_64.rpm         |  31 kB   00:00
+    centos-7.7: (37/136): gettext-libs-0.19.8.1-3.el7.x86_64.rpm           | 502 kB   00:00
+    centos-7.7: (38/136): grub2-pc-modules-2.02-0.81.el7.centos.noarch.rpm | 847 kB   00:00
+    centos-7.7: (39/136): grub2-tools-2.02-0.81.el7.centos.x86_64.rpm      | 1.8 MB   00:00
+    centos-7.7: (40/136): grub2-tools-minimal-2.02-0.81.el7.centos.x86_64. | 173 kB   00:00
+    centos-7.7: (41/136): grub2-tools-extra-2.02-0.81.el7.centos.x86_64.rp | 996 kB   00:00
+    centos-7.7: (42/136): hostname-3.13-3.el7_7.1.x86_64.rpm               |  17 kB   00:00
+    centos-7.7: (43/136): initscripts-9.49.49-1.el7.x86_64.rpm             | 440 kB   00:00
+    centos-7.7: (44/136): iprutils-2.4.17.1-3.el7_7.x86_64.rpm             | 243 kB   00:00
+    centos-7.7: (45/136): iptables-1.4.21-34.el7.x86_64.rpm                | 432 kB   00:00
+    centos-7.7: (46/136): iproute-4.11.0-25.el7_7.2.x86_64.rpm             | 803 kB   00:00
+    centos-7.7: (47/136): hwdata-0.252-9.5.el7.x86_64.rpm                  | 2.4 MB   00:00
+    centos-7.7: (48/136): iwl1000-firmware-39.31.5.1-76.el7.noarch.rpm     | 224 kB   00:00
+    centos-7.7: (49/136): iwl100-firmware-39.31.5.1-76.el7.noarch.rpm      | 160 kB   00:00
+    centos-7.7: (50/136): iwl105-firmware-18.168.6.1-76.el7.noarch.rpm     | 245 kB   00:00
+    centos-7.7: (51/136): iwl2000-firmware-18.168.6.1-76.el7.noarch.rpm    | 247 kB   00:00
+    centos-7.7: (52/136): iwl2030-firmware-18.168.6.1-76.el7.noarch.rpm    | 256 kB   00:00
+    centos-7.7: (53/136): iwl135-firmware-18.168.6.1-76.el7.noarch.rpm     | 254 kB   00:00
+    centos-7.7: (54/136): iwl3945-firmware-15.32.2.9-76.el7.noarch.rpm     |  98 kB   00:00
+    centos-7.7: (55/136): iwl4965-firmware-228.61.2.24-76.el7.noarch.rpm   | 112 kB   00:00
+    centos-7.7: (56/136): iwl5150-firmware-8.24.2.2-76.el7.noarch.rpm      | 157 kB   00:00
+    centos-7.7: (57/136): iwl5000-firmware-8.83.5.1_1-76.el7.noarch.rpm    | 304 kB   00:00
+    centos-7.7: (58/136): iwl6000g2a-firmware-18.168.6.1-76.el7.noarch.rpm | 320 kB   00:00
+    centos-7.7: (59/136): iwl6000-firmware-9.221.4.1-76.el7.noarch.rpm     | 177 kB   00:00
+    centos-7.7: (60/136): iwl6000g2b-firmware-18.168.6.1-76.el7.noarch.rpm | 321 kB   00:00
+    centos-7.7: (61/136): iwl3160-firmware-25.30.13.0-76.el7.noarch.rpm    | 1.7 MB   00:00
+    centos-7.7: (62/136): iwl6050-firmware-41.28.5.1-76.el7.noarch.rpm     | 253 kB   00:00
+    centos-7.7: (63/136): iwl7260-firmware-25.30.13.0-76.el7.noarch.rpm    |  10 MB   00:02
+    centos-7.7: (64/136): kernel-tools-libs-3.10.0-1127.el7.x86_64.rpm     | 7.9 MB   00:02
+    centos-7.7: (65/136): kernel-tools-3.10.0-1127.el7.x86_64.rpm          | 8.0 MB   00:02
+    centos-7.7: (66/136): kmod-libs-20-28.el7.x86_64.rpm                   |  51 kB   00:00
+    centos-7.7: (67/136): kexec-tools-2.0.15-43.el7.x86_64.rpm             | 349 kB   00:00
+    centos-7.7: (68/136): kpartx-0.4.9-131.el7.x86_64.rpm                  |  80 kB   00:00
+    centos-7.7: (69/136): libacl-2.2.51-15.el7.x86_64.rpm                  |  27 kB   00:00
+    centos-7.7: (70/136): libblkid-2.23.2-63.el7.x86_64.rpm                | 182 kB   00:00
+    centos-7.7: (71/136): libcap-2.22-11.el7.x86_64.rpm                    |  47 kB   00:00
+    centos-7.7: (72/136): kmod-20-28.el7.x86_64.rpm                        | 123 kB   00:00
+    centos-7.7: (73/136): libcom_err-1.42.9-17.el7.x86_64.rpm              |  42 kB   00:00
+    centos-7.7: (74/136): libffi-3.0.13-19.el7.x86_64.rpm                  |  30 kB   00:00
+    centos-7.7: (75/136): krb5-libs-1.15.1-46.el7.x86_64.rpm               | 809 kB   00:00
+    centos-7.7: (76/136): libcurl-7.29.0-57.el7.x86_64.rpm                 | 223 kB   00:00
+    centos-7.7: (77/136): libmount-2.23.2-63.el7.x86_64.rpm                | 184 kB   00:00
+    centos-7.7: (78/136): libseccomp-2.3.1-4.el7.x86_64.rpm                |  56 kB   00:00
+    centos-7.7: (79/136): libselinux-2.5-15.el7.x86_64.rpm                 | 162 kB   00:00
+    centos-7.7: (80/136): libselinux-python-2.5-15.el7.x86_64.rpm          | 236 kB   00:00
+    centos-7.7: (81/136): libselinux-utils-2.5-15.el7.x86_64.rpm           | 151 kB   00:00
+    centos-7.7: (82/136): libsmartcols-2.23.2-63.el7.x86_64.rpm            | 142 kB   00:00
+    centos-7.7: (83/136): libteam-1.29-1.el7.x86_64.rpm                    |  50 kB   00:00
+    centos-7.7: (84/136): libuuid-2.23.2-63.el7.x86_64.rpm                 |  83 kB   00:00
+    centos-7.7: (85/136): libss-1.42.9-17.el7.x86_64.rpm                   |  46 kB   00:00
+    centos-7.7: (86/136): libxml2-2.9.1-6.el7.4.x86_64.rpm                 | 668 kB   00:00
+    centos-7.7: (87/136): kernel-3.10.0-1127.el7.x86_64.rpm                |  50 MB   00:13
+    centos-7.7: (88/136): logrotate-3.8.6-19.el7.x86_64.rpm                |  70 kB   00:00
+    centos-7.7: (89/136): mariadb-libs-5.5.65-1.el7.x86_64.rpm             | 759 kB   00:00
+    centos-7.7: (90/136): lvm2-libs-2.02.186-7.el7_8.1.x86_64.rpm          | 1.1 MB   00:00
+    centos-7.7: (91/136): nss-3.44.0-7.el7_7.x86_64.rpm                    | 854 kB   00:00
+    centos-7.7: (92/136): lvm2-2.02.186-7.el7_8.1.x86_64.rpm               | 1.3 MB   00:00
+    centos-7.7: (93/136): nss-softokn-3.44.0-8.el7_7.x86_64.rpm            | 330 kB   00:00
+    centos-7.7: (94/136): nss-softokn-freebl-3.44.0-8.el7_7.x86_64.rpm     | 224 kB   00:00
+    centos-7.7: (95/136): microcode_ctl-2.1-61.el7.x86_64.rpm              | 2.5 MB   00:00
+    centos-7.7: (96/136): nss-sysinit-3.44.0-7.el7_7.x86_64.rpm            |  65 kB   00:00
+    centos-7.7: (97/136): numactl-libs-2.0.12-5.el7.x86_64.rpm             |  30 kB   00:00
+    centos-7.7: (98/136): nss-tools-3.44.0-7.el7_7.x86_64.rpm              | 528 kB   00:00
+    centos-7.7: (99/136): nss-util-3.44.0-4.el7_7.x86_64.rpm               |  79 kB   00:00
+    centos-7.7: (100/136): pam-1.1.8-23.el7.x86_64.rpm                     | 721 kB   00:00
+    centos-7.7: (101/136): passwd-0.79-6.el7.x86_64.rpm                    | 106 kB   00:00
+    centos-7.7: (102/136): plymouth-0.8.9-0.33.20140113.el7.centos.x86_64. | 116 kB   00:00
+    centos-7.7: (103/136): parted-3.1-32.el7.x86_64.rpm                    | 609 kB   00:00
+    centos-7.7: (104/136): plymouth-scripts-0.8.9-0.33.20140113.el7.centos |  39 kB   00:00
+    centos-7.7: (105/136): plymouth-core-libs-0.8.9-0.33.20140113.el7.cent | 108 kB   00:00
+    centos-7.7: (106/136): polkit-0.112-26.el7.x86_64.rpm                  | 170 kB   00:00
+    centos-7.7: (107/136): policycoreutils-2.5-34.el7.x86_64.rpm           | 917 kB   00:00
+    centos-7.7: (108/136): postfix-2.10.1-9.el7.x86_64.rpm                 | 2.4 MB   00:00
+    centos-7.7: (109/136): procps-ng-3.3.10-27.el7.x86_64.rpm              | 291 kB   00:00
+    centos-7.7: (110/136): python-2.7.5-88.el7.x86_64.rpm                  |  96 kB   00:00
+    centos-7.7: (111/136): python-firewall-0.6.3-8.el7_8.1.noarch.rpm      | 354 kB   00:00
+    centos-7.7: (112/136): python-urlgrabber-3.10-10.el7.noarch.rpm        | 108 kB   00:00
+    centos-7.7: (113/136): rpm-4.11.3-43.el7.x86_64.rpm                    | 1.2 MB   00:00
+    centos-7.7: (114/136): rpm-build-libs-4.11.3-43.el7.x86_64.rpm         | 107 kB   00:00
+    centos-7.7: (115/136): python-perf-3.10.0-1127.el7.x86_64.rpm          | 8.0 MB   00:01
+    centos-7.7: (116/136): rpm-libs-4.11.3-43.el7.x86_64.rpm               | 278 kB   00:00
+    centos-7.7: (117/136): rpm-python-4.11.3-43.el7.x86_64.rpm             |  84 kB   00:00
+    centos-7.7: (118/136): rsyslog-8.24.0-52.el7.x86_64.rpm                | 620 kB   00:00
+    centos-7.7: (119/136): sed-4.2.2-6.el7.x86_64.rpm                      | 231 kB   00:00
+    centos-7.7: (120/136): python-libs-2.7.5-88.el7.x86_64.rpm             | 5.6 MB   00:01
+    centos-7.7: (121/136): setup-2.8.71-11.el7.noarch.rpm                  | 166 kB   00:00
+    centos-7.7: (122/136): selinux-policy-3.13.1-266.el7.noarch.rpm        | 497 kB   00:00
+    centos-7.7: (123/136): shared-mime-info-1.8-5.el7.x86_64.rpm           | 312 kB   00:00
+    centos-7.7: (124/136): sqlite-3.7.17-8.el7_7.1.x86_64.rpm              | 394 kB   00:00
+    centos-7.7: (125/136): systemd-libs-219-73.el7_8.5.x86_64.rpm          | 416 kB   00:00
+    centos-7.7: (126/136): sudo-1.8.23-9.el7.x86_64.rpm                    | 842 kB   00:00
+    centos-7.7: (127/136): systemd-sysv-219-73.el7_8.5.x86_64.rpm          |  93 kB   00:00
+    centos-7.7: (128/136): teamd-1.29-1.el7.x86_64.rpm                     | 115 kB   00:00
+    centos-7.7: (129/136): tuned-2.11.0-8.el7.noarch.rpm                   | 268 kB   00:00
+    centos-7.7: (130/136): tzdata-2020a-1.el7.noarch.rpm                   | 495 kB   00:00
+    centos-7.7: (131/136): selinux-policy-targeted-3.13.1-266.el7.noarch.r | 7.0 MB   00:01
+    centos-7.7: (132/136): yum-plugin-fastestmirror-1.1.31-53.el7.noarch.r |  34 kB   00:00
+    centos-7.7: (133/136): util-linux-2.23.2-63.el7.x86_64.rpm             | 2.0 MB   00:00
+    centos-7.7: (134/136): systemd-219-73.el7_8.5.x86_64.rpm               | 5.1 MB   00:01
+    centos-7.7: (135/136): yum-3.4.3-167.el7.centos.noarch.rpm             | 1.2 MB   00:00
+    centos-7.7: (136/136): linux-firmware-20191203-76.gite8a0f4c.el7.noarc |  81 MB   00:19
+    centos-7.7: --------------------------------------------------------------------------------
+    centos-7.7: Total                                              8.7 MB/s | 236 MB  00:27
+    centos-7.7: Running transaction check
+    centos-7.7: Running transaction test
+    centos-7.7: Transaction test succeeded
+    centos-7.7: Running transaction
+    centos-7.7:   Updating   : bash-4.2.46-34.el7.x86_64                                  1/272
+    centos-7.7:   Updating   : libselinux-2.5-15.el7.x86_64                               2/272
+    centos-7.7:   Updating   : nss-util-3.44.0-4.el7_7.x86_64                             3/272
+    centos-7.7:   Updating   : libuuid-2.23.2-63.el7.x86_64                               4/272
+    centos-7.7:   Updating   : libblkid-2.23.2-63.el7.x86_64                              5/272
+    centos-7.7:   Updating   : sed-4.2.2-6.el7.x86_64                                     6/272
+    centos-7.7:   Updating   : libcap-2.22-11.el7.x86_64                                  7/272
+    centos-7.7:   Updating   : libcom_err-1.42.9-17.el7.x86_64                            8/272
+    centos-7.7:   Updating   : libacl-2.2.51-15.el7.x86_64                                9/272
+    centos-7.7:   Updating   : pam-1.1.8-23.el7.x86_64                                   10/272
+    centos-7.7:   Updating   : systemd-libs-219-73.el7_8.5.x86_64                        11/272
+    centos-7.7:   Updating   : 1:grub2-common-2.02-0.81.el7.centos.noarch                12/272
+    centos-7.7:   Updating   : centos-release-7-8.2003.0.el7.centos.x86_64               13/272
+    centos-7.7:   Updating   : krb5-libs-1.15.1-46.el7.x86_64                            14/272
+    centos-7.7:   Updating   : expat-2.1.0-11.el7.x86_64                                 15/272
+    centos-7.7:   Updating   : libxml2-2.9.1-6.el7.4.x86_64                              16/272
+    centos-7.7:   Updating   : file-libs-5.11-36.el7.x86_64                              17/272
+    centos-7.7:   Updating   : file-5.11-36.el7.x86_64                                   18/272
+    centos-7.7:   Updating   : 12:dhcp-libs-4.2.5-79.el7.centos.x86_64                   19/272
+    centos-7.7:   Updating   : procps-ng-3.3.10-27.el7.x86_64                            20/272
+    centos-7.7:   Updating   : libmount-2.23.2-63.el7.x86_64                             21/272
+    centos-7.7:   Updating   : iptables-1.4.21-34.el7.x86_64                             22/272
+    centos-7.7:   Updating   : iproute-4.11.0-25.el7_7.2.x86_64                          23/272
+    centos-7.7:   Updating   : hostname-3.13-3.el7_7.1.x86_64                            24/272
+    centos-7.7:   Updating   : sqlite-3.7.17-8.el7_7.1.x86_64                            25/272
+    centos-7.7:   Updating   : 12:dhcp-common-4.2.5-79.el7.centos.x86_64                 26/272
+    centos-7.7:   Updating   : gettext-libs-0.19.8.1-3.el7.x86_64                        27/272
+    centos-7.7:   Updating   : device-mapper-persistent-data-0.8.5-2.el7.x86_64          28/272
+    centos-7.7:   Updating   : 32:bind-export-libs-9.11.4-16.P2.el7_8.2.x86_64           29/272
+    centos-7.7:   Updating   : 1:grub2-pc-modules-2.02-0.81.el7.centos.noarch            30/272
+    centos-7.7:   Updating   : plymouth-core-libs-0.8.9-0.33.20140113.el7.centos.x86_    31/272
+    centos-7.7:   Updating   : acl-2.2.51-15.el7.x86_64                                  32/272
+    centos-7.7:   Updating   : logrotate-3.8.6-19.el7.x86_64                             33/272
+    centos-7.7:   Updating   : e2fsprogs-libs-1.42.9-17.el7.x86_64                       34/272
+    centos-7.7:   Updating   : libss-1.42.9-17.el7.x86_64                                35/272
+    centos-7.7:   Updating   : nss-softokn-freebl-3.44.0-8.el7_7.x86_64                  36/272
+    centos-7.7:   Updating   : nss-softokn-3.44.0-8.el7_7.x86_64                         37/272
+    centos-7.7:   Updating   : nss-sysinit-3.44.0-7.el7_7.x86_64                         38/272
+    centos-7.7:   Updating   : nss-3.44.0-7.el7_7.x86_64                                 39/272
+    centos-7.7:   Updating   : libcurl-7.29.0-57.el7.x86_64                              40/272
+    centos-7.7:   Updating   : 1:NetworkManager-libnm-1.18.4-3.el7.x86_64                41/272
+    centos-7.7:   Updating   : curl-7.29.0-57.el7.x86_64                                 42/272
+    centos-7.7:   Updating   : rpm-libs-4.11.3-43.el7.x86_64                             43/272
+    centos-7.7:   Updating   : rpm-4.11.3-43.el7.x86_64                                  44/272
+    centos-7.7:   Updating   : rpm-build-libs-4.11.3-43.el7.x86_64                       45/272
+    centos-7.7:   Updating   : libselinux-utils-2.5-15.el7.x86_64                        46/272
+    centos-7.7:   Updating   : linux-firmware-20191203-76.gite8a0f4c.el7.noarch          47/272
+    centos-7.7:   Updating   : libffi-3.0.13-19.el7.x86_64                               48/272
+    centos-7.7:   Updating   : python-libs-2.7.5-88.el7.x86_64                           49/272
+    centos-7.7:   Updating   : python-2.7.5-88.el7.x86_64                                50/272
+    centos-7.7:   Updating   : gettext-0.19.8.1-3.el7.x86_64                             51/272
+    centos-7.7:   Updating   : rpm-python-4.11.3-43.el7.x86_64                           52/272
+    centos-7.7:   Updating   : python-perf-3.10.0-1127.el7.x86_64                        53/272
+    centos-7.7:   Updating   : python-firewall-0.6.3-8.el7_8.1.noarch                    54/272
+    centos-7.7:   Updating   : python-urlgrabber-3.10-10.el7.noarch                      55/272
+    centos-7.7:   Updating   : yum-plugin-fastestmirror-1.1.31-53.el7.noarch             56/272
+    centos-7.7:   Updating   : yum-3.4.3-167.el7.centos.noarch                           57/272
+    centos-7.7:   Updating   : libsmartcols-2.23.2-63.el7.x86_64                         58/272
+    centos-7.7:   Updating   : util-linux-2.23.2-63.el7.x86_64                           59/272
+    centos-7.7:   Updating   : policycoreutils-2.5-34.el7.x86_64                         60/272
+    centos-7.7:   Updating   : selinux-policy-3.13.1-266.el7.noarch                      61/272
+    centos-7.7:   Updating   : 1:mariadb-libs-5.5.65-1.el7.x86_64                        62/272
+    centos-7.7:   Updating   : libteam-1.29-1.el7.x86_64                                 63/272
+    centos-7.7:   Updating   : teamd-1.29-1.el7.x86_64                                   64/272
+    centos-7.7:   Updating   : firewalld-filesystem-0.6.3-8.el7_8.1.noarch               65/272
+    centos-7.7:   Updating   : kernel-tools-libs-3.10.0-1127.el7.x86_64                  66/272
+    centos-7.7:   Updating   : kmod-libs-20-28.el7.x86_64                                67/272
+    centos-7.7:   Updating   : kpartx-0.4.9-131.el7.x86_64                               68/272
+    centos-7.7:   Updating   : cryptsetup-libs-2.0.3-6.el7.x86_64                        69/272
+    centos-7.7:   Updating   : 7:device-mapper-libs-1.02.164-7.el7_8.1.x86_64            70/272
+    centos-7.7:   Updating   : 7:device-mapper-1.02.164-7.el7_8.1.x86_64                 71/272
+    centos-7.7:   Updating   : kmod-20-28.el7.x86_64                                     72/272
+    centos-7.7:   Updating   : systemd-219-73.el7_8.5.x86_64                             73/272
+    centos-7.7:   Updating   : dracut-033-568.el7.x86_64                                 74/272
+    centos-7.7:   Updating   : initscripts-9.49.49-1.el7.x86_64                          75/272
+    centos-7.7:   Updating   : 7:device-mapper-event-libs-1.02.164-7.el7_8.1.x86_64      76/272
+    centos-7.7:   Updating   : 1:grub2-tools-minimal-2.02-0.81.el7.centos.x86_64         77/272
+    centos-7.7:   Updating   : 1:grub2-tools-2.02-0.81.el7.centos.x86_64                 78/272
+    centos-7.7:   Updating   : polkit-0.112-26.el7.x86_64                                79/272
+    centos-7.7:   Updating   : 1:NetworkManager-1.18.4-3.el7.x86_64                      80/272
+    centos-7.7:   Updating   : 1:grub2-tools-extra-2.02-0.81.el7.centos.x86_64           81/272
+    centos-7.7:   Updating   : 1:grub2-pc-2.02-0.81.el7.centos.x86_64                    82/272
+    centos-7.7:   Updating   : 7:device-mapper-event-1.02.164-7.el7_8.1.x86_64           83/272
+    centos-7.7:   Updating   : 7:lvm2-libs-2.02.186-7.el7_8.1.x86_64                     84/272
+    centos-7.7:   Updating   : 12:dhclient-4.2.5-79.el7.centos.x86_64                    85/272
+    centos-7.7:   Updating   : dracut-network-033-568.el7.x86_64                         86/272
+    centos-7.7:   Updating   : plymouth-scripts-0.8.9-0.33.20140113.el7.centos.x86_64    87/272
+    centos-7.7:   Updating   : plymouth-0.8.9-0.33.20140113.el7.centos.x86_64            88/272
+    centos-7.7:   Updating   : systemd-sysv-219-73.el7_8.5.x86_64                        89/272
+    centos-7.7:   Updating   : 2:postfix-2.10.1-9.el7.x86_64                             90/272
+    centos-7.7:   Updating   : kexec-tools-2.0.15-43.el7.x86_64                          91/272
+    centos-7.7:   Updating   : 7:lvm2-2.02.186-7.el7_8.1.x86_64                          92/272
+    centos-7.7:   Updating   : 1:grub2-2.02-0.81.el7.centos.x86_64                       93/272
+    centos-7.7:   Updating   : 1:NetworkManager-wifi-1.18.4-3.el7.x86_64                 94/272
+    centos-7.7:   Updating   : 1:NetworkManager-tui-1.18.4-3.el7.x86_64                  95/272
+    centos-7.7:   Updating   : 1:NetworkManager-team-1.18.4-3.el7.x86_64                 96/272
+    centos-7.7:   Updating   : tuned-2.11.0-8.el7.noarch                                 97/272
+    centos-7.7:   Installing : kernel-3.10.0-1127.el7.x86_64                             98/272
+    centos-7.7:   Updating   : dracut-config-rescue-033-568.el7.x86_64                   99/272
+    centos-7.7:   Updating   : rsyslog-8.24.0-52.el7.x86_64                             100/272
+    centos-7.7:   Updating   : 2:microcode_ctl-2.1-61.el7.x86_64                        101/272
+    centos-7.7:   Updating   : elfutils-default-yama-scope-0.176-4.el7.noarch           102/272
+    centos-7.7:   Updating   : firewalld-0.6.3-8.el7_8.1.noarch                         103/272
+    centos-7.7:   Updating   : hwdata-0.252-9.5.el7.x86_64                              104/272
+    centos-7.7:   Updating   : parted-3.1-32.el7.x86_64                                 105/272
+    centos-7.7:   Updating   : kernel-tools-3.10.0-1127.el7.x86_64                      106/272
+    centos-7.7:   Updating   : selinux-policy-targeted-3.13.1-266.el7.noarch            107/272
+    centos-7.7:   Updating   : libselinux-python-2.5-15.el7.x86_64                      108/272
+    centos-7.7:   Updating   : nss-tools-3.44.0-7.el7_7.x86_64                          109/272
+    centos-7.7:   Updating   : e2fsprogs-1.42.9-17.el7.x86_64                           110/272
+    centos-7.7:   Updating   : shared-mime-info-1.8-5.el7.x86_64                        111/272
+    centos-7.7:   Updating   : setup-2.8.71-11.el7.noarch                               112/272
+    centos-7.7: newaliases: warning: inet_protocols: disabling IPv6 name/address support: Address family not supported by protocol
+    centos-7.7: postalias: warning: inet_protocols: disabling IPv6 name/address support: Address family not supported by protocol
+    centos-7.7: warning: /etc/shadow created as /etc/shadow.rpmnew
+    centos-7.7:   Updating   : passwd-0.79-6.el7.x86_64                                 113/272
+    centos-7.7:   Updating   : sudo-1.8.23-9.el7.x86_64                                 114/272
+    centos-7.7:   Updating   : ca-certificates-2019.2.32-76.el7_7.noarch                115/272
+    centos-7.7:   Updating   : iprutils-2.4.17.1-3.el7_7.x86_64                         116/272
+    centos-7.7:   Updating   : iwl6000g2b-firmware-18.168.6.1-76.el7.noarch             117/272
+    centos-7.7:   Updating   : numactl-libs-2.0.12-5.el7.x86_64                         118/272
+    centos-7.7:   Updating   : iwl6000-firmware-9.221.4.1-76.el7.noarch                 119/272
+    centos-7.7:   Updating   : iwl6000g2a-firmware-18.168.6.1-76.el7.noarch             120/272
+    centos-7.7:   Updating   : iwl6050-firmware-41.28.5.1-76.el7.noarch                 121/272
+    centos-7.7:   Updating   : libseccomp-2.3.1-4.el7.x86_64                            122/272
+    centos-7.7:   Updating   : iwl2000-firmware-18.168.6.1-76.el7.noarch                123/272
+    centos-7.7:   Updating   : iwl5000-firmware-8.83.5.1_1-76.el7.noarch                124/272
+    centos-7.7:   Updating   : iwl3945-firmware-15.32.2.9-76.el7.noarch                 125/272
+    centos-7.7:   Updating   : iwl2030-firmware-18.168.6.1-76.el7.noarch                126/272
+    centos-7.7:   Installing : iwl7260-firmware-25.30.13.0-76.el7.noarch                127/272
+    centos-7.7:   Updating   : 1:iwl1000-firmware-39.31.5.1-76.el7.noarch               128/272
+    centos-7.7:   Updating   : elrepo-release-7.0-4.el7.elrepo.noarch                   129/272
+    centos-7.7:   Updating   : iwl3160-firmware-25.30.13.0-76.el7.noarch                130/272
+    centos-7.7:   Updating   : iwl135-firmware-18.168.6.1-76.el7.noarch                 131/272
+    centos-7.7:   Updating   : tzdata-2020a-1.el7.noarch                                132/272
+    centos-7.7:   Updating   : iwl100-firmware-39.31.5.1-76.el7.noarch                  133/272
+    centos-7.7:   Updating   : iwl105-firmware-18.168.6.1-76.el7.noarch                 134/272
+    centos-7.7:   Updating   : iwl5150-firmware-8.24.2.2-76.el7.noarch                  135/272
+    centos-7.7:   Updating   : iwl4965-firmware-228.61.2.24-76.el7.noarch               136/272
+    centos-7.7:   Cleanup    : tuned-2.11.0-5.el7.noarch                                137/272
+    centos-7.7:   Cleanup    : firewalld-0.6.3-2.el7.noarch                             138/272
+    centos-7.7:   Cleanup    : 7:lvm2-2.02.185-2.el7.x86_64                             139/272
+    centos-7.7:   Cleanup    : 1:NetworkManager-tui-1.18.0-5.el7.x86_64                 140/272
+    centos-7.7:   Cleanup    : e2fsprogs-1.42.9-16.el7.x86_64                           141/272
+    centos-7.7:   Cleanup    : yum-plugin-fastestmirror-1.1.31-52.el7.noarch            142/272
+    centos-7.7:   Cleanup    : yum-3.4.3-163.el7.centos.noarch                          143/272
+    centos-7.7:   Cleanup    : rpm-python-4.11.3-40.el7.x86_64                          144/272
+    centos-7.7:   Cleanup    : rpm-build-libs-4.11.3-40.el7.x86_64                      145/272
+    centos-7.7:   Cleanup    : 7:lvm2-libs-2.02.185-2.el7.x86_64                        146/272
+    centos-7.7:   Cleanup    : 7:device-mapper-event-1.02.158-2.el7.x86_64              147/272
+    centos-7.7:   Cleanup    : parted-3.1-31.el7.x86_64                                 148/272
+    centos-7.7:   Cleanup    : kexec-tools-2.0.15-33.el7.x86_64                         149/272
+    centos-7.7:   Cleanup    : nss-tools-3.44.0-4.el7.x86_64                            150/272
+    centos-7.7:   Cleanup    : rsyslog-8.24.0-38.el7.x86_64                             151/272
+    centos-7.7:   Cleanup    : dracut-network-033-564.el7.x86_64                        152/272
+    centos-7.7:   Cleanup    : 12:dhclient-4.2.5-77.el7.centos.x86_64                   153/272
+    centos-7.7:   Cleanup    : plymouth-0.8.9-0.32.20140113.el7.centos.x86_64           154/272
+    centos-7.7:   Cleanup    : plymouth-scripts-0.8.9-0.32.20140113.el7.centos.x86_64   155/272
+    centos-7.7:   Cleanup    : selinux-policy-targeted-3.13.1-252.el7.noarch            156/272
+    centos-7.7:   Cleanup    : selinux-policy-3.13.1-252.el7.noarch                     157/272
+    centos-7.7:   Cleanup    : 1:grub2-2.02-0.80.el7.centos.x86_64                      158/272
+    centos-7.7:   Cleanup    : 1:grub2-pc-2.02-0.80.el7.centos.x86_64                   159/272
+    centos-7.7:   Cleanup    : hwdata-0.252-9.3.el7.x86_64                              160/272
+    centos-7.7:   Cleanup    : elfutils-default-yama-scope-0.176-2.el7.noarch           161/272
+    centos-7.7:   Cleanup    : dracut-config-rescue-033-564.el7.x86_64                  162/272
+    centos-7.7:   Cleanup    : 2:microcode_ctl-2.1-53.el7.x86_64                        163/272
+    centos-7.7:   Cleanup    : 1:grub2-pc-modules-2.02-0.80.el7.centos.noarch           164/272
+    centos-7.7:   Cleanup    : 12:dhcp-common-4.2.5-77.el7.centos.x86_64                165/272
+    centos-7.7:   Cleanup    : 12:dhcp-libs-4.2.5-77.el7.centos.x86_64                  166/272
+    centos-7.7:   Cleanup    : python-urlgrabber-3.10-9.el7.noarch                      167/272
+    centos-7.7:   Cleanup    : python-firewall-0.6.3-2.el7.noarch                       168/272
+    centos-7.7:   Cleanup    : linux-firmware-20190429-72.gitddde598.el7.noarch         169/272
+    centos-7.7:   Cleanup    : setup-2.8.71-10.el7.noarch                               170/272
+    centos-7.7:   Cleanup    : ca-certificates-2018.2.22-70.0.el7_5.noarch              171/272
+    centos-7.7:   Cleanup    : firewalld-filesystem-0.6.3-2.el7.noarch                  172/272
+    centos-7.7:   Cleanup    : iwl6000g2b-firmware-17.168.5.2-72.el7.noarch             173/272
+    centos-7.7:   Cleanup    : iwl6000-firmware-9.221.4.1-72.el7.noarch                 174/272
+    centos-7.7:   Cleanup    : iwl6000g2a-firmware-17.168.5.3-72.el7.noarch             175/272
+    centos-7.7:   Cleanup    : iwl6050-firmware-41.28.5.1-72.el7.noarch                 176/272
+    centos-7.7:   Cleanup    : iwl2000-firmware-18.168.6.1-72.el7.noarch                177/272
+    centos-7.7:   Cleanup    : iwl5000-firmware-8.83.5.1_1-72.el7.noarch                178/272
+    centos-7.7:   Cleanup    : iwl3945-firmware-15.32.2.9-72.el7.noarch                 179/272
+    centos-7.7:   Cleanup    : iwl2030-firmware-18.168.6.1-72.el7.noarch                180/272
+    centos-7.7:   Erasing    : iwl7265-firmware-22.0.7.0-72.el7.noarch                  181/272
+    centos-7.7:   Cleanup    : iwl7260-firmware-22.0.7.0-72.el7.noarch                  182/272
+    centos-7.7:   Cleanup    : 1:iwl1000-firmware-39.31.5.1-72.el7.noarch               183/272
+    centos-7.7:   Cleanup    : elrepo-release-7.0-3.el7.elrepo.noarch                   184/272
+    centos-7.7:   Cleanup    : iwl3160-firmware-22.0.7.0-72.el7.noarch                  185/272
+    centos-7.7:   Cleanup    : iwl135-firmware-18.168.6.1-72.el7.noarch                 186/272
+    centos-7.7:   Cleanup    : tzdata-2019b-1.el7.noarch                                187/272
+    centos-7.7:   Cleanup    : iwl100-firmware-39.31.5.1-72.el7.noarch                  188/272
+    centos-7.7:   Cleanup    : iwl105-firmware-18.168.6.1-72.el7.noarch                 189/272
+    centos-7.7:   Cleanup    : iwl5150-firmware-8.24.2.2-72.el7.noarch                  190/272
+    centos-7.7:   Cleanup    : iwl4965-firmware-228.61.2.24-72.el7.noarch               191/272
+    centos-7.7:   Cleanup    : initscripts-9.49.47-1.el7.x86_64                         192/272
+    centos-7.7:   Cleanup    : 1:grub2-tools-extra-2.02-0.80.el7.centos.x86_64          193/272
+    centos-7.7:   Cleanup    : 1:grub2-tools-2.02-0.80.el7.centos.x86_64                194/272
+    centos-7.7:   Cleanup    : policycoreutils-2.5-33.el7.x86_64                        195/272
+    centos-7.7:   Cleanup    : rpm-4.11.3-40.el7.x86_64                                 196/272
+    centos-7.7:   Cleanup    : rpm-libs-4.11.3-40.el7.x86_64                            197/272
+    centos-7.7:   Cleanup    : curl-7.29.0-54.el7.x86_64                                198/272
+    centos-7.7:   Cleanup    : 1:grub2-tools-minimal-2.02-0.80.el7.centos.x86_64        199/272
+    centos-7.7:   Cleanup    : gettext-0.19.8.1-2.el7.x86_64                            200/272
+    centos-7.7:   Cleanup    : 2:postfix-2.10.1-7.el7.x86_64                            201/272
+    centos-7.7:   Cleanup    : iproute-4.11.0-25.el7.x86_64                             202/272
+    centos-7.7:   Cleanup    : 32:bind-export-libs-9.11.4-9.P2.el7.x86_64               203/272
+    centos-7.7:   Cleanup    : logrotate-3.8.6-17.el7.x86_64                            204/272
+    centos-7.7:   Cleanup    : sudo-1.8.23-4.el7.x86_64                                 205/272
+    centos-7.7:   Cleanup    : passwd-0.79-5.el7.x86_64                                 206/272
+    centos-7.7:   Cleanup    : systemd-sysv-219-67.el7.x86_64                           207/272
+    centos-7.7:   Cleanup    : python-perf-3.10.0-1062.el7.x86_64                       208/272
+    centos-7.7:   Cleanup    : libselinux-python-2.5-14.1.el7.x86_64                    209/272
+    centos-7.7:   Cleanup    : shared-mime-info-1.8-4.el7.x86_64                        210/272
+    centos-7.7:   Cleanup    : 1:NetworkManager-team-1.18.0-5.el7.x86_64                211/272
+    centos-7.7:   Cleanup    : teamd-1.27-9.el7.x86_64                                  212/272
+    centos-7.7:   Cleanup    : kernel-tools-3.10.0-1062.el7.x86_64                      213/272
+    centos-7.7:   Cleanup    : python-2.7.5-86.el7.x86_64                               214/272
+    centos-7.7:   Cleanup    : python-libs-2.7.5-86.el7.x86_64                          215/272
+    centos-7.7:   Cleanup    : iptables-1.4.21-33.el7.x86_64                            216/272
+    centos-7.7:   Cleanup    : gettext-libs-0.19.8.1-2.el7.x86_64                       217/272
+    centos-7.7:   Cleanup    : libselinux-utils-2.5-14.1.el7.x86_64                     218/272
+    centos-7.7:   Cleanup    : file-5.11-35.el7.x86_64                                  219/272
+    centos-7.7:   Cleanup    : plymouth-core-libs-0.8.9-0.32.20140113.el7.centos.x86_   220/272
+    centos-7.7:   Cleanup    : 7:device-mapper-event-libs-1.02.158-2.el7.x86_64         221/272
+    centos-7.7:   Cleanup    : e2fsprogs-libs-1.42.9-16.el7.x86_64                      222/272
+    centos-7.7:   Cleanup    : libss-1.42.9-16.el7.x86_64                               223/272
+    centos-7.7:   Cleanup    : device-mapper-persistent-data-0.8.5-1.el7.x86_64         224/272
+    centos-7.7:   Cleanup    : iprutils-2.4.17.1-2.el7.x86_64                           225/272
+    centos-7.7:   Cleanup    : 1:NetworkManager-wifi-1.18.0-5.el7.x86_64                226/272
+    centos-7.7:   Cleanup    : 1:grub2-common-2.02-0.80.el7.centos.noarch               227/272
+    centos-7.7:   Cleanup    : 1:NetworkManager-1.18.0-5.el7.x86_64                     228/272
+    centos-7.7:   Cleanup    : 1:NetworkManager-libnm-1.18.0-5.el7.x86_64               229/272
+    centos-7.7:   Cleanup    : polkit-0.112-22.el7.x86_64                               230/272
+    centos-7.7:   Cleanup    : kpartx-0.4.9-127.el7.x86_64                              231/272
+    centos-7.7:   Cleanup    : dracut-033-564.el7.x86_64                                232/272
+    centos-7.7:   Cleanup    : kmod-20-25.el7.x86_64                                    233/272
+    centos-7.7:   Cleanup    : 7:device-mapper-1.02.158-2.el7.x86_64                    234/272
+    centos-7.7:   Cleanup    : systemd-219-67.el7.x86_64                                235/272
+    centos-7.7:   Cleanup    : cryptsetup-libs-2.0.3-5.el7.x86_64                       236/272
+    centos-7.7:   Cleanup    : 7:device-mapper-libs-1.02.158-2.el7.x86_64               237/272
+    centos-7.7:   Cleanup    : util-linux-2.23.2-61.el7.x86_64                          238/272
+    centos-7.7:   Cleanup    : libcurl-7.29.0-54.el7.x86_64                             239/272
+    centos-7.7:   Cleanup    : nss-sysinit-3.44.0-4.el7.x86_64                          240/272
+    centos-7.7:   Cleanup    : nss-3.44.0-4.el7.x86_64                                  241/272
+    centos-7.7:   Cleanup    : nss-softokn-3.44.0-5.el7.x86_64                          242/272
+    centos-7.7:   Cleanup    : krb5-libs-1.15.1-37.el7_6.x86_64                         243/272
+    centos-7.7:   Cleanup    : libmount-2.23.2-61.el7.x86_64                            244/272
+    centos-7.7:   Cleanup    : libblkid-2.23.2-61.el7.x86_64                            245/272
+    centos-7.7:   Cleanup    : sed-4.2.2-5.el7.x86_64                                   246/272
+    centos-7.7:   Cleanup    : nss-softokn-freebl-3.44.0-5.el7.x86_64                   247/272
+    centos-7.7:   Cleanup    : acl-2.2.51-14.el7.x86_64                                 248/272
+    centos-7.7:   Cleanup    : procps-ng-3.3.10-26.el7.x86_64                           249/272
+    centos-7.7:   Cleanup    : centos-release-7-7.1908.0.el7.centos.x86_64              250/272
+    centos-7.7:   Cleanup    : systemd-libs-219-67.el7.x86_64                           251/272
+    centos-7.7:   Cleanup    : pam-1.1.8-22.el7.x86_64                                  252/272
+    centos-7.7:   Cleanup    : bash-4.2.46-33.el7.x86_64                                253/272
+    centos-7.7:   Cleanup    : libselinux-2.5-14.1.el7.x86_64                           254/272
+    centos-7.7:   Cleanup    : libcap-2.22-10.el7.x86_64                                255/272
+    centos-7.7:   Cleanup    : libacl-2.2.51-14.el7.x86_64                              256/272
+    centos-7.7:   Cleanup    : nss-util-3.44.0-3.el7.x86_64                             257/272
+    centos-7.7:   Cleanup    : libuuid-2.23.2-61.el7.x86_64                             258/272
+    centos-7.7:   Cleanup    : libcom_err-1.42.9-16.el7.x86_64                          259/272
+    centos-7.7:   Cleanup    : sqlite-3.7.17-8.el7.x86_64                               260/272
+    centos-7.7:   Cleanup    : libsmartcols-2.23.2-61.el7.x86_64                        261/272
+    centos-7.7:   Cleanup    : kmod-libs-20-25.el7.x86_64                               262/272
+    centos-7.7:   Cleanup    : expat-2.1.0-10.el7_3.x86_64                              263/272
+    centos-7.7:   Cleanup    : file-libs-5.11-35.el7.x86_64                             264/272
+    centos-7.7:   Cleanup    : libxml2-2.9.1-6.el7_2.3.x86_64                           265/272
+    centos-7.7:   Cleanup    : libffi-3.0.13-18.el7.x86_64                              266/272
+    centos-7.7:   Cleanup    : kernel-tools-libs-3.10.0-1062.el7.x86_64                 267/272
+    centos-7.7:   Cleanup    : libteam-1.27-9.el7.x86_64                                268/272
+    centos-7.7:   Cleanup    : 1:mariadb-libs-5.5.64-1.el7.x86_64                       269/272
+    centos-7.7:   Cleanup    : hostname-3.13-3.el7.x86_64                               270/272
+    centos-7.7:   Cleanup    : numactl-libs-2.0.12-3.el7.x86_64                         271/272
+    centos-7.7:   Cleanup    : libseccomp-2.3.1-3.el7.x86_64                            272/272
+    centos-7.7:   Verifying  : rsyslog-8.24.0-52.el7.x86_64                               1/272
+    centos-7.7:   Verifying  : acl-2.2.51-15.el7.x86_64                                   2/272
+    centos-7.7:   Verifying  : 1:grub2-tools-2.02-0.81.el7.centos.x86_64                  3/272
+    centos-7.7:   Verifying  : 2:microcode_ctl-2.1-61.el7.x86_64                          4/272
+    centos-7.7:   Verifying  : kpartx-0.4.9-131.el7.x86_64                                5/272
+    centos-7.7:   Verifying  : libcap-2.22-11.el7.x86_64                                  6/272
+    centos-7.7:   Verifying  : iwl4965-firmware-228.61.2.24-76.el7.noarch                 7/272
+    centos-7.7:   Verifying  : nss-3.44.0-7.el7_7.x86_64                                  8/272
+    centos-7.7:   Verifying  : libmount-2.23.2-63.el7.x86_64                              9/272
+    centos-7.7:   Verifying  : 1:grub2-tools-extra-2.02-0.81.el7.centos.x86_64           10/272
+    centos-7.7:   Verifying  : sqlite-3.7.17-8.el7_7.1.x86_64                            11/272
+    centos-7.7:   Verifying  : util-linux-2.23.2-63.el7.x86_64                           12/272
+    centos-7.7:   Verifying  : kernel-3.10.0-1127.el7.x86_64                             13/272
+    centos-7.7:   Verifying  : ca-certificates-2019.2.32-76.el7_7.noarch                 14/272
+    centos-7.7:   Verifying  : sed-4.2.2-6.el7.x86_64                                    15/272
+    centos-7.7:   Verifying  : libacl-2.2.51-15.el7.x86_64                               16/272
+    centos-7.7:   Verifying  : python-2.7.5-88.el7.x86_64                                17/272
+    centos-7.7:   Verifying  : iwl5150-firmware-8.24.2.2-76.el7.noarch                   18/272
+    centos-7.7:   Verifying  : kmod-libs-20-28.el7.x86_64                                19/272
+    centos-7.7:   Verifying  : dracut-config-rescue-033-568.el7.x86_64                   20/272
+    centos-7.7:   Verifying  : kernel-tools-3.10.0-1127.el7.x86_64                       21/272
+    centos-7.7:   Verifying  : centos-release-7-8.2003.0.el7.centos.x86_64               22/272
+    centos-7.7:   Verifying  : kernel-tools-libs-3.10.0-1127.el7.x86_64                  23/272
+    centos-7.7:   Verifying  : gettext-0.19.8.1-3.el7.x86_64                             24/272
+    centos-7.7:   Verifying  : 7:device-mapper-event-1.02.164-7.el7_8.1.x86_64           25/272
+    centos-7.7:   Verifying  : 2:postfix-2.10.1-9.el7.x86_64                             26/272
+    centos-7.7:   Verifying  : systemd-219-73.el7_8.5.x86_64                             27/272
+    centos-7.7:   Verifying  : setup-2.8.71-11.el7.noarch                                28/272
+    centos-7.7:   Verifying  : nss-tools-3.44.0-7.el7_7.x86_64                           29/272
+    centos-7.7:   Verifying  : iwl105-firmware-18.168.6.1-76.el7.noarch                  30/272
+    centos-7.7:   Verifying  : pam-1.1.8-23.el7.x86_64                                   31/272
+    centos-7.7:   Verifying  : 1:NetworkManager-wifi-1.18.4-3.el7.x86_64                 32/272
+    centos-7.7:   Verifying  : elfutils-default-yama-scope-0.176-4.el7.noarch            33/272
+    centos-7.7:   Verifying  : cryptsetup-libs-2.0.3-6.el7.x86_64                        34/272
+    centos-7.7:   Verifying  : iproute-4.11.0-25.el7_7.2.x86_64                          35/272
+    centos-7.7:   Verifying  : 7:device-mapper-event-libs-1.02.164-7.el7_8.1.x86_64      36/272
+    centos-7.7:   Verifying  : yum-3.4.3-167.el7.centos.noarch                           37/272
+    centos-7.7:   Verifying  : initscripts-9.49.49-1.el7.x86_64                          38/272
+    centos-7.7:   Verifying  : python-libs-2.7.5-88.el7.x86_64                           39/272
+    centos-7.7:   Verifying  : nss-softokn-freebl-3.44.0-8.el7_7.x86_64                  40/272
+    centos-7.7:   Verifying  : nss-sysinit-3.44.0-7.el7_7.x86_64                         41/272
+    centos-7.7:   Verifying  : file-libs-5.11-36.el7.x86_64                              42/272
+    centos-7.7:   Verifying  : firewalld-0.6.3-8.el7_8.1.noarch                          43/272
+    centos-7.7:   Verifying  : 1:NetworkManager-libnm-1.18.4-3.el7.x86_64                44/272
+    centos-7.7:   Verifying  : iprutils-2.4.17.1-3.el7_7.x86_64                          45/272
+    centos-7.7:   Verifying  : 7:device-mapper-1.02.164-7.el7_8.1.x86_64                 46/272
+    centos-7.7:   Verifying  : dracut-network-033-568.el7.x86_64                         47/272
+    centos-7.7:   Verifying  : iwl100-firmware-39.31.5.1-76.el7.noarch                   48/272
+    centos-7.7:   Verifying  : plymouth-scripts-0.8.9-0.33.20140113.el7.centos.x86_64    49/272
+    centos-7.7:   Verifying  : libxml2-2.9.1-6.el7.4.x86_64                              50/272
+    centos-7.7:   Verifying  : tzdata-2020a-1.el7.noarch                                 51/272
+    centos-7.7:   Verifying  : 1:grub2-pc-modules-2.02-0.81.el7.centos.noarch            52/272
+    centos-7.7:   Verifying  : iwl135-firmware-18.168.6.1-76.el7.noarch                  53/272
+    centos-7.7:   Verifying  : 12:dhcp-libs-4.2.5-79.el7.centos.x86_64                   54/272
+    centos-7.7:   Verifying  : rpm-python-4.11.3-43.el7.x86_64                           55/272
+    centos-7.7:   Verifying  : file-5.11-36.el7.x86_64                                   56/272
+    centos-7.7:   Verifying  : firewalld-filesystem-0.6.3-8.el7_8.1.noarch               57/272
+    centos-7.7:   Verifying  : iwl3160-firmware-25.30.13.0-76.el7.noarch                 58/272
+    centos-7.7:   Verifying  : 12:dhcp-common-4.2.5-79.el7.centos.x86_64                 59/272
+    centos-7.7:   Verifying  : yum-plugin-fastestmirror-1.1.31-53.el7.noarch             60/272
+    centos-7.7:   Verifying  : nss-softokn-3.44.0-8.el7_7.x86_64                         61/272
+    centos-7.7:   Verifying  : tuned-2.11.0-8.el7.noarch                                 62/272
+    centos-7.7:   Verifying  : libselinux-2.5-15.el7.x86_64                              63/272
+    centos-7.7:   Verifying  : libcom_err-1.42.9-17.el7.x86_64                           64/272
+    centos-7.7:   Verifying  : passwd-0.79-6.el7.x86_64                                  65/272
+    centos-7.7:   Verifying  : libcurl-7.29.0-57.el7.x86_64                              66/272
+    centos-7.7:   Verifying  : procps-ng-3.3.10-27.el7.x86_64                            67/272
+    centos-7.7:   Verifying  : device-mapper-persistent-data-0.8.5-2.el7.x86_64          68/272
+    centos-7.7:   Verifying  : iptables-1.4.21-34.el7.x86_64                             69/272
+    centos-7.7:   Verifying  : policycoreutils-2.5-34.el7.x86_64                         70/272
+    centos-7.7:   Verifying  : e2fsprogs-1.42.9-17.el7.x86_64                            71/272
+    centos-7.7:   Verifying  : elrepo-release-7.0-4.el7.elrepo.noarch                    72/272
+    centos-7.7:   Verifying  : 32:bind-export-libs-9.11.4-16.P2.el7_8.2.x86_64           73/272
+    centos-7.7:   Verifying  : 1:NetworkManager-tui-1.18.4-3.el7.x86_64                  74/272
+    centos-7.7:   Verifying  : libblkid-2.23.2-63.el7.x86_64                             75/272
+    centos-7.7:   Verifying  : 1:iwl1000-firmware-39.31.5.1-76.el7.noarch                76/272
+    centos-7.7:   Verifying  : hostname-3.13-3.el7_7.1.x86_64                            77/272
+    centos-7.7:   Verifying  : e2fsprogs-libs-1.42.9-17.el7.x86_64                       78/272
+    centos-7.7:   Verifying  : python-perf-3.10.0-1127.el7.x86_64                        79/272
+    centos-7.7:   Verifying  : curl-7.29.0-57.el7.x86_64                                 80/272
+    centos-7.7:   Verifying  : libteam-1.29-1.el7.x86_64                                 81/272
+    centos-7.7:   Verifying  : hwdata-0.252-9.5.el7.x86_64                               82/272
+    centos-7.7:   Verifying  : libuuid-2.23.2-63.el7.x86_64                              83/272
+    centos-7.7:   Verifying  : iwl7260-firmware-25.30.13.0-76.el7.noarch                 84/272
+    centos-7.7:   Verifying  : kmod-20-28.el7.x86_64                                     85/272
+    centos-7.7:   Verifying  : iwl2030-firmware-18.168.6.1-76.el7.noarch                 86/272
+    centos-7.7:   Verifying  : 7:lvm2-2.02.186-7.el7_8.1.x86_64                          87/272
+    centos-7.7:   Verifying  : selinux-policy-targeted-3.13.1-266.el7.noarch             88/272
+    centos-7.7:   Verifying  : polkit-0.112-26.el7.x86_64                                89/272
+    centos-7.7:   Verifying  : kexec-tools-2.0.15-43.el7.x86_64                          90/272
+    centos-7.7:   Verifying  : python-firewall-0.6.3-8.el7_8.1.noarch                    91/272
+    centos-7.7:   Verifying  : python-urlgrabber-3.10-10.el7.noarch                      92/272
+    centos-7.7:   Verifying  : 7:lvm2-libs-2.02.186-7.el7_8.1.x86_64                     93/272
+    centos-7.7:   Verifying  : logrotate-3.8.6-19.el7.x86_64                             94/272
+    centos-7.7:   Verifying  : 1:grub2-pc-2.02-0.81.el7.centos.x86_64                    95/272
+    centos-7.7:   Verifying  : systemd-libs-219-73.el7_8.5.x86_64                        96/272
+    centos-7.7:   Verifying  : rpm-libs-4.11.3-43.el7.x86_64                             97/272
+    centos-7.7:   Verifying  : iwl3945-firmware-15.32.2.9-76.el7.noarch                  98/272
+    centos-7.7:   Verifying  : 1:grub2-2.02-0.81.el7.centos.x86_64                       99/272
+    centos-7.7:   Verifying  : iwl5000-firmware-8.83.5.1_1-76.el7.noarch                100/272
+    centos-7.7:   Verifying  : 12:dhclient-4.2.5-79.el7.centos.x86_64                   101/272
+    centos-7.7:   Verifying  : 1:NetworkManager-team-1.18.4-3.el7.x86_64                102/272
+    centos-7.7:   Verifying  : 1:grub2-common-2.02-0.81.el7.centos.noarch               103/272
+    centos-7.7:   Verifying  : iwl2000-firmware-18.168.6.1-76.el7.noarch                104/272
+    centos-7.7:   Verifying  : rpm-4.11.3-43.el7.x86_64                                 105/272
+    centos-7.7:   Verifying  : bash-4.2.46-34.el7.x86_64                                106/272
+    centos-7.7:   Verifying  : krb5-libs-1.15.1-46.el7.x86_64                           107/272
+    centos-7.7:   Verifying  : 1:NetworkManager-1.18.4-3.el7.x86_64                     108/272
+    centos-7.7:   Verifying  : 1:grub2-tools-minimal-2.02-0.81.el7.centos.x86_64        109/272
+    centos-7.7:   Verifying  : plymouth-core-libs-0.8.9-0.33.20140113.el7.centos.x86_   110/272
+    centos-7.7:   Verifying  : selinux-policy-3.13.1-266.el7.noarch                     111/272
+    centos-7.7:   Verifying  : rpm-build-libs-4.11.3-43.el7.x86_64                      112/272
+    centos-7.7:   Verifying  : libseccomp-2.3.1-4.el7.x86_64                            113/272
+    centos-7.7:   Verifying  : 7:device-mapper-libs-1.02.164-7.el7_8.1.x86_64           114/272
+    centos-7.7:   Verifying  : shared-mime-info-1.8-5.el7.x86_64                        115/272
+    centos-7.7:   Verifying  : libselinux-utils-2.5-15.el7.x86_64                       116/272
+    centos-7.7:   Verifying  : linux-firmware-20191203-76.gite8a0f4c.el7.noarch         117/272
+    centos-7.7:   Verifying  : iwl6050-firmware-41.28.5.1-76.el7.noarch                 118/272
+    centos-7.7:   Verifying  : iwl6000g2a-firmware-18.168.6.1-76.el7.noarch             119/272
+    centos-7.7:   Verifying  : dracut-033-568.el7.x86_64                                120/272
+    centos-7.7:   Verifying  : libselinux-python-2.5-15.el7.x86_64                      121/272
+    centos-7.7:   Verifying  : iwl6000-firmware-9.221.4.1-76.el7.noarch                 122/272
+    centos-7.7:   Verifying  : parted-3.1-32.el7.x86_64                                 123/272
+    centos-7.7:   Verifying  : 1:mariadb-libs-5.5.65-1.el7.x86_64                       124/272
+    centos-7.7:   Verifying  : systemd-sysv-219-73.el7_8.5.x86_64                       125/272
+    centos-7.7:   Verifying  : libss-1.42.9-17.el7.x86_64                               126/272
+    centos-7.7:   Verifying  : sudo-1.8.23-9.el7.x86_64                                 127/272
+    centos-7.7:   Verifying  : numactl-libs-2.0.12-5.el7.x86_64                         128/272
+    centos-7.7:   Verifying  : iwl6000g2b-firmware-18.168.6.1-76.el7.noarch             129/272
+    centos-7.7:   Verifying  : expat-2.1.0-11.el7.x86_64                                130/272
+    centos-7.7:   Verifying  : plymouth-0.8.9-0.33.20140113.el7.centos.x86_64           131/272
+    centos-7.7:   Verifying  : nss-util-3.44.0-4.el7_7.x86_64                           132/272
+    centos-7.7:   Verifying  : libsmartcols-2.23.2-63.el7.x86_64                        133/272
+    centos-7.7:   Verifying  : gettext-libs-0.19.8.1-3.el7.x86_64                       134/272
+    centos-7.7:   Verifying  : libffi-3.0.13-19.el7.x86_64                              135/272
+    centos-7.7:   Verifying  : teamd-1.29-1.el7.x86_64                                  136/272
+    centos-7.7:   Verifying  : 2:postfix-2.10.1-7.el7.x86_64                            137/272
+    centos-7.7:   Verifying  : rsyslog-8.24.0-38.el7.x86_64                             138/272
+    centos-7.7:   Verifying  : dracut-config-rescue-033-564.el7.x86_64                  139/272
+    centos-7.7:   Verifying  : initscripts-9.49.47-1.el7.x86_64                         140/272
+    centos-7.7:   Verifying  : iwl3160-firmware-22.0.7.0-72.el7.noarch                  141/272
+    centos-7.7:   Verifying  : elfutils-default-yama-scope-0.176-2.el7.noarch           142/272
+    centos-7.7:   Verifying  : acl-2.2.51-14.el7.x86_64                                 143/272
+    centos-7.7:   Verifying  : selinux-policy-targeted-3.13.1-252.el7.noarch            144/272
+    centos-7.7:   Verifying  : dracut-network-033-564.el7.x86_64                        145/272
+    centos-7.7:   Verifying  : python-libs-2.7.5-86.el7.x86_64                          146/272
+    centos-7.7:   Verifying  : gettext-0.19.8.1-2.el7.x86_64                            147/272
+    centos-7.7:   Verifying  : procps-ng-3.3.10-26.el7.x86_64                           148/272
+    centos-7.7:   Verifying  : iwl7260-firmware-22.0.7.0-72.el7.noarch                  149/272
+    centos-7.7:   Verifying  : hostname-3.13-3.el7.x86_64                               150/272
+    centos-7.7:   Verifying  : 1:grub2-tools-extra-2.02-0.80.el7.centos.x86_64          151/272
+    centos-7.7:   Verifying  : 7:lvm2-2.02.185-2.el7.x86_64                             152/272
+    centos-7.7:   Verifying  : kernel-tools-3.10.0-1062.el7.x86_64                      153/272
+    centos-7.7:   Verifying  : file-5.11-35.el7.x86_64                                  154/272
+    centos-7.7:   Verifying  : 1:iwl1000-firmware-39.31.5.1-72.el7.noarch               155/272
+    centos-7.7:   Verifying  : polkit-0.112-22.el7.x86_64                               156/272
+    centos-7.7:   Verifying  : libss-1.42.9-16.el7.x86_64                               157/272
+    centos-7.7:   Verifying  : python-perf-3.10.0-1062.el7.x86_64                       158/272
+    centos-7.7:   Verifying  : iwl2000-firmware-18.168.6.1-72.el7.noarch                159/272
+    centos-7.7:   Verifying  : iwl2030-firmware-18.168.6.1-72.el7.noarch                160/272
+    centos-7.7:   Verifying  : logrotate-3.8.6-17.el7.x86_64                            161/272
+    centos-7.7:   Verifying  : rpm-libs-4.11.3-40.el7.x86_64                            162/272
+    centos-7.7:   Verifying  : 7:device-mapper-1.02.158-2.el7.x86_64                    163/272
+    centos-7.7:   Verifying  : firewalld-filesystem-0.6.3-2.el7.noarch                  164/272
+    centos-7.7:   Verifying  : libselinux-python-2.5-14.1.el7.x86_64                    165/272
+    centos-7.7:   Verifying  : 12:dhcp-libs-4.2.5-77.el7.centos.x86_64                  166/272
+    centos-7.7:   Verifying  : nss-softokn-freebl-3.44.0-5.el7.x86_64                   167/272
+    centos-7.7:   Verifying  : libffi-3.0.13-18.el7.x86_64                              168/272
+    centos-7.7:   Verifying  : 1:grub2-common-2.02-0.80.el7.centos.noarch               169/272
+    centos-7.7:   Verifying  : hwdata-0.252-9.3.el7.x86_64                              170/272
+    centos-7.7:   Verifying  : 1:grub2-2.02-0.80.el7.centos.x86_64                      171/272
+    centos-7.7:   Verifying  : setup-2.8.71-10.el7.noarch                               172/272
+    centos-7.7:   Verifying  : 1:NetworkManager-tui-1.18.0-5.el7.x86_64                 173/272
+    centos-7.7:   Verifying  : centos-release-7-7.1908.0.el7.centos.x86_64              174/272
+    centos-7.7:   Verifying  : 1:grub2-tools-2.02-0.80.el7.centos.x86_64                175/272
+    centos-7.7:   Verifying  : kernel-tools-libs-3.10.0-1062.el7.x86_64                 176/272
+    centos-7.7:   Verifying  : iwl3945-firmware-15.32.2.9-72.el7.noarch                 177/272
+    centos-7.7:   Verifying  : 1:grub2-pc-2.02-0.80.el7.centos.x86_64                   178/272
+    centos-7.7:   Verifying  : 1:NetworkManager-wifi-1.18.0-5.el7.x86_64                179/272
+    centos-7.7:   Verifying  : iwl5000-firmware-8.83.5.1_1-72.el7.noarch                180/272
+    centos-7.7:   Verifying  : iwl6000-firmware-9.221.4.1-72.el7.noarch                 181/272
+    centos-7.7:   Verifying  : 7:device-mapper-event-libs-1.02.158-2.el7.x86_64         182/272
+    centos-7.7:   Verifying  : util-linux-2.23.2-61.el7.x86_64                          183/272
+    centos-7.7:   Verifying  : iptables-1.4.21-33.el7.x86_64                            184/272
+    centos-7.7:   Verifying  : 1:NetworkManager-libnm-1.18.0-5.el7.x86_64               185/272
+    centos-7.7:   Verifying  : nss-util-3.44.0-3.el7.x86_64                             186/272
+    centos-7.7:   Verifying  : systemd-219-67.el7.x86_64                                187/272
+    centos-7.7:   Verifying  : tuned-2.11.0-5.el7.noarch                                188/272
+    centos-7.7:   Verifying  : krb5-libs-1.15.1-37.el7_6.x86_64                         189/272
+    centos-7.7:   Verifying  : iwl6000g2b-firmware-17.168.5.2-72.el7.noarch             190/272
+    centos-7.7:   Verifying  : 32:bind-export-libs-9.11.4-9.P2.el7.x86_64               191/272
+    centos-7.7:   Verifying  : libmount-2.23.2-61.el7.x86_64                            192/272
+    centos-7.7:   Verifying  : libteam-1.27-9.el7.x86_64                                193/272
+    centos-7.7:   Verifying  : passwd-0.79-5.el7.x86_64                                 194/272
+    centos-7.7:   Verifying  : nss-sysinit-3.44.0-4.el7.x86_64                          195/272
+    centos-7.7:   Verifying  : iwl6050-firmware-41.28.5.1-72.el7.noarch                 196/272
+    centos-7.7:   Verifying  : python-2.7.5-86.el7.x86_64                               197/272
+    centos-7.7:   Verifying  : elrepo-release-7.0-3.el7.elrepo.noarch                   198/272
+    centos-7.7:   Verifying  : 1:NetworkManager-1.18.0-5.el7.x86_64                     199/272
+    centos-7.7:   Verifying  : policycoreutils-2.5-33.el7.x86_64                        200/272
+    centos-7.7:   Verifying  : 1:grub2-tools-minimal-2.02-0.80.el7.centos.x86_64        201/272
+    centos-7.7:   Verifying  : ca-certificates-2018.2.22-70.0.el7_5.noarch              202/272
+    centos-7.7:   Verifying  : libselinux-utils-2.5-14.1.el7.x86_64                     203/272
+    centos-7.7:   Verifying  : nss-3.44.0-4.el7.x86_64                                  204/272
+    centos-7.7:   Verifying  : sqlite-3.7.17-8.el7.x86_64                               205/272
+    centos-7.7:   Verifying  : e2fsprogs-libs-1.42.9-16.el7.x86_64                      206/272
+    centos-7.7:   Verifying  : numactl-libs-2.0.12-3.el7.x86_64                         207/272
+    centos-7.7:   Verifying  : shared-mime-info-1.8-4.el7.x86_64                        208/272
+    centos-7.7:   Verifying  : 7:device-mapper-libs-1.02.158-2.el7.x86_64               209/272
+    centos-7.7:   Verifying  : nss-softokn-3.44.0-5.el7.x86_64                          210/272
+    centos-7.7:   Verifying  : libselinux-2.5-14.1.el7.x86_64                           211/272
+    centos-7.7:   Verifying  : nss-tools-3.44.0-4.el7.x86_64                            212/272
+    centos-7.7:   Verifying  : 12:dhcp-common-4.2.5-77.el7.centos.x86_64                213/272
+    centos-7.7:   Verifying  : 7:device-mapper-event-1.02.158-2.el7.x86_64              214/272
+    centos-7.7:   Verifying  : iprutils-2.4.17.1-2.el7.x86_64                           215/272
+    centos-7.7:   Verifying  : device-mapper-persistent-data-0.8.5-1.el7.x86_64         216/272
+    centos-7.7:   Verifying  : iwl4965-firmware-228.61.2.24-72.el7.noarch               217/272
+    centos-7.7:   Verifying  : plymouth-scripts-0.8.9-0.32.20140113.el7.centos.x86_64   218/272
+    centos-7.7:   Verifying  : libseccomp-2.3.1-3.el7.x86_64                            219/272
+    centos-7.7:   Verifying  : firewalld-0.6.3-2.el7.noarch                             220/272
+    centos-7.7:   Verifying  : linux-firmware-20190429-72.gitddde598.el7.noarch         221/272
+    centos-7.7:   Verifying  : python-firewall-0.6.3-2.el7.noarch                       222/272
+    centos-7.7:   Verifying  : gettext-libs-0.19.8.1-2.el7.x86_64                       223/272
+    centos-7.7:   Verifying  : python-urlgrabber-3.10-9.el7.noarch                      224/272
+    centos-7.7:   Verifying  : cryptsetup-libs-2.0.3-5.el7.x86_64                       225/272
+    centos-7.7:   Verifying  : libxml2-2.9.1-6.el7_2.3.x86_64                           226/272
+    centos-7.7:   Verifying  : file-libs-5.11-35.el7.x86_64                             227/272
+    centos-7.7:   Verifying  : yum-plugin-fastestmirror-1.1.31-52.el7.noarch            228/272
+    centos-7.7:   Verifying  : teamd-1.27-9.el7.x86_64                                  229/272
+    centos-7.7:   Verifying  : libblkid-2.23.2-61.el7.x86_64                            230/272
+    centos-7.7:   Verifying  : iwl105-firmware-18.168.6.1-72.el7.noarch                 231/272
+    centos-7.7:   Verifying  : iwl5150-firmware-8.24.2.2-72.el7.noarch                  232/272
+    centos-7.7:   Verifying  : sudo-1.8.23-4.el7.x86_64                                 233/272
+    centos-7.7:   Verifying  : yum-3.4.3-163.el7.centos.noarch                          234/272
+    centos-7.7:   Verifying  : 7:lvm2-libs-2.02.185-2.el7.x86_64                        235/272
+    centos-7.7:   Verifying  : kexec-tools-2.0.15-33.el7.x86_64                         236/272
+    centos-7.7:   Verifying  : plymouth-0.8.9-0.32.20140113.el7.centos.x86_64           237/272
+    centos-7.7:   Verifying  : pam-1.1.8-22.el7.x86_64                                  238/272
+    centos-7.7:   Verifying  : iwl6000g2a-firmware-17.168.5.3-72.el7.noarch             239/272
+    centos-7.7:   Verifying  : 2:microcode_ctl-2.1-53.el7.x86_64                        240/272
+    centos-7.7:   Verifying  : iwl7265-firmware-22.0.7.0-72.el7.noarch                  241/272
+    centos-7.7:   Verifying  : kmod-libs-20-25.el7.x86_64                               242/272
+    centos-7.7:   Verifying  : 1:NetworkManager-team-1.18.0-5.el7.x86_64                243/272
+    centos-7.7:   Verifying  : expat-2.1.0-10.el7_3.x86_64                              244/272
+    centos-7.7:   Verifying  : systemd-sysv-219-67.el7.x86_64                           245/272
+    centos-7.7:   Verifying  : 1:mariadb-libs-5.5.64-1.el7.x86_64                       246/272
+    centos-7.7:   Verifying  : bash-4.2.46-33.el7.x86_64                                247/272
+    centos-7.7:   Verifying  : parted-3.1-31.el7.x86_64                                 248/272
+    centos-7.7:   Verifying  : sed-4.2.2-5.el7.x86_64                                   249/272
+    centos-7.7:   Verifying  : 1:grub2-pc-modules-2.02-0.80.el7.centos.noarch           250/272
+    centos-7.7:   Verifying  : systemd-libs-219-67.el7.x86_64                           251/272
+    centos-7.7:   Verifying  : rpm-4.11.3-40.el7.x86_64                                 252/272
+    centos-7.7:   Verifying  : plymouth-core-libs-0.8.9-0.32.20140113.el7.centos.x86_   253/272
+    centos-7.7:   Verifying  : iwl135-firmware-18.168.6.1-72.el7.noarch                 254/272
+    centos-7.7:   Verifying  : dracut-033-564.el7.x86_64                                255/272
+    centos-7.7:   Verifying  : rpm-python-4.11.3-40.el7.x86_64                          256/272
+    centos-7.7:   Verifying  : libuuid-2.23.2-61.el7.x86_64                             257/272
+    centos-7.7:   Verifying  : libacl-2.2.51-14.el7.x86_64                              258/272
+    centos-7.7:   Verifying  : kpartx-0.4.9-127.el7.x86_64                              259/272
+    centos-7.7:   Verifying  : libcap-2.22-10.el7.x86_64                                260/272
+    centos-7.7:   Verifying  : libcom_err-1.42.9-16.el7.x86_64                          261/272
+    centos-7.7:   Verifying  : libcurl-7.29.0-54.el7.x86_64                             262/272
+    centos-7.7:   Verifying  : iwl100-firmware-39.31.5.1-72.el7.noarch                  263/272
+    centos-7.7:   Verifying  : libsmartcols-2.23.2-61.el7.x86_64                        264/272
+    centos-7.7:   Verifying  : curl-7.29.0-54.el7.x86_64                                265/272
+    centos-7.7:   Verifying  : iproute-4.11.0-25.el7.x86_64                             266/272
+    centos-7.7:   Verifying  : selinux-policy-3.13.1-252.el7.noarch                     267/272
+    centos-7.7:   Verifying  : kmod-20-25.el7.x86_64                                    268/272
+    centos-7.7:   Verifying  : e2fsprogs-1.42.9-16.el7.x86_64                           269/272
+    centos-7.7:   Verifying  : tzdata-2019b-1.el7.noarch                                270/272
+    centos-7.7:   Verifying  : rpm-build-libs-4.11.3-40.el7.x86_64                      271/272
+    centos-7.7:   Verifying  : 12:dhclient-4.2.5-77.el7.centos.x86_64                   272/272
+    centos-7.7:
+    centos-7.7: Installed:
+    centos-7.7:   iwl7260-firmware.noarch 0:25.30.13.0-76.el7  kernel.x86_64 0:3.10.0-1127.el7
+    centos-7.7:
+    centos-7.7: Updated:
+    centos-7.7:   NetworkManager.x86_64 1:1.18.4-3.el7
+    centos-7.7:   NetworkManager-libnm.x86_64 1:1.18.4-3.el7
+    centos-7.7:   NetworkManager-team.x86_64 1:1.18.4-3.el7
+    centos-7.7:   NetworkManager-tui.x86_64 1:1.18.4-3.el7
+    centos-7.7:   NetworkManager-wifi.x86_64 1:1.18.4-3.el7
+    centos-7.7:   acl.x86_64 0:2.2.51-15.el7
+    centos-7.7:   bash.x86_64 0:4.2.46-34.el7
+    centos-7.7:   bind-export-libs.x86_64 32:9.11.4-16.P2.el7_8.2
+    centos-7.7:   ca-certificates.noarch 0:2019.2.32-76.el7_7
+    centos-7.7:   centos-release.x86_64 0:7-8.2003.0.el7.centos
+    centos-7.7:   cryptsetup-libs.x86_64 0:2.0.3-6.el7
+    centos-7.7:   curl.x86_64 0:7.29.0-57.el7
+    centos-7.7:   device-mapper.x86_64 7:1.02.164-7.el7_8.1
+    centos-7.7:   device-mapper-event.x86_64 7:1.02.164-7.el7_8.1
+    centos-7.7:   device-mapper-event-libs.x86_64 7:1.02.164-7.el7_8.1
+    centos-7.7:   device-mapper-libs.x86_64 7:1.02.164-7.el7_8.1
+    centos-7.7:   device-mapper-persistent-data.x86_64 0:0.8.5-2.el7
+    centos-7.7:   dhclient.x86_64 12:4.2.5-79.el7.centos
+    centos-7.7:   dhcp-common.x86_64 12:4.2.5-79.el7.centos
+    centos-7.7:   dhcp-libs.x86_64 12:4.2.5-79.el7.centos
+    centos-7.7:   dracut.x86_64 0:033-568.el7
+    centos-7.7:   dracut-config-rescue.x86_64 0:033-568.el7
+    centos-7.7:   dracut-network.x86_64 0:033-568.el7
+    centos-7.7:   e2fsprogs.x86_64 0:1.42.9-17.el7
+    centos-7.7:   e2fsprogs-libs.x86_64 0:1.42.9-17.el7
+    centos-7.7:   elfutils-default-yama-scope.noarch 0:0.176-4.el7
+    centos-7.7:   elrepo-release.noarch 0:7.0-4.el7.elrepo
+    centos-7.7:   expat.x86_64 0:2.1.0-11.el7
+    centos-7.7:   file.x86_64 0:5.11-36.el7
+    centos-7.7:   file-libs.x86_64 0:5.11-36.el7
+    centos-7.7:   firewalld.noarch 0:0.6.3-8.el7_8.1
+    centos-7.7:   firewalld-filesystem.noarch 0:0.6.3-8.el7_8.1
+    centos-7.7:   gettext.x86_64 0:0.19.8.1-3.el7
+    centos-7.7:   gettext-libs.x86_64 0:0.19.8.1-3.el7
+    centos-7.7:   grub2.x86_64 1:2.02-0.81.el7.centos
+    centos-7.7:   grub2-common.noarch 1:2.02-0.81.el7.centos
+    centos-7.7:   grub2-pc.x86_64 1:2.02-0.81.el7.centos
+    centos-7.7:   grub2-pc-modules.noarch 1:2.02-0.81.el7.centos
+    centos-7.7:   grub2-tools.x86_64 1:2.02-0.81.el7.centos
+    centos-7.7:   grub2-tools-extra.x86_64 1:2.02-0.81.el7.centos
+    centos-7.7:   grub2-tools-minimal.x86_64 1:2.02-0.81.el7.centos
+    centos-7.7:   hostname.x86_64 0:3.13-3.el7_7.1
+    centos-7.7:   hwdata.x86_64 0:0.252-9.5.el7
+    centos-7.7:   initscripts.x86_64 0:9.49.49-1.el7
+    centos-7.7:   iproute.x86_64 0:4.11.0-25.el7_7.2
+    centos-7.7:   iprutils.x86_64 0:2.4.17.1-3.el7_7
+    centos-7.7:   iptables.x86_64 0:1.4.21-34.el7
+    centos-7.7:   iwl100-firmware.noarch 0:39.31.5.1-76.el7
+    centos-7.7:   iwl1000-firmware.noarch 1:39.31.5.1-76.el7
+    centos-7.7:   iwl105-firmware.noarch 0:18.168.6.1-76.el7
+    centos-7.7:   iwl135-firmware.noarch 0:18.168.6.1-76.el7
+    centos-7.7:   iwl2000-firmware.noarch 0:18.168.6.1-76.el7
+    centos-7.7:   iwl2030-firmware.noarch 0:18.168.6.1-76.el7
+    centos-7.7:   iwl3160-firmware.noarch 0:25.30.13.0-76.el7
+    centos-7.7:   iwl3945-firmware.noarch 0:15.32.2.9-76.el7
+    centos-7.7:   iwl4965-firmware.noarch 0:228.61.2.24-76.el7
+    centos-7.7:   iwl5000-firmware.noarch 0:8.83.5.1_1-76.el7
+    centos-7.7:   iwl5150-firmware.noarch 0:8.24.2.2-76.el7
+    centos-7.7:   iwl6000-firmware.noarch 0:9.221.4.1-76.el7
+    centos-7.7:   iwl6000g2a-firmware.noarch 0:18.168.6.1-76.el7
+    centos-7.7:   iwl6000g2b-firmware.noarch 0:18.168.6.1-76.el7
+    centos-7.7:   iwl6050-firmware.noarch 0:41.28.5.1-76.el7
+    centos-7.7:   kernel-tools.x86_64 0:3.10.0-1127.el7
+    centos-7.7:   kernel-tools-libs.x86_64 0:3.10.0-1127.el7
+    centos-7.7:   kexec-tools.x86_64 0:2.0.15-43.el7
+    centos-7.7:   kmod.x86_64 0:20-28.el7
+    centos-7.7:   kmod-libs.x86_64 0:20-28.el7
+    centos-7.7:   kpartx.x86_64 0:0.4.9-131.el7
+    centos-7.7:   krb5-libs.x86_64 0:1.15.1-46.el7
+    centos-7.7:   libacl.x86_64 0:2.2.51-15.el7
+    centos-7.7:   libblkid.x86_64 0:2.23.2-63.el7
+    centos-7.7:   libcap.x86_64 0:2.22-11.el7
+    centos-7.7:   libcom_err.x86_64 0:1.42.9-17.el7
+    centos-7.7:   libcurl.x86_64 0:7.29.0-57.el7
+    centos-7.7:   libffi.x86_64 0:3.0.13-19.el7
+    centos-7.7:   libmount.x86_64 0:2.23.2-63.el7
+    centos-7.7:   libseccomp.x86_64 0:2.3.1-4.el7
+    centos-7.7:   libselinux.x86_64 0:2.5-15.el7
+    centos-7.7:   libselinux-python.x86_64 0:2.5-15.el7
+    centos-7.7:   libselinux-utils.x86_64 0:2.5-15.el7
+    centos-7.7:   libsmartcols.x86_64 0:2.23.2-63.el7
+    centos-7.7:   libss.x86_64 0:1.42.9-17.el7
+    centos-7.7:   libteam.x86_64 0:1.29-1.el7
+    centos-7.7:   libuuid.x86_64 0:2.23.2-63.el7
+    centos-7.7:   libxml2.x86_64 0:2.9.1-6.el7.4
+    centos-7.7:   linux-firmware.noarch 0:20191203-76.gite8a0f4c.el7
+    centos-7.7:   logrotate.x86_64 0:3.8.6-19.el7
+    centos-7.7:   lvm2.x86_64 7:2.02.186-7.el7_8.1
+    centos-7.7:   lvm2-libs.x86_64 7:2.02.186-7.el7_8.1
+    centos-7.7:   mariadb-libs.x86_64 1:5.5.65-1.el7
+    centos-7.7:   microcode_ctl.x86_64 2:2.1-61.el7
+    centos-7.7:   nss.x86_64 0:3.44.0-7.el7_7
+    centos-7.7:   nss-softokn.x86_64 0:3.44.0-8.el7_7
+    centos-7.7:   nss-softokn-freebl.x86_64 0:3.44.0-8.el7_7
+    centos-7.7:   nss-sysinit.x86_64 0:3.44.0-7.el7_7
+    centos-7.7:   nss-tools.x86_64 0:3.44.0-7.el7_7
+    centos-7.7:   nss-util.x86_64 0:3.44.0-4.el7_7
+    centos-7.7:   numactl-libs.x86_64 0:2.0.12-5.el7
+    centos-7.7:   pam.x86_64 0:1.1.8-23.el7
+    centos-7.7:   parted.x86_64 0:3.1-32.el7
+    centos-7.7:   passwd.x86_64 0:0.79-6.el7
+    centos-7.7:   plymouth.x86_64 0:0.8.9-0.33.20140113.el7.centos
+    centos-7.7:   plymouth-core-libs.x86_64 0:0.8.9-0.33.20140113.el7.centos
+    centos-7.7:   plymouth-scripts.x86_64 0:0.8.9-0.33.20140113.el7.centos
+    centos-7.7:   policycoreutils.x86_64 0:2.5-34.el7
+    centos-7.7:   polkit.x86_64 0:0.112-26.el7
+    centos-7.7:   postfix.x86_64 2:2.10.1-9.el7
+    centos-7.7:   procps-ng.x86_64 0:3.3.10-27.el7
+    centos-7.7:   python.x86_64 0:2.7.5-88.el7
+    centos-7.7:   python-firewall.noarch 0:0.6.3-8.el7_8.1
+    centos-7.7:   python-libs.x86_64 0:2.7.5-88.el7
+    centos-7.7:   python-perf.x86_64 0:3.10.0-1127.el7
+    centos-7.7:   python-urlgrabber.noarch 0:3.10-10.el7
+    centos-7.7:   rpm.x86_64 0:4.11.3-43.el7
+    centos-7.7:   rpm-build-libs.x86_64 0:4.11.3-43.el7
+    centos-7.7:   rpm-libs.x86_64 0:4.11.3-43.el7
+    centos-7.7:   rpm-python.x86_64 0:4.11.3-43.el7
+    centos-7.7:   rsyslog.x86_64 0:8.24.0-52.el7
+    centos-7.7:   sed.x86_64 0:4.2.2-6.el7
+    centos-7.7:   selinux-policy.noarch 0:3.13.1-266.el7
+    centos-7.7:   selinux-policy-targeted.noarch 0:3.13.1-266.el7
+    centos-7.7:   setup.noarch 0:2.8.71-11.el7
+    centos-7.7:   shared-mime-info.x86_64 0:1.8-5.el7
+    centos-7.7:   sqlite.x86_64 0:3.7.17-8.el7_7.1
+    centos-7.7:   sudo.x86_64 0:1.8.23-9.el7
+    centos-7.7:   systemd.x86_64 0:219-73.el7_8.5
+    centos-7.7:   systemd-libs.x86_64 0:219-73.el7_8.5
+    centos-7.7:   systemd-sysv.x86_64 0:219-73.el7_8.5
+    centos-7.7:   teamd.x86_64 0:1.29-1.el7
+    centos-7.7:   tuned.noarch 0:2.11.0-8.el7
+    centos-7.7:   tzdata.noarch 0:2020a-1.el7
+    centos-7.7:   util-linux.x86_64 0:2.23.2-63.el7
+    centos-7.7:   yum.noarch 0:3.4.3-167.el7.centos
+    centos-7.7:   yum-plugin-fastestmirror.noarch 0:1.1.31-53.el7
+    centos-7.7:
+    centos-7.7: Replaced:
+    centos-7.7:   iwl7265-firmware.noarch 0:22.0.7.0-72.el7
+    centos-7.7:
+    centos-7.7: Complete!
+    centos-7.7: Loaded plugins: fastestmirror
+    centos-7.7: Cleaning repos: base elrepo extras updates
+    centos-7.7: Cleaning up list of fastest mirrors
+    centos-7.7: Other repos take up 10 M of disk space (use --verbose for details)
+    centos-7.7: dd: error writing ‘/EMPTY’: No space left on device
+    centos-7.7: 6367+0 records in
+    centos-7.7: 6366+0 records out
+    centos-7.7: 6675234816 bytes (6.7 GB) copied, 9.85323 s, 677 MB/s
+==> centos-7.7: Gracefully halting virtual machine...
+==> centos-7.7: Preparing to export machine...
+    centos-7.7: Deleting forwarded port mapping for the communicator (SSH, WinRM, etc) (host port 4071)
+==> centos-7.7: Exporting virtual machine...
+    centos-7.7: Executing: export packer-centos-vm --output builds/packer-centos-vm.ovf --manifest --vsys 0 --description CentOS 7.7 with kernel 5.x --version 7.7.1908
+==> centos-7.7: Deregistering and deleting VM...
+==> centos-7.7: Running post-processor: vagrant
+==> centos-7.7 (vagrant): Creating Vagrant box for 'virtualbox' provider
+    centos-7.7 (vagrant): Copying from artifact: builds/packer-centos-vm-disk001.vmdk
+    centos-7.7 (vagrant): Copying from artifact: builds/packer-centos-vm.mf
+    centos-7.7 (vagrant): Copying from artifact: builds/packer-centos-vm.ovf
+    centos-7.7 (vagrant): Renaming the OVF to box.ovf...
+    centos-7.7 (vagrant): Compressing: Vagrantfile
+    centos-7.7 (vagrant): Compressing: box.ovf
+    centos-7.7 (vagrant): Compressing: metadata.json
+    centos-7.7 (vagrant): Compressing: packer-centos-vm-disk001.vmdk
+    centos-7.7 (vagrant): Compressing: packer-centos-vm.mf
+Build 'centos-7.7' finished.
+
+==> Builds finished. The artifacts of successful builds are:
+--> centos-7.7: 'virtualbox' provider box: centos-7.7.1908-kernel-5-x86_64-Minimal.box
