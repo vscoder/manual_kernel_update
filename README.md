@@ -12,6 +12,12 @@ This article describes a compilation of kernel from sources with config from the
 
 Here is described the installation process of VirtualBox Guest Additions. It makes shared folders usable.
 
+## [Build and publish box](PACKER.md)
+
+And finally, build vagrant box with packer and publish it on vagrant cloud.
+
+https://app.vagrantup.com/vscoder/boxes/centos-7-5-custom
+
 ---
 
 ## [Some deprecated solutions](DEPRECATED.md)
