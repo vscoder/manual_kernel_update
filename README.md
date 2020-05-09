@@ -4,6 +4,8 @@
 
 Here is described an installation of mainline kernel from the ELRepo repsitory and publication of the vagrant box with updated kernel.
 
+https://app.vagrantup.com/vscoder/boxes/centos-7-5
+
 ## [Build custom kernel](CUSTOMKERNEL.md)
 
 This article describes a compilation of kernel from sources with config from the ELRepo's kernel package
