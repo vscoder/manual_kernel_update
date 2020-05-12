@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -eux
+set -ex
 
 echo "Set locale"
 export LANG=C
@@ -44,12 +44,19 @@ echo "Install new kernel"
 cd ~/rpmbuild/RPMS/x86_64/
 sudo yum localinstall --skip-broken -y *.rpm
 
-echo "Remove build files"
-rm -rf ~/rpmbuild/BUILD/*
+if [ "$PROVISIONER" != "vagrant" ]
+then
+    echo "Remove build files"
+    rm -rf ~/rpmbuild/BUILD/*
+fi
 
 echo "Update grub menu"
 sudo grub2-mkconfig -o /boot/grub2/grub.cfg
 sudo grub2-set-default 0
 
-# Reboot VM
-shutdown -r now
+# Reboot VM (except vagrant provisioner)
+if [ "$PROVISIONER" != "vagrant" ]
+then
+    echo "Reboot"
+    shutdown -r now
+fi

@@ -27,5 +27,10 @@ sudo umount /mnt
 echo "Remove iso"
 rm ~/VBoxGuestAdditions*.iso
 
-echo "Reboot"
-sudo shutdown -r now
+# Reboot VM (except vagrant provisioner)
+set +u
+if [ "$PROVISIONER" != "vagrant" ]
+then
+    echo "Reboot"
+    shutdown -r now
+fi

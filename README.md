@@ -22,6 +22,16 @@ https://app.vagrantup.com/vscoder/boxes/centos-7-5-custom
 
 ---
 
+## [Build kernel with vagrant up](VAGRANTPROVISION.md)
+
+There is described the process of build a custom kernel with `vagrant up` provision process.
+
+How to run:
+1. `vagratn up` to up vm instance and build a custom kernel
+2. `vagrant reload` to automatically enable shared folders
+
+---
+
 ## [Some deprecated solutions](DEPRECATED.md)
 
 Here are described some old and wrong ways, but I don't like to lose them.
